@@ -4,6 +4,21 @@
   "main": "index.js",
   "description": "A blog theme for VuePress by tolking",
   "author": "tolking <qw13131wang@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/tolking/vuepress-theme-ououe",
+  "bugs": {
+    "url": "https://github.com/tolking/vuepress-theme-ououe/issues"
+  },
+  "homepage": "https://github.com/tolking/vuepress-theme-ououe",
+  "doc": "https://ououe.com/lib/vuepress-theme-ououe.html",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "theme",
+    "ououe",
+    "blog",
+    "Ghost Casper"
+  ],
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.0.0-alpha.39",
     "@vuepress/plugin-nprogress": "^1.0.0-alpha.39",
