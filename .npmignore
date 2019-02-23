@@ -1,0 +1,12 @@
+.DS_Store
+.npmignore
+.gitignore
+.editorconfig
+
+node_modules/
+test/
+npm-debug.log
+yarn.lock
+
+*.test.js
+.travis.yml
