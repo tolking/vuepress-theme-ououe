@@ -7,13 +7,27 @@
         <h1 class="header-title">{{ $page.title }}</h1>
       </div>
       <Content/>
+      <div v-if="$themeConfig.postTime" class="info-time">
+        <p v-if="createTime"
+          class="time-text">{{ $themeConfig.postTime.createTime + ": " + createTime }}</p>
+        <p v-if="lastUpdated"
+          class="time-text">{{ $themeConfig.postTime.lastUpdated + ": " + lastUpdated }}</p>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import { formatDate } from '../lib/util'
 export default {
-  
+  computed: {
+    createTime() {
+      return this.$frontmatter.date && formatDate(this.$frontmatter.date)
+    },
+    lastUpdated() {
+      return this.$page.lastUpdated && formatDate(this.$page.lastUpdated.split(' ')[0])
+    }
+  }
 }
 </script>
 
@@ -37,6 +51,13 @@ export default {
         color $blackColor
         font-weight bold
         text-shadow 0 1px 5px $shadowColor
+    .info-time
+      padding 0 2rem 2rem
+      text-align right
+      .time-text
+        font-size .9rem
+        color $textColor
+
 .no-bg
   padding-top 2rem
   .info-main

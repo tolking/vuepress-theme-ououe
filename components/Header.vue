@@ -3,12 +3,12 @@
     <div class="header-navbar">
       <div class="flex-bc main header-nav">
         <div class="nav-link">
-          <router-link :to="$site.base" class="inblock link-logo">
+          <router-link :to="$localePath" class="inblock link-logo">
             <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo">
           </router-link>
           <nav-link :value="links" class="nav-link"></nav-link>
         </div>
-        <search-box v-if="$site.themeConfig.search !== false"></search-box>
+        <search-box v-if="$themeConfig.search"></search-box>
       </div>
     </div>
     <slot></slot>
@@ -27,10 +27,10 @@ export default {
   name: 'app-header',
   computed: {
     links() {
-      return this.$site.themeConfig.nav || [];
+      return this.$themeConfig.nav
     },
     logoImg() {
-      return this.$site.themeConfig.logo
+      return this.$themeConfig.logo
     }
   },
 }

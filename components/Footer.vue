@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <nav-link v-if="links" :value="links" class="footer-link"></nav-link>
-    <router-link :to="$site.base"
+    <router-link :to="$localePath"
       class="copyright">{{ $site.title + " &copy; " + year }}</router-link>
   </footer>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     links() {
-      return this.$site.themeConfig.footer;
+      return this.$themeConfig.footer;
     },
     year() {
       return new Date().getFullYear();

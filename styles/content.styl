@@ -34,6 +34,7 @@
     font-weight 600
 
   h1, h2, h3, h4, h5, h6
+    color $titleColor
     font-weight 600
     line-height 1.25
     &:hover .header-anchor
@@ -44,11 +45,18 @@
 
   h2
     font-size 1.65rem
-    padding-bottom .3rem
-    border-bottom 1px solid $borderColor
 
   h3
     font-size 1.35rem
+
+  h4
+    font-size 1.3rem
+
+  h5
+    font-size 1.2rem
+
+  h6
+    font-size 1rem
 
   a.header-anchor
     font-size 0.85em
@@ -67,7 +75,8 @@
     line-height 1.7
 
   p
-    font-size 1.2rem
+    margin: .5rem 0
+    font-size 1.1rem
     color $textColor
     img
       max-width: 100%

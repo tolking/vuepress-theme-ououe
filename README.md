@@ -6,6 +6,8 @@ A blog theme for VuePress by tolking
 
 Live Demo: [My Blog](https://ououe.com)
 
+[Documentation](https://ououe.com/lib/vuepress-theme-ououe.html)
+
 Uses [vuepress-theme-ououe-template](https://github.com/tolking/vuepress-theme-ououe-template) to starter
 
 Take [TryGhost/Casper](https://github.com/TryGhost/Casper) as a reference
@@ -47,6 +49,11 @@ module.exports = {
   themeConfig: {
     cover: '/cover.jpg',
     logo: '/logo.png',
+    search: true,
+    postTime: {
+      createTime: 'Create Time',
+      lastUpdated: 'Last Updated'
+    },
     nav: [{
       text: 'Home',
       link: '/'

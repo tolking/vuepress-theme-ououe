@@ -10,6 +10,17 @@ export default ({
     computed: {
       $pages() {
         return splitPages(this.$site.pages);
+      },
+      $themeConfig() {
+        return Object.assign({
+          search: true,
+          postTime: {
+            createTime: 'Create Time',
+            lastUpdated: 'Last Updated'
+          },
+          nav: [],
+          footer: []
+        }, this.$site.themeConfig)
       }
     }
   })

@@ -1,7 +1,11 @@
 <template>
   <section>
     <span v-for="(item, index) in value" :key="index" class="list-item">
-      <a v-if="checkUrl(item.link)" :href="item.link" class="item-link" target="_blank">{{ item.text }}</a>
+      <a v-if="checkUrl(item.link)"
+        :href="item.link"
+        class="item-link"
+        target="_blank"
+        rel="noopener noreferrer">{{ item.text }}</a>
       <router-link v-else :to="item.link" class="item-link">{{ item.text }}</router-link>
     </span>
   </section>
@@ -15,9 +19,7 @@ export default {
   props: {
     value: {
       type: Array,
-      default: () => {
-        return []
-      }
+      default: () => []
     },
   },
   methods: {
@@ -74,8 +76,10 @@ export default {
       margin-left 0
       &:before
         content none
+      .item-link
+        margin-left 0
     .item-link
       margin-left .4rem
-      font-size .8rem
+      font-size .9rem
       color $whiteColor
 </style>

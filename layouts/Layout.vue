@@ -1,15 +1,16 @@
 <template>
-  <section class="latout">
-    <app-header :class="{'cover-header': $themeConfig.cover }">
-      <header-cover></header-cover>
+  <section class="layout">
+    <app-header :class="{'cover-header': cover }">
+      <header-cover :item="cover"></header-cover>
     </app-header>
-    <list :item="posts" :class="{'cover-list': $themeConfig.cover, 'home-list': isHome }"></list>
+    <list :item="posts" :class="{'cover-list': cover, 'home-list': isHome }"></list>
+    <Content class="main"/>
     <app-footer></app-footer>
   </section>
 </template>
 
 <script>
-import { splitUrl } from '../lib/util.js';
+import { splitUrl, sortPosts } from '../lib/util.js';
 import AppHeader from '../components/Header.vue';
 import AppFooter from '../components/Footer.vue';
 import HeaderCover from '../components/HeaderCover.vue';
@@ -25,7 +26,10 @@ export default {
   },
   computed: {
     isHome() {
-      return this.$site.base === this.$page.regularPath
+      return this.$localePath === this.$page.regularPath
+    },
+    cover() {
+      return this.$frontmatter.image || this.$themeConfig.cover
     },
     posts() {
       if (this.isHome) {
@@ -36,12 +40,19 @@ export default {
             (element.frontmatter.display === 'home') && _posts.push(element);
           });
         }
-        return _posts;
+        return sortPosts(_posts);
       } else {
         const key = splitUrl(this.$page.regularPath)[0];
-        return this.$pages[key];
+        return sortPosts(this.$pages[key]);
       }
     }
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.layout
+  .content
+    padding 0
+</style>
+
