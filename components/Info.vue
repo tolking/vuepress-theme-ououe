@@ -33,13 +33,12 @@ export default {
 
 <style lang="stylus" scoped>
 .info
-  padding-top ($coverHeight / 1.6)
-  padding-bottom 2rem
+  padding ($coverHeight / 1.6) 0.5rem 2rem
   background-size cover
   background-position center
   background-attachment fixed
   .info-main
-    min-height "calc(100vh - 9.75rem - %s)" % ($coverHeight / 1.6)
+    min-height "calc(100vh - 9.95rem - %s)" % ($coverHeight / 1.6)
     border-radius 1rem
     box-shadow 0px 0px 8px $shadowColor
     background $whiteColor
@@ -61,5 +60,5 @@ export default {
 .no-bg
   padding-top 2rem
   .info-main
-    min-height "calc(100vh - 8.25rem - %s)" % $headerHeight
+    min-height "calc(100vh - 8.45rem - %s)" % $headerHeight
 </style>

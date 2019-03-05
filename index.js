@@ -6,13 +6,6 @@ module.exports = {
     '@vuepress/search',
     '@vuepress/plugin-nprogress',
     '@vuepress/last-updated',
-    [(pluginOptions, context) => ({
-      name: 'ououe-add-layout',
-      extendPageData($page) {
-        if (!$page.frontmatter.layout && $page.regularPath.includes('.html')) {
-          $page.frontmatter.layout = 'Page';
-        }
-      }
-    })]
+    require('./lib/my-plugin.js')
   ]
 }
