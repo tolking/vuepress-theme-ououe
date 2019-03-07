@@ -1,4 +1,3 @@
-import { splitUrl, sortPosts } from './lib/util'
 import { findPageByKey } from '@app/util'
 import themeConfig from './lib/themeConfig'
 import tagMeta from '@dynamic/tag'
@@ -69,17 +68,15 @@ export default ({
       $list() {
         const tagName = this.$route.meta.tagName
         const categoryName = this.$route.meta.categoryName
-        const listName = splitUrl(this.$route.fullPath)[0] || '__home'
-        let _list
+        const listName = this.$route.meta.listName
+
         if (tagName) {
-          _list = this.$tags.getItemByName(tagName)
+          return this.$tags.getItemByName(tagName)
         } else if (categoryName) {
-          _list = this.$categories.getItemByName(categoryName)
+          return this.$categories.getItemByName(categoryName)
         } else {
-          _list = this.$lists.getItemByName(listName)
+          return this.$lists.getItemByName(listName)
         }
-        // return _list
-        return sortPosts(_list.posts)
       }
     }
   })

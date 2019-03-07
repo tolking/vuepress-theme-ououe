@@ -1,6 +1,6 @@
 <template>
   <section class="flex-w main list">
-    <router-link v-for="(item, index) in item" :key="index" :to="item.path"
+    <router-link v-for="(item, index) in list" :key="index" :to="item.path"
       :class="{ 'no-image': !item.frontmatter.image }"
       class="flex-y list-item">
       <div :style="{'background-image': `url(${item.frontmatter.image})`}" class="item-img"></div>
@@ -13,14 +13,15 @@
 </template>
 
 <script>
+import { sortPosts } from '../lib/util'
+
 export default {
   name: 'list',
-  props: {
-    item: {
-      type: Array,
-      default: () => []
-    },
-  }
+  computed: {
+    list() {
+      return sortPosts(this.$list.posts)
+    }
+  },
 }
 </script>
 

@@ -3,7 +3,7 @@
     <app-header :class="{'cover-header': cover }">
       <header-cover :item="cover"></header-cover>
     </app-header>
-    <list :item="$list" :class="{'cover-list': cover, 'home-list': isHome }"></list>
+    <list :class="{'cover-list': cover, 'home-list': isHome }"></list>
     <Content class="main"/>
     <app-footer></app-footer>
   </section>
