@@ -3,6 +3,7 @@ import themeConfig from './lib/themeConfig'
 import tagMeta from '@dynamic/tag'
 import categoryMeta from '@dynamic/category'
 import listMeta from '@dynamic/list'
+import pluginConfig from '@dynamic/pluginConfig'
 
 class Classifiable {
   constructor (metaMap, pages) {
@@ -47,6 +48,9 @@ export default ({
 }) => {
   Vue.mixin({
     computed: {
+      $pluginConfig() {
+        return pluginConfig
+      },
       $themeConfig() {
         return Object.assign(themeConfig, this.$site.themeConfig)
       },
