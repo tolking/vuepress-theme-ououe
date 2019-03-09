@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { checkUrl } from '../lib/util';
+import { checkUrl } from '@theme/lib/util';
 
 export default {
   name: 'nav-link',

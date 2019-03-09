@@ -1,20 +1,20 @@
 <template>
   <section class="layout">
-    <app-header :class="{'cover-header': cover }">
-      <header-cover :item="cover"></header-cover>
+    <app-header :class="{ 'cover-header': cover }">
+      <header-cover v-if="cover" :item="cover"></header-cover>
     </app-header>
-    <list :class="{'cover-list': cover, 'home-list': isHome }"></list>
-    <Content class="main"/>
+    <list :class="{ 'cover-list': cover, 'home-list': isHome }"></list>
+    <pagination></pagination>
     <app-footer></app-footer>
   </section>
 </template>
 
 <script>
-import { splitUrl, pagination } from '../lib/util.js';
-import AppHeader from '../components/Header.vue';
-import AppFooter from '../components/Footer.vue';
-import HeaderCover from '../components/HeaderCover.vue';
-import List from '../components/List.vue';
+import AppHeader from '@theme/components/Header.vue';
+import AppFooter from '@theme/components/Footer.vue';
+import HeaderCover from '@theme/components/HeaderCover.vue';
+import List from '@theme/components/List.vue';
+import Pagination from '@theme/components/Pagination.vue';
 
 export default {
   name: 'layout',
@@ -22,14 +22,21 @@ export default {
     AppHeader,
     AppFooter,
     HeaderCover,
-    List
+    List,
+    Pagination
   },
   computed: {
     isHome() {
       return this.$localePath === this.$page.regularPath
     },
     cover() {
-      return this.$frontmatter.image || this.$themeConfig.cover
+      const item = this.$themeConfig.nav.filter(item => {
+        return item.link === this.$route.path
+      })
+
+      return this.$frontmatter.image
+        || item.length && item[0].cover
+        || this.$themeConfig.cover
     }
   }
 }

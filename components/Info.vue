@@ -6,6 +6,21 @@
       <div class="info-header">
         <h1 class="header-title">{{ $page.title }}</h1>
       </div>
+      <div class="flex-wcc info-tag">
+        <div v-if="categories" class="inblock tag-list">
+          <router-link v-for="(item, index) in categories"
+            :key="index"
+            :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
+            class="tag-text">{{ item }}</router-link>
+        </div>
+        <span v-if="categories && tags">/</span>
+        <div v-if="tags" class="inblock tag-list">
+          <router-link v-for="(item, index) in tags"
+            :key="index"
+            :to="$pluginConfig.tagIndexPageUrl + item + '/'"
+            class="tag-text">{{ item }}</router-link>
+        </div>
+      </div>
       <Content/>
       <div v-if="$themeConfig.postTime" class="info-time">
         <p v-if="createTime"
@@ -18,9 +33,16 @@
 </template>
 
 <script>
-import { formatDate } from '../lib/util'
+import { formatDate } from '@theme/lib/util'
+
 export default {
   computed: {
+    categories() {
+      return this.$frontmatter.categories || [this.$frontmatter.category]
+    },
+    tags() {
+      return this.$frontmatter.tags || [this.$frontmatter.tag]
+    },
     createTime() {
       return this.$frontmatter.date && formatDate(this.$frontmatter.date)
     },
@@ -50,13 +72,20 @@ export default {
         color $blackColor
         font-weight bold
         text-shadow 0 1px 5px $shadowColor
+    .info-tag
+      .tag-list
+        padding .5rem 0
+        .tag-text
+          display inline-block
+          padding .2rem .5rem
+          font-size 1.2rem
+          color $accentColor
     .info-time
       padding 0 2rem 2rem
       text-align right
       .time-text
         font-size .9rem
         color $textColor
-
 .no-bg
   padding-top 2rem
   .info-main

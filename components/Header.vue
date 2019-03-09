@@ -17,14 +17,14 @@
 
 <script>
 import SearchBox from '@SearchBox'
-import NavLink from './NavLink.vue';
+import NavLink from '@theme/components/NavLink.vue';
 
 export default {
+  name: 'app-header',
   components: {
     SearchBox,
     NavLink,
   },
-  name: 'app-header',
   computed: {
     links() {
       return this.$themeConfig.nav

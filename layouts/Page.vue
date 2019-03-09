@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import AppHeader from '../components/Header.vue';
-import AppFooter from '../components/Footer.vue';
-import HeaderCover from '../components/HeaderCover.vue';
-import Info from '../components/Info.vue';
+import AppHeader from '@theme/components/Header.vue';
+import AppFooter from '@theme/components/Footer.vue';
+import HeaderCover from '@theme/components/HeaderCover.vue';
+import Info from '@theme/components/Info.vue';
 
 export default {
   name: 'page',

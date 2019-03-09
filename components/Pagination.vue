@@ -1,0 +1,103 @@
+<template>
+<section v-if="page" class="flex-cc main pagination">
+  <div class="flex-wac pagination-list">
+    <router-link v-if="current !== 1"
+      :to="pagination[current - 2]"
+      class="list-item">&lt;</router-link>
+    <router-link v-for="(item, index) in grouplist"
+      :key="index"
+      :to="item.path || ''"
+      :class="{ 'list-item-active': current === item.val }"
+      class="list-item">{{ item.text }}</router-link>
+    <router-link v-if="current !== page"
+      :to="pagination[current]"
+      class="list-item">&gt;</router-link>
+  </div>
+</section>
+</template>
+
+<script>
+export default {
+  name: 'pagination',
+  computed: {
+    pagination() {
+      return this.$list.pagination
+    },
+    page() {
+      return this.pagination && this.pagination.length
+    },
+    current() {
+      return this.pagination && (this.pagination.indexOf(this.$route.path) + 1)
+    },
+    grouplist() {
+      const count = Math.floor(this.$themeConfig.pageGroup / 2)
+      let len = this.page
+      let temp = []
+      let list = []
+      let center = this.current
+
+      if (this.pagination) {
+        if (len <= this.$themeConfig.pageGroup) {
+          while (len--) {
+            temp.push({
+              text: this.page - len,
+              val: this.page - len,
+              path: this.pagination[this.page - len - 1]
+            })
+          }
+          return temp
+        }
+        while (len--) {
+          temp.push(this.page - len)
+        }
+        const idx = temp.indexOf(center)
+        if (idx < count) {
+          center = center + count - idx
+        }
+        if (this.current > this.page - count) {
+          center = this.page - count
+        }
+        temp = temp.splice(center - count - 1, this.$themeConfig.pageGroup);
+        do {
+          const t = temp.shift()
+          list.push({
+            text: t,
+            val: t,
+            path: this.pagination[t - 1]
+          });
+        } while (temp.length)
+        return list
+      }
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+.pagination
+  margin 1rem 0 2rem
+  .pagination-list
+    .list-item
+      display inline-block
+      margin 0 .5rem
+      padding .8rem 1.2rem
+      border 1px solid $borderColor
+      border-radius .5rem
+      background $bgColor
+      font-size 1.2rem
+      color $titleColor
+      transition all .5s ease-in-out
+      &:hover
+        border-color $accentColor
+        transition all .5s ease-in-out
+    .list-item-active
+      border-color $accentColor
+      background $accentColor
+      color $whiteColor
+@media (max-width $phoneWidth)
+  .pagination
+    .pagination-list
+      .list-item
+        margin  0 .3rem
+        padding .6rem .8rem
+</style>

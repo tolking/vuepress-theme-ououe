@@ -1,27 +1,32 @@
 <template>
   <section class="flex-w main list">
-    <router-link v-for="(item, index) in list" :key="index" :to="item.path"
+    <router-link v-for="(item, index) in $list.posts" :key="index" :to="item.path"
       :class="{ 'no-image': !item.frontmatter.image }"
       class="flex-y list-item">
       <div :style="{'background-image': `url(${item.frontmatter.image})`}" class="item-img"></div>
-      <div class="item-content">
+      <div class="flex-cb item-content">
+        <div v-if="item.frontmatter.categories" class="content-categories">
+          <router-link v-for="(item, index) in item.frontmatter.categories"
+            :key="index"
+            :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
+            class="item-text">{{ item }}</router-link>
+        </div>
         <h2 class="content-title">{{ item.title }}</h2>
         <div v-html="item.excerpt" class="content-text"></div>
+        <div v-if="item.frontmatter.tags" class="content-tags">
+          <router-link v-for="(item, index) in item.frontmatter.tags"
+            :key="index"
+            :to="$pluginConfig.tagIndexPageUrl + item + '/'"
+            class="item-text">{{ item }}</router-link>
+        </div>
       </div>
     </router-link >
   </section>
 </template>
 
 <script>
-import { sortPosts } from '../lib/util'
-
 export default {
-  name: 'list',
-  computed: {
-    list() {
-      return sortPosts(this.$list.posts)
-    }
-  },
+  name: 'list'
 }
 </script>
 
@@ -52,7 +57,20 @@ export default {
       background-size cover
       background-position center
     .item-content
+      flex: 1
       padding 1rem
+      .content-categories
+      .content-tags
+        white-space nowrap
+        overflow hidden
+        .item-text
+          padding .2rem
+          font-size 1rem
+          color $textColor
+          &:hover
+            color $accentColor
+      .content-tags
+        text-align right
       .content-title
         font-size 1.3rem
         color $titleColor
@@ -71,6 +89,7 @@ export default {
           transform scaleX(0)
           transition transform .5s ease-out
       .content-text
+        flex 1
         margin-top .5rem
         max-height $listCardHeight
         overflow hidden

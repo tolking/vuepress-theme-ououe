@@ -6,6 +6,6 @@ module.exports = {
     '@vuepress/search',
     '@vuepress/plugin-nprogress',
     '@vuepress/last-updated',
-    require('./lib/my-plugin.js')
+    'blog-multidir'
   ]
 }
