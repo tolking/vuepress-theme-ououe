@@ -1,7 +1,7 @@
 <template>
   <section class="layout">
     <app-header :class="{ 'cover-header': cover }">
-      <header-cover v-if="cover" :item="cover"></header-cover>
+      <header-cover :item="cover"></header-cover>
     </app-header>
     <list :class="{ 'cover-list': cover, 'home-list': isHome }"></list>
     <pagination></pagination>
@@ -30,13 +30,12 @@ export default {
       return this.$localePath === this.$page.regularPath
     },
     cover() {
-      const item = this.$themeConfig.nav.filter(item => {
-        return item.link === this.$route.path
-      })
-
+      const item = this.$themeConfig.cover
       return this.$frontmatter.image
-        || item.length && item[0].cover
-        || this.$themeConfig.cover
+        || typeof item === 'string'
+          ? item
+          : item[this.$route.path]
+            || item.base
     }
   }
 }

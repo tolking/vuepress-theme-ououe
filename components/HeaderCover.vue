@@ -1,6 +1,6 @@
 <template>
   <section v-if="item"
-    :style="{'background-image': `url(${item})`}"
+    :style="{ 'background-image': `url(${item})` }"
     class="flex-ccc header-cover">
     <h1 class="cover-title">
       <img v-if="logoImg" :src="logoImg" class="title-img"/>
@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     logoImg() {
-      return this.$themeConfig.logo;
+      return this.$themeConfig.logo
     }
   }
 }

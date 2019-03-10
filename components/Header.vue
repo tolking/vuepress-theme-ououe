@@ -1,13 +1,13 @@
 <template>
-  <header class="header">
+  <header class="header" role="banner">
     <div class="header-navbar">
       <div class="flex-bc main header-nav">
-        <div class="nav-link">
+        <nav class="nav-link" role="navigation">
           <router-link :to="$localePath" class="inblock link-logo">
             <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo">
           </router-link>
           <nav-link :value="links" class="nav-link"></nav-link>
-        </div>
+        </nav>
         <search-box v-if="$themeConfig.search"></search-box>
       </div>
     </div>

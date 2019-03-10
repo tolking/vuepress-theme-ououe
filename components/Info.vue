@@ -1,20 +1,21 @@
 <template>
-  <section :style="{'background-image': `url(${$frontmatter.image})`}"
-    :class="{'no-bg': !$frontmatter.image}"
-    class="info">
-    <div class="main info-main">
+  <section :style="{ 'background-image': `url(${$frontmatter.image})` }"
+    :class="{ 'no-bg': !$frontmatter.image }"
+    class="info"
+    role="main">
+    <article class="main info-main">
       <div class="info-header">
         <h1 class="header-title">{{ $page.title }}</h1>
       </div>
-      <div class="flex-wcc info-tag">
-        <div v-if="categories" class="inblock tag-list">
+      <div v-if="categories.length || tags.length" class="flex-wcc info-tag">
+        <div v-if="categories.length" class="inblock tag-list">
           <router-link v-for="(item, index) in categories"
             :key="index"
             :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
             class="tag-text">{{ item }}</router-link>
         </div>
-        <span v-if="categories && tags">/</span>
-        <div v-if="tags" class="inblock tag-list">
+        <span v-if="categories.length && tags.length">/</span>
+        <div v-if="tags.length" class="inblock tag-list">
           <router-link v-for="(item, index) in tags"
             :key="index"
             :to="$pluginConfig.tagIndexPageUrl + item + '/'"
@@ -22,32 +23,39 @@
         </div>
       </div>
       <Content/>
-      <div v-if="$themeConfig.postTime" class="info-time">
-        <p v-if="createTime"
-          class="time-text">{{ $themeConfig.postTime.createTime + ": " + createTime }}</p>
-        <p v-if="lastUpdated"
-          class="time-text">{{ $themeConfig.postTime.lastUpdated + ": " + lastUpdated }}</p>
+      <div v-if="postTime" class="info-time">
+        <time v-if="createTime"
+          datetime="2019-02-22"
+          class="time-text">{{ postTime.createTime + ": " + createTime }}</time>
+        <time v-if="lastUpdated"
+          datetime="2019-02-22"
+          class="time-text">{{ postTime.lastUpdated + ": " + lastUpdated }}</time>
       </div>
-    </div>
+    </article>
   </section>
 </template>
 
 <script>
-import { formatDate } from '@theme/lib/util'
+import { getCategories, getTags, formatDate } from '@theme/lib/util'
 
 export default {
   computed: {
     categories() {
-      return this.$frontmatter.categories || [this.$frontmatter.category]
+      return getCategories(this.$frontmatter)
     },
     tags() {
-      return this.$frontmatter.tags || [this.$frontmatter.tag]
+      return getTags(this.$frontmatter)
     },
     createTime() {
-      return this.$frontmatter.date && formatDate(this.$frontmatter.date)
+      return this.$frontmatter.date
+        && formatDate(this.$frontmatter.date)
     },
     lastUpdated() {
-      return this.$page.lastUpdated && formatDate(this.$page.lastUpdated.split(' ')[0])
+      return this.$page.lastUpdated
+        && formatDate(this.$page.lastUpdated.split(' ')[0])
+    },
+    postTime() {
+      return this.$themeConfig.postTime
     }
   }
 }

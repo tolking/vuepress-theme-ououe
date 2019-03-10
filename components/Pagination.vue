@@ -1,6 +1,6 @@
 <template>
 <section v-if="page" class="flex-cc main pagination">
-  <div class="flex-wac pagination-list">
+  <nav class="flex-wac pagination-list" role="navigation">
     <router-link v-if="current !== 1"
       :to="pagination[current - 2]"
       class="list-item">&lt;</router-link>
@@ -12,7 +12,7 @@
     <router-link v-if="current !== page"
       :to="pagination[current]"
       class="list-item">&gt;</router-link>
-  </div>
+  </nav>
 </section>
 </template>
 
@@ -24,10 +24,12 @@ export default {
       return this.$list.pagination
     },
     page() {
-      return this.pagination && this.pagination.length
+      return this.pagination
+        && this.pagination.length
     },
     current() {
-      return this.pagination && (this.pagination.indexOf(this.$route.path) + 1)
+      return this.pagination
+        && (this.pagination.indexOf(this.$route.path) + 1)
     },
     grouplist() {
       const count = Math.floor(this.$themeConfig.pageGroup / 2)
@@ -57,7 +59,7 @@ export default {
         if (this.current > this.page - count) {
           center = this.page - count
         }
-        temp = temp.splice(center - count - 1, this.$themeConfig.pageGroup);
+        temp = temp.splice(center - count - 1, this.$themeConfig.pageGroup)
         do {
           const t = temp.shift()
           list.push({

@@ -1,32 +1,45 @@
 <template>
-  <section class="flex-w main list">
-    <router-link v-for="(item, index) in $list.posts" :key="index" :to="item.path"
+  <section class="flex-w main list" role="main">
+    <router-link v-for="(item, index) in $list.posts"
+      :key="index"
+      :to="item.path"
       :class="{ 'no-image': !item.frontmatter.image }"
       class="flex-y list-item">
-      <div :style="{'background-image': `url(${item.frontmatter.image})`}" class="item-img"></div>
-      <div class="flex-cb item-content">
-        <div v-if="item.frontmatter.categories" class="content-categories">
-          <router-link v-for="(item, index) in item.frontmatter.categories"
+      <div :style="{ 'background-image': `url(${item.frontmatter.image})` }"
+        class="item-img"></div>
+      <article class="flex-cb item-content">
+        <div v-if="getCategories(item.frontmatter)" class="content-categories">
+          <router-link v-for="(item, index) in getCategories(item.frontmatter)"
             :key="index"
             :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
             class="item-text">{{ item }}</router-link>
         </div>
         <h2 class="content-title">{{ item.title }}</h2>
         <div v-html="item.excerpt" class="content-text"></div>
-        <div v-if="item.frontmatter.tags" class="content-tags">
-          <router-link v-for="(item, index) in item.frontmatter.tags"
+        <div v-if="getTags(item.frontmatter)" class="content-tags">
+          <router-link v-for="(item, index) in getTags(item.frontmatter)"
             :key="index"
             :to="$pluginConfig.tagIndexPageUrl + item + '/'"
             class="item-text">{{ item }}</router-link>
         </div>
-      </div>
+      </article>
     </router-link >
   </section>
 </template>
 
 <script>
+import { getCategories, getTags } from '@theme/lib/util'
+
 export default {
-  name: 'list'
+  name: 'list',
+  methods: {
+    getCategories(item) {
+      return getCategories(item)
+    },
+    getTags(item) {
+      return getTags(item)
+    }
+  }
 }
 </script>
 
