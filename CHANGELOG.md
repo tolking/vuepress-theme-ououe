@@ -1,5 +1,14 @@
 # Change Log
 
+[README](README.md) | [CHANGELOG](CHANGELOG.md)
+
+## 1.1.1
+- add last and next link for post
+- change styles
+- add [vssue](https://vssue.js.org/guide/vuepress.html) for comment system
+
+  **You must install it before using it**
+
 ## 1.1.0
 - add tags and categories
 - add pagination

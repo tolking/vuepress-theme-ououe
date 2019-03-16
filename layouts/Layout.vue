@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import AppHeader from '@theme/components/Header.vue';
-import AppFooter from '@theme/components/Footer.vue';
-import HeaderCover from '@theme/components/HeaderCover.vue';
-import List from '@theme/components/List.vue';
-import Pagination from '@theme/components/Pagination.vue';
+import AppHeader from '@theme/components/Header.vue'
+import AppFooter from '@theme/components/Footer.vue'
+import HeaderCover from '@theme/components/HeaderCover.vue'
+import List from '@theme/components/List.vue'
+import Pagination from '@theme/components/Pagination.vue'
 
 export default {
   name: 'layout',

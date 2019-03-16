@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import AppHeader from '@theme/components/Header.vue';
-import AppFooter from '@theme/components/Footer.vue';
-import HeaderCover from '@theme/components/HeaderCover.vue';
-import TagsList from '@theme/components/TagsList.vue';
+import AppHeader from '@theme/components/Header.vue'
+import AppFooter from '@theme/components/Footer.vue'
+import HeaderCover from '@theme/components/HeaderCover.vue'
+import TagsList from '@theme/components/TagsList.vue'
 
 export default {
   name: 'page',

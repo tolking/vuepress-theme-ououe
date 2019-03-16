@@ -17,7 +17,7 @@
 
 <script>
 import SearchBox from '@SearchBox'
-import NavLink from '@theme/components/NavLink.vue';
+import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   name: 'app-header',
@@ -32,7 +32,7 @@ export default {
     logoImg() {
       return this.$themeConfig.logo
     }
-  },
+  }
 }
 </script>
 

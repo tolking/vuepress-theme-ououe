@@ -107,6 +107,14 @@ Number of pages Pagination
 // ...
 ```
 
+### useVssue
+- Type: `boolean`
+- Default: `false`
+
+Use [vssue](https://vssue.js.org/guide/vuepress.html) for comment system
+
+**You must install it before using it**
+
 ## Structure directores
 ```
 +- blog

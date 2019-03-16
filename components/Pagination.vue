@@ -29,7 +29,7 @@ export default {
     },
     current() {
       return this.pagination
-        && (this.pagination.indexOf(this.$route.path) + 1)
+        && this.$route.meta.current
     },
     grouplist() {
       const count = Math.floor(this.$themeConfig.pageGroup / 2)

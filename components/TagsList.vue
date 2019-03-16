@@ -17,32 +17,18 @@ export default {
   name: 'tag',
   computed: {
     list() {
+      let list = []
       const m = this.$route.path === this.$pluginConfig.categoryIndexPageUrl
         ? '$categories'
         : '$tags'
-      let list = []
-      for (const key in this[m]._metaMap) {
-        if (this[m]._metaMap.hasOwnProperty(key)) {
-          const paginatioPath = this.$pluginConfig.paginatioPath
-          const item = this[m]._metaMap[key]
-          const _key = key.includes(paginatioPath)
-            ? key.split(paginatioPath)[0]
-            : key
-          const _tag = list.filter(item => item.text === _key)
-
-          if (_tag.length) {
-            _tag[0].count += item.pageKeys.length
-          } else {
-            list.push({
-              text: _key,
-              count: item.pageKeys.length,
-              path: item.path.includes(paginatioPath)
-                ? item.path.split(paginatioPath)[0]
-                : item.path
-            })
-          }
-        }
-      }
+      Object.keys(this[m]._metaMap).map(key => {
+        const item = this[m]._metaMap[key]
+        list.push({
+          text: key,
+          count: item.pageKeys.length,
+          path: item.path
+        })
+      })
       return list
     }
   }

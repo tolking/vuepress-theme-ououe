@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink.vue';
+import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   components: {
@@ -15,10 +15,10 @@ export default {
   },
   computed: {
     links() {
-      return this.$themeConfig.footer;
+      return this.$themeConfig.footer
     },
     year() {
-      return new Date().getFullYear();
+      return new Date().getFullYear()
     }
   }
 }
