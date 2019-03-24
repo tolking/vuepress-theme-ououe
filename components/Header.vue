@@ -39,7 +39,6 @@ export default {
 <style lang="stylus" scoped>
 .header
   position relative
-  height $headerHeight
   .header-navbar
     position fixed
     top 0

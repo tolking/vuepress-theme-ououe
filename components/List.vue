@@ -46,7 +46,7 @@ export default {
 <style lang="stylus" scoped>
 .list
   position relative
-  margin-top 2rem
+  margin-top ($headerHeight + 2rem)
   min-height "calc(100vh - 6.5rem - %s)" % $headerHeight
   .list-item
     flex: 1 1 300px;
