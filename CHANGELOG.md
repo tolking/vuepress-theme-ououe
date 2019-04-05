@@ -2,6 +2,9 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.1.2
+- change styles
+
 ## 1.1.1
 - add last and next link for post
 - change styles

@@ -1,17 +1,23 @@
 <template>
 <section v-if="page" class="flex-cc main pagination">
   <nav class="flex-wac pagination-list" role="navigation">
-    <router-link v-if="current !== 1"
+    <router-link
+      v-if="current !== 1"
       :to="pagination[current - 2]"
-      class="list-item">&lt;</router-link>
-    <router-link v-for="(item, index) in grouplist"
+      class="list-item"
+    >&lt;</router-link>
+    <router-link
+      v-for="(item, index) in grouplist"
       :key="index"
       :to="item.path || ''"
       :class="{ 'list-item-active': current === item.val }"
-      class="list-item">{{ item.text }}</router-link>
-    <router-link v-if="current !== page"
+      class="list-item"
+    >{{ item.text }}</router-link>
+    <router-link
+      v-if="current !== page"
       :to="pagination[current]"
-      class="list-item">&gt;</router-link>
+      class="list-item"
+    >&gt;</router-link>
   </nav>
 </section>
 </template>
@@ -77,7 +83,7 @@ export default {
 
 <style lang="stylus" scoped>
 .pagination
-  margin 1rem 0 2rem
+  margin 1rem auto 2rem
   .pagination-list
     .list-item
       display inline-block

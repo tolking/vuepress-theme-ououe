@@ -1,13 +1,17 @@
 <template>
-  <section :style="{ 'background-image': `url(${$frontmatter.image})` }"
+  <section
+    :style="{ 'background-image': `url(${$frontmatter.image})` }"
     :class="{ 'no-bg': !$frontmatter.image }"
     class="info"
-    role="main">
+    role="main"
+  >
     <info-content></info-content>
     <info-nav></info-nav>
-    <Vssue v-if="$themeConfig.useVssue && $list.total"
-      title="Vssue Demo"
-      class="main info-vssue"></Vssue>
+    <Vssue
+      v-if="$themeConfig.useVssue && $list.total"
+      title="comment"
+      class="main info-vssue"
+    ></Vssue>
   </section>
 </template>
 
@@ -25,7 +29,7 @@ export default {
 
 <style lang="stylus" scoped>
 .info
-  padding ($coverHeight / 1.6) 0.5rem 2rem
+  padding ($coverHeight / 1.6 + $headerHeight) 0.5rem 2rem
   background-size cover
   background-position center
   background-attachment fixed
@@ -38,7 +42,7 @@ export default {
     background $whiteColor
     box-shadow 0px 0px 8px $shadowColor
 .no-bg
-  padding-top 2rem
+  padding-top ($headerHeight + 2rem)
   .info-content
     min-height "calc(100vh - 8.45rem - %s)" % $headerHeight
 @media (max-width $phoneWidth)
