@@ -1,10 +1,12 @@
 <template>
   <section class="flex-cc main tags-list">
     <nav class="flex-wbc list-content">
-      <router-link v-for="(item, index) in list"
+      <router-link
+        v-for="(item, index) in list"
         :key="index"
         :to="item.path"
-        class="list-item">
+        class="list-item"
+      >
         <p class="item-count">{{ item.count }}</p>
         <h3 class="item-text">{{ item.text }}</h3>
       </router-link>

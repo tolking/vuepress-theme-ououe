@@ -1,7 +1,9 @@
 <template>
-  <section v-if="item"
+  <section
+    v-if="item"
     :style="{ 'background-image': `url(${item})` }"
-    class="flex-ccc header-cover">
+    class="flex-ccc header-cover"
+  >
     <h1 class="cover-title">
       <img v-if="logoImg" :src="logoImg" class="title-img"/>
       <span v-else class="title-text">{{ $title }}</span>
@@ -45,6 +47,7 @@ export default {
       font-size 2rem
       color $whiteColor
   .cover-text
+    margin-top .5rem;
     font-size 1.2rem
     color $whiteColor
 @media (max-width $s-phoneWidth)

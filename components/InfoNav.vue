@@ -1,16 +1,20 @@
 <template>
   <section v-if="last || next" class="flex-b main info-nav">
     <router-link v-if="last" :to="last.path" class="flex-b nav-item">
-      <div :style="{ 'background-image': `url(${last.frontmatter.image})` }"
-        class="item-img"></div>
+      <div
+        :style="{ 'background-image': `url(${last.frontmatter.image})` }"
+        class="item-img"
+      ></div>
       <article class="flex-csc item-content">
         <h2 class="content-title">{{ last.title }}</h2>
         <div v-html="last.excerpt" class="content-text"></div>
       </article>
     </router-link>
     <router-link v-if="next" :to="next.path" class="flex-b nav-item">
-      <div :style="{ 'background-image': `url(${next.frontmatter.image})` }"
-        class="item-img"></div>
+      <div
+        :style="{ 'background-image': `url(${next.frontmatter.image})` }"
+        class="item-img"
+      ></div>
       <article class="flex-csc item-content">
         <h2 class="content-title">{{ next.title }}</h2>
         <div v-html="next.excerpt" class="content-text"></div>

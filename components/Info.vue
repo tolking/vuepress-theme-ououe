@@ -1,13 +1,17 @@
 <template>
-  <section :style="{ 'background-image': `url(${$frontmatter.image})` }"
+  <section
+    :style="{ 'background-image': `url(${$frontmatter.image})` }"
     :class="{ 'no-bg': !$frontmatter.image }"
     class="info"
-    role="main">
+    role="main"
+  >
     <info-content></info-content>
     <info-nav></info-nav>
-    <Vssue v-if="$themeConfig.useVssue && $list.total"
+    <Vssue
+      v-if="$themeConfig.useVssue && $list.total"
       title="comment"
-      class="main info-vssue"></Vssue>
+      class="main info-vssue"
+    ></Vssue>
   </section>
 </template>
 

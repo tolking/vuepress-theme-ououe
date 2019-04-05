@@ -1,16 +1,22 @@
 <template>
   <section>
-    <span v-for="(item, index) in value"
+    <span
+      v-for="(item, index) in value"
       :key="index"
-      class="list-item">
-      <a v-if="checkUrl(item.link)"
+      class="list-item"
+    >
+      <a
+        v-if="checkUrl(item.link)"
         :href="item.link"
         class="item-link"
         target="_blank"
-        rel="noopener noreferrer">{{ item.text }}</a>
-      <router-link v-else
+        rel="noopener noreferrer"
+      >{{ item.text }}</a>
+      <router-link
+        v-else
         :to="item.link"
-        class="item-link">{{ item.text }}</router-link>
+        class="item-link"
+      >{{ item.text }}</router-link>
     </span>
   </section>
 </template>

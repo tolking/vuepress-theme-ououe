@@ -5,27 +5,35 @@
     </div>
     <div v-if="categories.length || tags.length" class="flex-wcc content-tag">
       <div v-if="categories.length" class="inblock tag-list">
-        <router-link v-for="(item, index) in categories"
+        <router-link
+          v-for="(item, index) in categories"
           :key="index"
           :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
-          class="tag-text">{{ item }}</router-link>
+          class="tag-text"
+        >{{ item }}</router-link>
       </div>
       <span v-if="categories.length && tags.length">/</span>
       <div v-if="tags.length" class="inblock tag-list">
-        <router-link v-for="(item, index) in tags"
+        <router-link
+          v-for="(item, index) in tags"
           :key="index"
           :to="$pluginConfig.tagIndexPageUrl + item + '/'"
-          class="tag-text">{{ item }}</router-link>
+          class="tag-text"
+        >{{ item }}</router-link>
       </div>
     </div>
     <Content/>
     <div v-if="postTime" class="content-time">
-      <time v-if="createTime"
+      <time
+        v-if="createTime"
         datetime="2019-02-22"
-        class="time-text">{{ postTime.createTime + ": " + createTime }}</time>
-      <time v-if="lastUpdated"
+        class="time-text"
+      >{{ postTime.createTime + ": " + createTime }}</time>
+      <time
+        v-if="lastUpdated"
         datetime="2019-02-22"
-        class="time-text">{{ postTime.lastUpdated + ": " + lastUpdated }}</time>
+        class="time-text"
+      >{{ postTime.lastUpdated + ": " + lastUpdated }}</time>
     </div>
   </article>
 </template>
@@ -65,7 +73,7 @@ export default {
     padding 3rem 0 1rem
     text-align center
     .header-title
-      font-size 2rem
+      font-size 2.2rem
       color $blackColor
       font-weight bold
       text-shadow 0 1px 5px $shadowColor
