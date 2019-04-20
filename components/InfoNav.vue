@@ -1,20 +1,18 @@
 <template>
   <section v-if="last || next" class="flex-b main info-nav">
     <router-link v-if="last" :to="last.path" class="flex-b nav-item">
-      <div
-        :style="{ 'background-image': `url(${last.frontmatter.image})` }"
-        class="item-img"
-      ></div>
+      <div class="flex-cc item-img">
+        <img :src="last.frontmatter.image" :alt="last.title" class="img">
+      </div>
       <article class="flex-csc item-content">
         <h2 class="content-title">{{ last.title }}</h2>
         <div v-html="last.excerpt" class="content-text"></div>
       </article>
     </router-link>
     <router-link v-if="next" :to="next.path" class="flex-b nav-item">
-      <div
-        :style="{ 'background-image': `url(${next.frontmatter.image})` }"
-        class="item-img"
-      ></div>
+      <div class="flex-cc item-img">
+        <img :src="next.frontmatter.image" :alt="next.title" class="img">
+      </div>
       <article class="flex-csc item-content">
         <h2 class="content-title">{{ next.title }}</h2>
         <div v-html="next.excerpt" class="content-text"></div>
@@ -25,6 +23,7 @@
 
 <script>
 export default {
+  name: 'InfoNav',
   computed: {
     last() {
       return this.$list.lastPost || false
@@ -41,6 +40,7 @@ export default {
   .nav-item
     margin-top 2rem
     width 100%
+    max-height 12rem
     border-radius 1rem
     overflow hidden
     background $whiteColor
@@ -54,10 +54,12 @@ export default {
     .item-img
       width 35%
       min-height ($listCardHeight / 2)
-      background-size cover
-      background-position center
+      max-height 12rem
+      overflow hidden
+      .img
+        width auto
     .item-content
-      flex 1
+      flex 1 0 60%
       padding .5rem 1rem
       .content-title
         font-size 1.3rem

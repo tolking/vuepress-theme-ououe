@@ -25,7 +25,7 @@
 import { checkUrl } from '@theme/lib/util';
 
 export default {
-  name: 'nav-link',
+  name: 'NavLink',
   props: {
     value: {
       type: Array,

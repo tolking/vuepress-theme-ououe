@@ -20,6 +20,7 @@ import InfoContent from '@theme/components/InfoContent'
 import InfoNav from '@theme/components/InfoNav.vue'
 
 export default {
+  name: 'Info',
   components: {
     InfoContent,
     InfoNav

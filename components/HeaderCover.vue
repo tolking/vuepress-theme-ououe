@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'header-cover',
+  name: 'HeaderCover',
   props: {
     item: {
       type: String,

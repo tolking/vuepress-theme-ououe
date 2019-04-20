@@ -42,6 +42,7 @@
 import { getCategories, getTags, formatDate } from '@theme/lib/util'
 
 export default {
+  name: 'InfoContent',
   computed: {
     categories() {
       return getCategories(this.$frontmatter)
