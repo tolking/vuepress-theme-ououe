@@ -1,11 +1,11 @@
 <template>
-  <div id="global-layout">
+  <section id="global-layout">
     <app-header :class="{ 'cover-header': layout !== 'Page' }">
       <header-cover v-if="layout !== 'Page'" :item="$cover"></header-cover>
     </app-header>
     <component :is="layout"/>
     <app-footer></app-footer>
-  </div>
+  </section>
 </template>
 
 <script>
