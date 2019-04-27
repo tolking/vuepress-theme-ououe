@@ -1,6 +1,6 @@
 <template>
   <section
-    :style="{ 'background-image': `url(${$frontmatter.image})` }"
+    :style="style"
     :class="{ 'no-bg': !$frontmatter.image }"
     class="info"
     role="main"
@@ -20,10 +20,18 @@ import InfoContent from '@theme/components/InfoContent'
 import InfoNav from '@theme/components/InfoNav.vue'
 
 export default {
+  name: 'Info',
   components: {
     InfoContent,
     InfoNav
-  }
+  },
+  computed: {
+    style() {
+      return this.$frontmatter.image
+        ? { 'background-image': `url(${this.$frontmatter.image})` }
+        : ''
+    }
+  },
 }
 </script>
 

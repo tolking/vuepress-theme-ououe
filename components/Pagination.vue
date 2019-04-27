@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'pagination',
+  name: 'Pagination',
   computed: {
     pagination() {
       return this.$list.pagination

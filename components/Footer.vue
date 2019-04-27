@@ -12,6 +12,7 @@
 import NavLink from '@theme/components/NavLink.vue'
 
 export default {
+  name: 'Footer',
   components: {
     NavLink
   },

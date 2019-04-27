@@ -20,7 +20,7 @@ import SearchBox from '@SearchBox'
 import NavLink from '@theme/components/NavLink.vue'
 
 export default {
-  name: 'app-header',
+  name: 'Header',
   components: {
     SearchBox,
     NavLink,

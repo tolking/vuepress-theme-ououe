@@ -2,6 +2,11 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.2.0
+- optimizing html
+- change styles
+- fix bug
+
 ## 1.1.2
 - change styles
 

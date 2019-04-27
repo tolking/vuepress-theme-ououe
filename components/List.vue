@@ -7,10 +7,9 @@
       :class="{ 'no-image': !item.frontmatter.image }"
       class="flex-y list-item"
     >
-      <div
-        :style="{ 'background-image': `url(${item.frontmatter.image})` }"
-        class="item-img"
-      ></div>
+      <div class="flex-cc item-img">
+        <img :src="item.frontmatter.image" :alt="item.title" class="img">
+      </div>
       <article class="flex-cb item-content">
         <div v-if="getCategories(item.frontmatter)" class="content-categories">
           <router-link
@@ -39,7 +38,7 @@
 import { getCategories, getTags } from '@theme/lib/util'
 
 export default {
-  name: 'list',
+  name: 'List',
   methods: {
     getCategories(item) {
       return getCategories(item)
@@ -61,22 +60,23 @@ export default {
     margin 0 .8rem 2rem
     min-height $listCardHeight
     border-radius .5rem
-    box-shadow 0 1px 10px $shadowColor
+    box-shadow 0 1px 8px $shadowColor
     background $whiteColor
     overflow hidden
-    transition transform .5s ease-in-out
+    transition all .5s ease-in-out
     &:hover
+      box-shadow 0 3px 15px $shadowColor
       transform scale3d(1.02, 1.02, 1)
-      transition transform .5s ease-in-out
+      transition all .5s ease-in-out
       .item-content
         .content-title:after
           transform scaleX(1)
           transition transform .5s ease-out
     .item-img
-      width 100%
-      height ($listCardHeight / 1.5)
-      background-size cover
-      background-position center
+      max-height ($listCardHeight / 1.5)
+      overflow hidden
+      .img
+        height auto
     .item-content
       flex: 1
       padding 1rem
@@ -126,9 +126,9 @@ export default {
       flex: 1 1 100%;
       flex-direction: row;
       .item-img
-        height 100%
+        min-height 19rem
       .item-content
-        flex: 0 1 45%
+        flex: 1 1 60%
 @media (max-width $phoneWidth)
   .list
     .list-item
