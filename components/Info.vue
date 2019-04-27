@@ -1,6 +1,6 @@
 <template>
   <section
-    :style="{ 'background-image': `url(${$frontmatter.image})` }"
+    :style="style"
     :class="{ 'no-bg': !$frontmatter.image }"
     class="info"
     role="main"
@@ -24,7 +24,14 @@ export default {
   components: {
     InfoContent,
     InfoNav
-  }
+  },
+  computed: {
+    style() {
+      return this.$frontmatter.image
+        ? { 'background-image': `url(${this.$frontmatter.image})` }
+        : ''
+    }
+  },
 }
 </script>
 
