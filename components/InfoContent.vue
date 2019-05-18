@@ -87,7 +87,7 @@ export default {
         font-size 1.2rem
         color $accentColor
   .content-time
-    padding 0 2rem 2rem
+    padding 0 3rem 2rem
     text-align right
     .time-text
       display block

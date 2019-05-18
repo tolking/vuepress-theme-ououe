@@ -1,7 +1,7 @@
 <template>
   <section id="global-layout">
-    <app-header :class="{ 'cover-header': layout !== 'Page' }">
-      <header-cover v-if="layout !== 'Page'" :item="$cover"></header-cover>
+    <app-header :class="{ 'cover-header': showCover }">
+      <header-cover v-if="showCover" :item="$cover"></header-cover>
     </app-header>
     <component :is="layout"/>
     <app-footer></app-footer>
@@ -15,6 +15,7 @@ import HeaderCover from '@theme/components/HeaderCover.vue'
 import Layout from '@theme/layouts/Layout.vue'
 import Page from '@theme/layouts/Page.vue'
 import Tag from '@theme/layouts/Tag.vue'
+import NotFound from '@theme/layouts/404.vue'
 
 export default {
   name: 'GlobalLayout',
@@ -24,7 +25,8 @@ export default {
     HeaderCover,
     Layout,
     Page,
-    Tag
+    Tag,
+    NotFound
   },
   computed: {
     layout() {
@@ -35,6 +37,9 @@ export default {
         return 'Layout'
       }
       return 'NotFound'
+    },
+    showCover() {
+      return this.layout !== 'Page' && this.layout !== 'NotFound'
     }
   }
 }

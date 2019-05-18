@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-ououe",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "description": "A blog theme for VuePress by tolking",
   "author": "tolking <qw13131wang@gmail.com>",
