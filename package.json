@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-ououe",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.js",
   "description": "A blog theme for VuePress by tolking",
   "author": "tolking <qw13131wang@gmail.com>",
@@ -20,13 +20,16 @@
     "Ghost Casper"
   ],
   "devDependencies": {
+    "@vue/eslint-config-prettier": "^4.0.1",
     "@vuepress/plugin-back-to-top": "^1.0.0-alpha.39",
-    "@vuepress/plugin-nprogress": "^1.0.0-alpha.39",
     "@vuepress/plugin-last-updated": "^1.0.0-alpha.39",
     "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.39",
+    "@vuepress/plugin-nprogress": "^1.0.0-alpha.39",
     "@vuepress/plugin-search": "^1.0.0-alpha.39",
     "@vuepress/shared-utils": "^1.0.0-alpha.39",
-    "vuepress-plugin-blog-multidir": "^1.0.4",
-    "vuepress": "^1.0.0-alpha.39"
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "vuepress": "^1.0.0-alpha.39",
+    "vuepress-plugin-blog-multidir": "^1.0.4"
   }
 }

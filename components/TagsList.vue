@@ -20,9 +20,10 @@ export default {
   computed: {
     list() {
       let list = []
-      const m = this.$route.path === this.$pluginConfig.categoryIndexPageUrl
-        ? '$categories'
-        : '$tags'
+      const m =
+        this.$route.path === this.$pluginConfig.categoryIndexPageUrl
+          ? '$categories'
+          : '$tags'
       Object.keys(this[m]._metaMap).map(key => {
         const item = this[m]._metaMap[key]
         list.push({

@@ -1,10 +1,9 @@
 <template>
   <footer class="footer">
     <nav-link v-if="links" :value="links" class="footer-link"></nav-link>
-    <router-link
-      :to="$localePath"
-      class="copyright"
-    >{{ $site.title + " &copy; " + year }}</router-link>
+    <router-link :to="$localePath" class="copyright">{{
+      $site.title + ' &copy; ' + year
+    }}</router-link>
   </footer>
 </template>
 

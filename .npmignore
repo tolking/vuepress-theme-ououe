@@ -6,7 +6,9 @@
 node_modules/
 test/
 npm-debug.log
+yarn-error.log
 yarn.lock
+package-lock.json
 
 *.test.js
 .travis.yml

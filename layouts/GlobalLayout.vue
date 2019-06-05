@@ -3,7 +3,7 @@
     <app-header :class="{ 'cover-header': showCover }">
       <header-cover v-if="showCover" :item="$cover"></header-cover>
     </app-header>
-    <component :is="layout"/>
+    <component :is="layout" />
     <app-footer></app-footer>
   </section>
 </template>

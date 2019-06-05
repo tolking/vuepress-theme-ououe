@@ -4,7 +4,7 @@
       <div class="flex-bc main header-nav">
         <nav class="nav-link" role="navigation">
           <router-link :to="$localePath" class="inblock link-logo">
-            <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo">
+            <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo" />
           </router-link>
           <nav-link :value="links" class="nav-link"></nav-link>
         </nav>
@@ -23,7 +23,7 @@ export default {
   name: 'Header',
   components: {
     SearchBox,
-    NavLink,
+    NavLink
   },
   computed: {
     links() {

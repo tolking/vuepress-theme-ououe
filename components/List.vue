@@ -8,7 +8,7 @@
       class="flex-y list-item"
     >
       <div class="flex-cc item-img">
-        <img :src="item.frontmatter.image" :alt="item.title" class="img">
+        <img :src="item.frontmatter.image" :alt="item.title" class="img" />
       </div>
       <article class="flex-cb item-content">
         <div v-if="getCategories(item.frontmatter)" class="content-categories">
@@ -17,7 +17,8 @@
             :key="index"
             :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
             class="item-text"
-          >{{ item }}</router-link>
+            >{{ item }}</router-link
+          >
         </div>
         <h2 class="content-title">{{ item.title }}</h2>
         <div v-html="item.excerpt" class="content-text"></div>
@@ -27,10 +28,11 @@
             :key="index"
             :to="$pluginConfig.tagIndexPageUrl + item + '/'"
             class="item-text"
-          >{{ item }}</router-link>
+            >{{ item }}</router-link
+          >
         </div>
       </article>
-    </router-link >
+    </router-link>
   </section>
 </template>
 
