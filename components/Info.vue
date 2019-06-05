@@ -31,7 +31,7 @@ export default {
         ? { 'background-image': `url(${this.$frontmatter.image})` }
         : ''
     }
-  },
+  }
 }
 </script>
 

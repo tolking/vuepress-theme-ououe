@@ -10,7 +10,8 @@
           :key="index"
           :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
           class="tag-text"
-        >{{ item }}</router-link>
+          >{{ item }}</router-link
+        >
       </div>
       <span v-if="categories.length && tags.length">/</span>
       <div v-if="tags.length" class="inblock tag-list">
@@ -19,21 +20,18 @@
           :key="index"
           :to="$pluginConfig.tagIndexPageUrl + item + '/'"
           class="tag-text"
-        >{{ item }}</router-link>
+          >{{ item }}</router-link
+        >
       </div>
     </div>
-    <Content/>
+    <Content />
     <div v-if="postTime" class="content-time">
-      <time
-        v-if="createTime"
-        datetime="2019-02-22"
-        class="time-text"
-      >{{ postTime.createTime + ": " + createTime }}</time>
-      <time
-        v-if="lastUpdated"
-        datetime="2019-02-22"
-        class="time-text"
-      >{{ postTime.lastUpdated + ": " + lastUpdated }}</time>
+      <time v-if="createTime" datetime="2019-02-22" class="time-text">{{
+        postTime.createTime + ': ' + createTime
+      }}</time>
+      <time v-if="lastUpdated" datetime="2019-02-22" class="time-text">{{
+        postTime.lastUpdated + ': ' + lastUpdated
+      }}</time>
     </div>
   </article>
 </template>
@@ -51,12 +49,13 @@ export default {
       return getTags(this.$frontmatter)
     },
     createTime() {
-      return this.$frontmatter.date
-        && formatDate(this.$frontmatter.date)
+      return this.$frontmatter.date && formatDate(this.$frontmatter.date)
     },
     lastUpdated() {
-      return this.$page.lastUpdated
-        && formatDate(this.$page.lastUpdated.split(' ')[0])
+      return (
+        this.$page.lastUpdated &&
+        formatDate(this.$page.lastUpdated.split(' ')[0])
+      )
     },
     postTime() {
       return this.$themeConfig.postTime

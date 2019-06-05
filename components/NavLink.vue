@@ -1,28 +1,23 @@
 <template>
   <section>
-    <span
-      v-for="(item, index) in value"
-      :key="index"
-      class="list-item"
-    >
+    <span v-for="(item, index) in value" :key="index" class="list-item">
       <a
         v-if="checkUrl(item.link)"
         :href="item.link"
         class="item-link"
         target="_blank"
         rel="noopener noreferrer"
-      >{{ item.text }}</a>
-      <router-link
-        v-else
-        :to="item.link"
-        class="item-link"
-      >{{ item.text }}</router-link>
+        >{{ item.text }}</a
+      >
+      <router-link v-else :to="item.link" class="item-link">{{
+        item.text
+      }}</router-link>
     </span>
   </section>
 </template>
 
 <script>
-import { checkUrl } from '@theme/lib/util';
+import { checkUrl } from '@theme/lib/util'
 
 export default {
   name: 'NavLink',
@@ -30,7 +25,7 @@ export default {
     value: {
       type: Array,
       default: () => []
-    },
+    }
   },
   methods: {
     checkUrl

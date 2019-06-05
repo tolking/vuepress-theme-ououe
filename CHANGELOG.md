@@ -2,6 +2,9 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.2.2
+- change styles
+
 ## 1.2.1
 - add 404 page
 - change styles

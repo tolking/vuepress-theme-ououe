@@ -17,7 +17,12 @@ export default {
   },
   computed: {
     isHome() {
-      return this.$localePath === this.$page.regularPath
+      return (
+        this.$localePath === this.$page.regularPath ||
+        this.$page.regularPath.startsWith(
+          '/' + this.$pluginConfig.paginatioPath
+        )
+      )
     }
   }
 }
@@ -28,4 +33,3 @@ export default {
   .content
     padding 0
 </style>
-

@@ -5,7 +5,7 @@
     class="flex-ccc header-cover"
   >
     <h1 class="cover-title">
-      <img v-if="logoImg" :src="logoImg" class="title-img"/>
+      <img v-if="logoImg" :src="logoImg" class="title-img" />
       <span v-else class="title-text">{{ $title }}</span>
     </h1>
     <h2 class="cover-text">{{ $site.description }}</h2>
@@ -19,7 +19,7 @@ export default {
     item: {
       type: String,
       default: null
-    },
+    }
   },
   computed: {
     logoImg() {
