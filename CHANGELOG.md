@@ -2,6 +2,10 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.2.3
+- fix error styles on 1.0
+- optimizing styles
+
 ## 1.2.2
 - change styles
 

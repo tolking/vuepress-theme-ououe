@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-ccc error">
+  <section class="flex-ycc error">
     <h1 class="error-code">404</h1>
     <p class="error-description">Page not found</p>
     <router-link :to="$localePath" class="error-home">home</router-link>

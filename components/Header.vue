@@ -1,7 +1,7 @@
 <template>
   <header class="header" role="banner">
     <div class="header-navbar">
-      <div class="flex-bc main header-nav">
+      <div class="flex-xbc main header-nav">
         <nav class="nav-link" role="navigation">
           <router-link :to="$localePath" class="inblock link-logo">
             <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo" />

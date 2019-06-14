@@ -2,8 +2,6 @@
 
 > A blog theme for VuePress
 
-**This plugin is for Vuepress 1.x which is currently in alpha**
-
 Live Demo: [My Blog](https://ououe.com)
 
 [Documentation](https://ououe.com/lib/vuepress-theme-ououe.html)

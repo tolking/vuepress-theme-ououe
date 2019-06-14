@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-cc main tags-list">
+  <section class="flex-xcc main tags-list">
     <nav class="flex-wbc list-content">
       <router-link
         v-for="(item, index) in list"

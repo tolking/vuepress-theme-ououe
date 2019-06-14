@@ -1,19 +1,19 @@
 <template>
-  <section v-if="last || next" class="flex-b main info-nav">
-    <router-link v-if="last" :to="last.path" class="flex-b nav-item">
-      <div class="flex-cc item-img">
+  <section v-if="last || next" class="flex-xb main info-nav">
+    <router-link v-if="last" :to="last.path" class="flex-xb nav-item">
+      <div class="flex-xcc item-img">
         <img :src="last.frontmatter.image" :alt="last.title" class="img" />
       </div>
-      <article class="flex-csc item-content">
+      <article class="flex-ysc item-content">
         <h2 class="content-title">{{ last.title }}</h2>
         <div v-html="last.excerpt" class="content-text"></div>
       </article>
     </router-link>
-    <router-link v-if="next" :to="next.path" class="flex-b nav-item">
-      <div class="flex-cc item-img">
+    <router-link v-if="next" :to="next.path" class="flex-xb nav-item">
+      <div class="flex-xcc item-img">
         <img :src="next.frontmatter.image" :alt="next.title" class="img" />
       </div>
-      <article class="flex-csc item-content">
+      <article class="flex-ysc item-content">
         <h2 class="content-title">{{ next.title }}</h2>
         <div v-html="next.excerpt" class="content-text"></div>
       </article>
@@ -52,7 +52,7 @@ export default {
       transform scale3d(1.01, 1.01, 1)
       transition transform .5s ease-in-out
     .item-img
-      width 35%
+      width 30%
       min-height ($listCardHeight / 2)
       max-height 12rem
       overflow hidden
