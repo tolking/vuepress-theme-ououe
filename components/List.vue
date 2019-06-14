@@ -7,10 +7,10 @@
       :class="{ 'no-image': !item.frontmatter.image }"
       class="flex-y list-item"
     >
-      <div class="flex-cc item-img">
+      <div class="flex-xcc item-img">
         <img :src="item.frontmatter.image" :alt="item.title" class="img" />
       </div>
-      <article class="flex-cb item-content">
+      <article class="flex-yb item-content">
         <div v-if="getCategories(item.frontmatter)" class="content-categories">
           <router-link
             v-for="(item, index) in getCategories(item.frontmatter)"

@@ -2,6 +2,8 @@
 .npmignore
 .gitignore
 .editorconfig
+.eslintrc.js
+.prettierrc
 
 node_modules/
 test/

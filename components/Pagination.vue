@@ -1,5 +1,5 @@
 <template>
-  <section v-if="page" class="flex-cc main pagination">
+  <section v-if="page" class="flex-xcc main pagination">
     <nav class="flex-wac pagination-list" role="navigation">
       <router-link
         v-if="current !== 1"

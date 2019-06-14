@@ -24,7 +24,7 @@
         >
       </div>
     </div>
-    <Content />
+    <Content class="content" />
     <div v-if="postTime" class="content-time">
       <time v-if="createTime" datetime="2019-02-22" class="time-text">{{
         postTime.createTime + ': ' + createTime
