@@ -1,8 +1,8 @@
 <template>
-  <header class="header" role="banner">
+  <header class="header">
     <div class="header-navbar">
       <div class="flex-xbc main header-nav">
-        <nav class="nav-link" role="navigation">
+        <nav class="nav-link">
           <router-link :to="$localePath" class="inblock link-logo">
             <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo" />
           </router-link>
@@ -45,7 +45,8 @@ export default {
     left 0
     right 0
     z-index 100
-    background $maskColor
+    background var(--maskColor)
+    transition all .5s ease-in-out
     .header-nav
       height $headerHeight
       .nav-link

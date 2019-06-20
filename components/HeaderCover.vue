@@ -50,7 +50,4 @@ export default {
     margin-top .5rem;
     font-size 1.2rem
     color $whiteColor
-@media (max-width $s-phoneWidth)
-  .cover-header
-    height 100vh
 </style>

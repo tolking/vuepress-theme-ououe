@@ -4,12 +4,14 @@
   padding: 3rem
   a
     font-weight 500
-    color $accentColor
+    color var(--accentColor)
     text-decoration none
+    transition color .5s ease-in-out
 
   p a code
     font-weight 400
-    color $accentColor
+    color var(--accentColor)
+    transition color .5s ease-in-out
 
   kbd
     background #eee
@@ -31,15 +33,17 @@
     padding-left 1.2em
     li
       font-size 1em
-      color $textColor
+      color var(--textColor)
+      transition color .5s ease-in-out
 
   strong
     font-weight 600
 
   h1, h2, h3, h4, h5, h6
-    color $titleColor
+    color var(--titleColor)
     font-weight 600
     line-height 1.25
+    transition color .5s ease-in-out
     &:hover .header-anchor
       opacity: 1
 
@@ -86,13 +90,15 @@
 
   p
     font-size 1.1rem
-    color $textColor
+    color var(--textColor)
+    transition color .5s ease-in-out
     img
       max-width: 100%
 
   hr
     border 0
-    border-top 1px solid $borderColor
+    border-top 1px solid var(--borderColor)
+    transition border .5s ease-in-out
 
   table
     border-collapse collapse

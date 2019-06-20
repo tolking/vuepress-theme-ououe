@@ -1,6 +1,6 @@
 <template>
   <section v-if="page" class="flex-xcc main pagination">
-    <nav class="flex-wac pagination-list" role="navigation">
+    <nav class="flex-wac pagination-list">
       <router-link
         v-if="current !== 1"
         :to="pagination[current - 2]"
@@ -90,19 +90,20 @@ export default {
       display inline-block
       margin 0 .5rem
       padding .8rem 1.2rem
-      border 1px solid $borderColor
+      border 1px solid var(--borderColor)
       border-radius .5rem
-      background $bgColor
+      background var(--bgColor)
       font-size 1.2rem
-      color $titleColor
+      color var(--titleColor)
       transition all .5s ease-in-out
       &:hover
-        border-color $accentColor
+        border-color var(--accentColor)
         transition all .5s ease-in-out
     .list-item-active
-      border-color $accentColor
-      background $accentColor
-      color $whiteColor
+      border-color var(--accentColor)
+      background var(--accentColor)
+      color var(--whiteColor)
+      transition all .5s ease-in-out
 @media (max-width $phoneWidth)
   .pagination
     .pagination-list

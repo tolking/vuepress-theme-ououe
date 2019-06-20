@@ -3,7 +3,6 @@
     :style="style"
     :class="{ 'no-bg': !$frontmatter.image }"
     class="info"
-    role="main"
   >
     <info-content></info-content>
     <info-nav></info-nav>
@@ -47,8 +46,9 @@ export default {
     margin-top 3rem
     padding 2rem
     border-radius 1rem
-    background $whiteColor
-    box-shadow 0px 0px 8px $shadowColor
+    background var(--whiteColor)
+    box-shadow 0px 0px 8px var(--shadowColor)
+    transition all .5s ease-in-out
 .no-bg
   padding-top ($headerHeight + 2rem)
   .info-content

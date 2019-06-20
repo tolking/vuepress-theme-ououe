@@ -46,8 +46,8 @@ export default {
       position relative
       margin 1.5rem 1rem
       border-radius .5rem
-      box-shadow 0 1px 5px $shadowColor
-      background $whiteColor
+      box-shadow 0 1px 5px var(--shadowColor)
+      background var(--whiteColor)
       transition transform .5s ease-in-out
       &:hover
         transform scale3d(1.05, 1.05, 1)
@@ -55,12 +55,14 @@ export default {
       .item-count
         padding .5rem .5rem 0
         font-size 1rem
-        color $accentColor
+        color var(--accentColor)
         text-align right
+        transition color .5s ease-in-out
       .item-text
         padding 0 3rem 1rem
         font-size 1.4rem
-        color $titleColor
+        color var(--titleColor)
+        transition color .5s ease-in-out
 .cover-list
   min-height "calc(100vh - 4.5rem - %s)" % $coverHeight
 </style>

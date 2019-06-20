@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-w main list" role="main">
+  <section class="flex-w main list">
     <router-link
       v-for="(item, index) in $list.posts"
       :key="index"
@@ -62,12 +62,12 @@ export default {
     margin 0 .8rem 2rem
     min-height $listCardHeight
     border-radius .5rem
-    box-shadow 0 1px 8px $shadowColor
-    background $whiteColor
+    box-shadow 0 1px 8px var(--shadowColor)
+    background var(--whiteColor)
     overflow hidden
     transition all .5s ease-in-out
     &:hover
-      box-shadow 0 3px 15px $shadowColor
+      box-shadow 0 3px 15px var(--shadowColor)
       transform scale3d(1.02, 1.02, 1)
       transition all .5s ease-in-out
       .item-content
@@ -89,14 +89,14 @@ export default {
         .item-text
           padding .2rem
           font-size 1rem
-          color $textColor
+          color var(--textColor)
           &:hover
-            color $accentColor
+            color var(--accentColor)
       .content-tags
         text-align right
       .content-title
         font-size 1.3rem
-        color $titleColor
+        color var(--titleColor)
         line-height 2.5rem
         font-weight bold
         white-space nowrap
@@ -108,7 +108,7 @@ export default {
           margin-left 5%
           width 98%
           height .1rem
-          background $accentColor
+          background var(--accentColor)
           transform scaleX(0)
           transition transform .5s ease-out
       .content-text
@@ -117,7 +117,7 @@ export default {
         max-height $listCardHeight
         overflow hidden
         font-size 1rem
-        color $textColor
+        color var(--textColor)
         line-height 1.5rem
 .cover-list
   margin-top -2rem

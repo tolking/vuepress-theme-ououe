@@ -1,21 +1,34 @@
 // colors
-$accentColor = #3eaf7c
-$titleColor = #333
-$textColor = #2c3e50
-$borderColor = #eaecef
-$bgColor = #f4f8fb
-$codeBgColor = #282c34
-$arrowBgColor = #ccc
-$shadowColor = rgba(0, 0, 0, .3)
-$maskColor = rgba(0, 0, 0, 0.8)
-$whiteColor = #fff
-$blackColor = #000
-$transColor = transparent
+$accentColor ?= #3eaf7c
+$titleColor ?= #333
+$textColor ?= #2c3e50
+$borderColor ?= #eaecef
+$bgColor ?= #f4f8fb
+$codeBgColor ?= #282c34
+$arrowBgColor ?= #ccc
+$shadowColor ?= rgba(0, 0, 0, .3)
+$maskColor ?= rgba(0, 0, 0, 0.8)
+$whiteColor ?= #fff
+$blackColor ?= #000
+$transColor ?= transparent
+
+// darkColors
+$accentDarkColor = $accentColor
+$titleDarkColor ?= #eaecef
+$textDarkColor ?= #ccc
+$borderDarkColor ?= #4e4e4e
+$bgDarkColor ?= #282c34
+$codeBgDarkColor ?= #282c34
+$arrowBgDarkColor ?= #ccc
+$shadowDarkColor ?= rgba(0, 0, 0, .3)
+$maskDarkColor ?= rgba(0, 0, 0, 0.8)
+$whiteDarkColor ?= #222
+$blackDarkColor ?= #eaecef
 
 // size
-$mainWidth = 68.75rem
-$phoneWidth = 37.5rem
-$headerHeight = 3.5rem
-$coverHeight = 25rem
-$listCardHeight = 19rem
-$lineNumbersWrapperWidth = 2.5rem
+$mainWidth ?= 68.75rem
+$phoneWidth ?= 37.5rem
+$headerHeight ?= 3.5rem
+$coverHeight ?= 25rem
+$listCardHeight ?= 19rem
+$lineNumbersWrapperWidth ?= 2.5rem

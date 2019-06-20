@@ -1,3 +1,29 @@
+:root
+  --accentColor: $accentColor
+  --titleColor: $titleColor
+  --textColor: $textColor
+  --borderColor: $borderColor
+  --bgColor: $bgColor
+  --codeBgColor: $codeBgColor
+  --arrowBgColor: $arrowBgColor
+  --shadowColor: $shadowColor
+  --maskColor: $maskColor
+  --whiteColor: $whiteColor
+  --blackColor: $blackColor
+  --transColor: $transColor
+  @media (prefers-color-scheme: dark)
+    --accentColor: $accentDarkColor
+    --titleColor: $titleDarkColor
+    --textColor: $textDarkColor
+    --borderColor: $borderDarkColor
+    --bgColor: $bgDarkColor
+    --codeBgColor: $codeBgDarkColor
+    --arrowBgColor: $arrowBgDarkColor
+    --shadowColor: $shadowDarkColor
+    --maskColor: $maskDarkColor
+    --whiteColor: $whiteDarkColor
+    --blackColor: $blackDarkColor
+
 html
   font-size 16px
 
@@ -24,20 +50,24 @@ select
   margin 0 auto
   width 100%
   max-width $mainWidth
-@media (max-width $phoneWidth)
-  .main
+  @media (max-width $phoneWidth)
     padding: 0 .5rem
     width auto
 
 #app
-  background $bgColor
+  background var(--bgColor)
+  transition all .5s ease-in-out
+
+.search-box input
+  border 1px solid var(--borderColor)
+  background-color var(--bgColor)
+  transition all .5s ease-in-out
 
 @media (max-width $phoneWidth)
   .search-box
     margin-right 0
     input
       left 0 !important
-      background-color $transColor !important
       &:focus
         background-color $whiteColor !important
 

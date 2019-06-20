@@ -26,6 +26,14 @@ module.exports = {
   theme: 'ououe',
   themeConfig: {
     // ...
+  },
+
+  // When your version is larger than 1.3.0, you need to add the following code to enable dark theme
+  postcss: {
+    plugins: [
+      require('postcss-preset-env')({ stage: 0 }),
+      require('autoprefixer')
+    ]
   }
 }
 ```

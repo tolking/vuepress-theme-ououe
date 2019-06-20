@@ -2,6 +2,25 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.0
+- add dark theme (change theme using switch button on the left)
+``` js
+// .vuepress -> config.js
+module.exports = {
+  theme: 'ououe',
+  themeConfig: {
+    // ...
+  },
+  // When your version is larger than 1.3.0, you need to add the following code to enable dark theme
+  postcss: {
+    plugins: [
+      require('postcss-preset-env')({ stage: 0 }),
+      require('autoprefixer')
+    ]
+  }
+}
+```
+
 ## 1.2.3
 - fix error styles on 1.0
 - optimizing styles

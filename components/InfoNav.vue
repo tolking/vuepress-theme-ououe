@@ -43,14 +43,14 @@ export default {
     max-height 12rem
     border-radius 1rem
     overflow hidden
-    background $whiteColor
-    box-shadow 0px 0px 8px $shadowColor
-    transition transform .5s ease-in-out
+    background var(--whiteColor)
+    box-shadow 0px 0px 8px var(--shadowColor)
+    transition all .5s ease-in-out
     &:nth-child(2)
       margin-left 2rem
     &:hover
       transform scale3d(1.01, 1.01, 1)
-      transition transform .5s ease-in-out
+      transition all .5s ease-in-out
     .item-img
       width 30%
       min-height ($listCardHeight / 2)
@@ -63,16 +63,18 @@ export default {
       padding .5rem 1rem
       .content-title
         font-size 1.3rem
-        color $titleColor
+        color var(--titleColor)
         font-weight bold
+        transition color .5s ease-in-out
       .content-text
         flex 1
         margin-top .5rem
         max-height $listCardHeight
         overflow hidden
         font-size 1rem
-        color $textColor
+        color var(--textColor)
         line-height 1.5rem
+        transition color .5s ease-in-out
 @media (max-width $phoneWidth)
   .info-nav
     flex-direction column
