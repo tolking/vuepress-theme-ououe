@@ -10,6 +10,12 @@ Uses [vuepress-theme-ououe-template](https://github.com/tolking/vuepress-theme-o
 
 Take [TryGhost/Casper](https://github.com/TryGhost/Casper) as a reference
 
+---
+
+![preview](https://ououe.com/img/vuepress-theme-ououe.jpg)
+
+---
+
 ## Installation
 
 ``` sh

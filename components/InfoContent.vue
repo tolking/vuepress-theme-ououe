@@ -13,7 +13,7 @@
           >{{ item }}</router-link
         >
       </div>
-      <span v-if="categories.length && tags.length">/</span>
+      <span v-if="categories.length && tags.length" class="tag-space">/</span>
       <div v-if="tags.length" class="inblock tag-list">
         <router-link
           v-for="(item, index) in tags"
@@ -88,6 +88,9 @@ export default {
         font-size 1.2rem
         color var(--accentColor)
         transition all .5s ease-in-out
+    .tag-space
+      color var(--blackColor)
+      transition color .5s ease-in-out
   .content-time
     padding 0 3rem 2rem
     text-align right
