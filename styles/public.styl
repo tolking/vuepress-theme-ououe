@@ -1,29 +1,3 @@
-:root
-  --accentColor: $accentColor
-  --titleColor: $titleColor
-  --textColor: $textColor
-  --borderColor: $borderColor
-  --bgColor: $bgColor
-  --codeBgColor: $codeBgColor
-  --arrowBgColor: $arrowBgColor
-  --shadowColor: $shadowColor
-  --maskColor: $maskColor
-  --whiteColor: $whiteColor
-  --blackColor: $blackColor
-  --transColor: $transColor
-  @media (prefers-color-scheme: dark)
-    --accentColor: $accentDarkColor
-    --titleColor: $titleDarkColor
-    --textColor: $textDarkColor
-    --borderColor: $borderDarkColor
-    --bgColor: $bgDarkColor
-    --codeBgColor: $codeBgDarkColor
-    --arrowBgColor: $arrowBgDarkColor
-    --shadowColor: $shadowDarkColor
-    --maskColor: $maskDarkColor
-    --whiteColor: $whiteDarkColor
-    --blackColor: $blackDarkColor
-
 html
   font-size 16px
 
@@ -54,14 +28,13 @@ select
     padding: 0 .5rem
     width auto
 
-#app
-  background var(--bgColor)
-  transition all .5s ease-in-out
-
 .search-box input
-  border 1px solid var(--borderColor)
-  background-color var(--bgColor)
+  border 1px solid $borderColor
+  background-color $bgColor
   transition all .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    border 1px solid $borderDarkColor
+    background-color $bgDarkColor
 
 @media (max-width $phoneWidth)
   .search-box
@@ -70,6 +43,8 @@ select
       left 0 !important
       &:focus
         background-color $whiteColor !important
+        @media (prefers-color-scheme: dark)
+          background-color $whiteDarkColor !important
 
 .global-ui
   .go-to-top

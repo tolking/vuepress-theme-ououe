@@ -37,7 +37,7 @@ module.exports = {
   // When your version is larger than 1.3.0, you need to add the following code to enable dark theme
   postcss: {
     plugins: [
-      require('postcss-preset-env')({ stage: 0 }),
+      require('css-prefers-color-scheme/postcss'),
       require('autoprefixer')
     ]
   }
@@ -45,6 +45,16 @@ module.exports = {
 ```
 
 ## Options
+
+### defaultTheme
+- Type: `string`
+- Default: `light`
+
+support `light` or `dark`
+
+based on [css-prefers-color-scheme](https://github.com/csstools/css-prefers-color-scheme/)
+
+you need to add a postcss plugins to your [config file](#Usage)
 
 ### cover
 - Type: `string`, `object`

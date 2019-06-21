@@ -4,7 +4,8 @@
 
 ## 1.3.0
 - add dark theme (change theme using switch button on the left)
-- you need to add the following code to enable dark theme
+- you need to add a postcss plugins to your config file
+
 ``` js
 // .vuepress -> config.js
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
   // add
   postcss: {
     plugins: [
-      require('postcss-preset-env')({ stage: 0 }),
+      require('css-prefers-color-scheme/postcss'),
       require('autoprefixer')
     ]
   }

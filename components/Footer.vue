@@ -29,9 +29,11 @@ export default {
 <style lang="stylus" scoped>
 .footer
   padding 1rem 0 .5rem
-  background var(--codeBgColor)
+  background $codeBgColor
   text-align center
   transition background .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    background $codeBgDarkColor
   .copyright
     display inline-block
     margin-top .55rem

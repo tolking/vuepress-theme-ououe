@@ -43,9 +43,12 @@ export default {
     max-height 12rem
     border-radius 1rem
     overflow hidden
-    background var(--whiteColor)
-    box-shadow 0px 0px 8px var(--shadowColor)
+    background $whiteColor
+    box-shadow 0px 0px 8px $shadowColor
     transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      background $whiteDarkColor
+      box-shadow 0px 0px 8px $shadowDarkColor
     &:nth-child(2)
       margin-left 2rem
     &:hover
@@ -63,18 +66,22 @@ export default {
       padding .5rem 1rem
       .content-title
         font-size 1.3rem
-        color var(--titleColor)
+        color $titleColor
         font-weight bold
         transition color .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $titleDarkColor
       .content-text
         flex 1
         margin-top .5rem
         max-height $listCardHeight
         overflow hidden
         font-size 1rem
-        color var(--textColor)
+        color $textColor
         line-height 1.5rem
         transition color .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $textDarkColor
 @media (max-width $phoneWidth)
   .info-nav
     flex-direction column

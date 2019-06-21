@@ -46,23 +46,30 @@ export default {
       position relative
       margin 1.5rem 1rem
       border-radius .5rem
-      box-shadow 0 1px 5px var(--shadowColor)
-      background var(--whiteColor)
+      box-shadow 0 1px 5px $shadowColor
+      background $whiteColor
       transition transform .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        box-shadow 0 1px 5px $shadowDarkColor
+        background $whiteDarkColor
       &:hover
         transform scale3d(1.05, 1.05, 1)
         transition transform .5s ease-in-out
       .item-count
         padding .5rem .5rem 0
         font-size 1rem
-        color var(--accentColor)
+        color $accentColor
         text-align right
         transition color .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $accentDarkColor
       .item-text
         padding 0 3rem 1rem
         font-size 1.4rem
-        color var(--titleColor)
+        color $titleColor
         transition color .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $titleDarkColor
 .cover-list
   min-height "calc(100vh - 4.5rem - %s)" % $coverHeight
 </style>

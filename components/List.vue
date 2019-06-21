@@ -62,14 +62,19 @@ export default {
     margin 0 .8rem 2rem
     min-height $listCardHeight
     border-radius .5rem
-    box-shadow 0 1px 8px var(--shadowColor)
-    background var(--whiteColor)
+    box-shadow 0 1px 8px $shadowColor
+    background $whiteColor
     overflow hidden
     transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      box-shadow 0 1px 8px $shadowDarkColor
+      background $whiteDarkColor
     &:hover
-      box-shadow 0 3px 15px var(--shadowColor)
+      box-shadow 0 3px 15px $shadowColor
       transform scale3d(1.02, 1.02, 1)
       transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        box-shadow 0 3px 15px $shadowDarkColor
       .item-content
         .content-title:after
           transform scaleX(1)
@@ -89,36 +94,49 @@ export default {
         .item-text
           padding .2rem
           font-size 1rem
-          color var(--textColor)
+          color $textColor
+          transition transform .5s ease-out
+          @media (prefers-color-scheme: dark)
+            color $textDarkColor
+            &:hover
+              color $accentDarkColor
           &:hover
-            color var(--accentColor)
+            color $accentColor
       .content-tags
         text-align right
       .content-title
         font-size 1.3rem
-        color var(--titleColor)
+        color $titleColor
         line-height 2.5rem
         font-weight bold
         white-space nowrap
         overflow hidden
         text-overflow ellipsis
+        transition transform .5s ease-out
+        @media (prefers-color-scheme: dark)
+          color $titleDarkColor
+          &:after
+            background $accentDarkColor
         &:after
           content ""
           display block
           margin-left 5%
           width 98%
           height .1rem
-          background var(--accentColor)
+          background $accentColor
           transform scaleX(0)
-          transition transform .5s ease-out
+          transition transform .5s ease-out  
       .content-text
         flex 1
         margin-top .5rem
         max-height $listCardHeight
         overflow hidden
         font-size 1rem
-        color var(--textColor)
+        color $textColor
         line-height 1.5rem
+        transition transform .5s ease-out
+        @media (prefers-color-scheme: dark)
+          color $textDarkColor
 .cover-list
   margin-top -2rem
   min-height "calc(100vh - 2.5rem - %s)" % $coverHeight

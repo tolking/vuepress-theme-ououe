@@ -90,20 +90,22 @@ export default {
       display inline-block
       margin 0 .5rem
       padding .8rem 1.2rem
-      border 1px solid var(--borderColor)
+      border 1px solid $borderColor
       border-radius .5rem
-      background var(--bgColor)
+      background $bgColor
       font-size 1.2rem
-      color var(--titleColor)
+      color $titleColor
       transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        border 1px solid $borderDarkColor
+        background $bgDarkColor
+        color $titleDarkColor
       &:hover
-        border-color var(--accentColor)
-        transition all .5s ease-in-out
+        border-color $accentColor
     .list-item-active
-      border-color var(--accentColor)
-      background var(--accentColor)
-      color var(--whiteColor)
-      transition all .5s ease-in-out
+      border-color $accentColor
+      background $accentColor
+      color $whiteColor
 @media (max-width $phoneWidth)
   .pagination
     .pagination-list

@@ -45,8 +45,10 @@ export default {
     left 0
     right 0
     z-index 100
-    background var(--maskColor)
+    background $maskColor
     transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      background $maskDarkColor
     .header-nav
       height $headerHeight
       .nav-link

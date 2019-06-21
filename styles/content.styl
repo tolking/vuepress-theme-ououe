@@ -4,29 +4,38 @@
   padding: 3rem
   a
     font-weight 500
-    color var(--accentColor)
+    color $accentColor
     text-decoration none
     transition color .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color $accentDarkColor
 
   p a code
     font-weight 400
-    color var(--accentColor)
+    color $accentColor
     transition color .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color: $accentDarkColor
 
   kbd
     padding 0 0.15em
-    border solid 0.15rem var(--borderColor)
-    border-bottom solid 0.25rem var(--borderColor)
+    border solid 0.15rem $borderColor
+    border-bottom solid 0.25rem $borderColor
     border-radius 0.15rem
     background #eee
     transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      border solid 0.15rem $borderDarkColor
+      border-bottom solid 0.25rem $borderDarkColor
 
   blockquote
     font-size .9rem
     color #999
-    border-left .5rem solid var(--accentColor)
+    border-left .5rem solid $accentColor
     margin 0.5rem 0
     padding .25rem 0 .25rem 1rem
+    @media (prefers-color-scheme: dark)
+      border-left .5rem solid $accentDarkColor
     & > p
       margin 0
 
@@ -34,17 +43,21 @@
     padding-left 1.2em
     li
       font-size 1em
-      color var(--textColor)
+      color $textColor
       transition color .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $textDarkColor
 
   strong
     font-weight 600
 
   h1, h2, h3, h4, h5, h6
-    color var(--titleColor)
+    color $titleColor
     font-weight 600
     line-height 1.25
     transition color .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color $titleDarkColor
     &:hover .header-anchor
       opacity: 1
 
@@ -91,15 +104,19 @@
 
   p
     font-size 1.1rem
-    color var(--textColor)
+    color $textColor
     transition color .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color $textDarkColor
     img
       max-width: 100%
 
   hr
     border 0
-    border-top 1px solid var(--borderColor)
+    border-top 1px solid $borderColor
     transition border .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      border-top 1px solid $borderDarkColor
 
   table
     border-collapse collapse
@@ -108,7 +125,7 @@
     overflow-x: auto
 
   tr
-    border-top 1px solid var(--shadowColor)
+    border-top 1px solid $shadowColor
     transition all .5s ease-in-out
     &:nth-child(2n)
       background-color #f6f8fa
@@ -117,9 +134,12 @@
 
   th, td
     padding .6em 1em
-    border 1px solid var(--shadowColor)
-    color var(--textColor)
+    border 1px solid $shadowColor
+    color $textColor
     transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      border 1px solid $shadowDarkColor
+      color $textDarkColor
 
   .theme-container
     &.sidebar-open

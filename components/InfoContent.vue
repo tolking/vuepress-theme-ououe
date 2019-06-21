@@ -67,18 +67,24 @@ export default {
 <style lang="stylus" scoped>
 .info-content
   border-radius 1rem
-  box-shadow 0px 0px 8px var(--shadowColor)
-  background var(--whiteColor)
+  box-shadow 0px 0px 8px $shadowColor
+  background $whiteColor
   transition all .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    box-shadow 0px 0px 8px $shadowDarkColor
+    background $whiteDarkColor
   .content-header
     padding 3rem 0 1rem
     text-align center
     .header-title
       font-size 2.2rem
-      color var(--blackColor)
+      color $blackColor
       font-weight bold
-      text-shadow 0 1px 5px var(--shadowColor)
+      text-shadow 0 1px 5px $shadowColor
       transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $blackDarkColor
+        text-shadow 0 1px 5px $shadowDarkColor
   .content-tag
     .tag-list
       padding .5rem 0
@@ -86,17 +92,23 @@ export default {
         display inline-block
         padding .2rem .5rem
         font-size 1.2rem
-        color var(--accentColor)
+        color $accentColor
         transition all .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $accentDarkColor
     .tag-space
-      color var(--blackColor)
+      color $blackColor
       transition color .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $blackDarkColor
   .content-time
     padding 0 3rem 2rem
     text-align right
     .time-text
       display block
       font-size .9rem
-      color var(--textColor)
+      color $textColor
       transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $textDarkColor
 </style>
