@@ -24,22 +24,27 @@ select
   margin 0 auto
   width 100%
   max-width $mainWidth
-@media (max-width $phoneWidth)
-  .main
+  @media (max-width $phoneWidth)
     padding: 0 .5rem
     width auto
 
-#app
-  background $bgColor
+.search-box input
+  border 1px solid $borderColor
+  background-color $bgColor
+  transition all .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    border 1px solid $borderDarkColor
+    background-color $bgDarkColor
 
 @media (max-width $phoneWidth)
   .search-box
     margin-right 0
     input
       left 0 !important
-      background-color $transColor !important
       &:focus
         background-color $whiteColor !important
+        @media (prefers-color-scheme: dark)
+          background-color $whiteDarkColor !important
 
 .global-ui
   .go-to-top

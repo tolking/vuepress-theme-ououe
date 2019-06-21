@@ -45,12 +45,15 @@ export default {
     overflow hidden
     background $whiteColor
     box-shadow 0px 0px 8px $shadowColor
-    transition transform .5s ease-in-out
+    transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      background $whiteDarkColor
+      box-shadow 0px 0px 8px $shadowDarkColor
     &:nth-child(2)
       margin-left 2rem
     &:hover
       transform scale3d(1.01, 1.01, 1)
-      transition transform .5s ease-in-out
+      transition all .5s ease-in-out
     .item-img
       width 30%
       min-height ($listCardHeight / 2)
@@ -65,6 +68,9 @@ export default {
         font-size 1.3rem
         color $titleColor
         font-weight bold
+        transition color .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $titleDarkColor
       .content-text
         flex 1
         margin-top .5rem
@@ -73,6 +79,9 @@ export default {
         font-size 1rem
         color $textColor
         line-height 1.5rem
+        transition color .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $textDarkColor
 @media (max-width $phoneWidth)
   .info-nav
     flex-direction column

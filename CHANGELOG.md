@@ -2,6 +2,31 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.1
+- fix error of partial styles
+
+## 1.3.0
+- add dark theme (change theme using switch button on the left)
+- you need to add a postcss plugins to your config file
+
+``` js
+// .vuepress -> config.js
+module.exports = {
+  theme: 'ououe',
+  themeConfig: {
+    // ...
+  },
+
+  // add
+  postcss: {
+    plugins: [
+      require('css-prefers-color-scheme/postcss'),
+      require('autoprefixer')
+    ]
+  }
+}
+```
+
 ## 1.2.3
 - fix error styles on 1.0
 - optimizing styles

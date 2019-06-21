@@ -6,6 +6,10 @@
     font-size 0.85em
     background-color rgba(27,31,35,0.05)
     border-radius 3px
+    transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color #578dc1
+      background-color #444
     .token
       &.deleted
         color #EC5975
@@ -21,7 +25,7 @@
     border-radius 6px
     overflow auto
     code
-      color #fff
+      color #eee
       padding 0
       background-color transparent
       border-radius 0
@@ -39,7 +43,7 @@ div[class*="language-"]
     width 100%
     line-height 1.4
     .highlighted
-      background-color rgba(0, 0, 0, 66%)
+      background-color rgba(0, 0, 0, 50%)
   pre, pre[class*="language-"]
     background transparent
     position relative

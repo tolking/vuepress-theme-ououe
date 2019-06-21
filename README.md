@@ -10,6 +10,12 @@ Uses [vuepress-theme-ououe-template](https://github.com/tolking/vuepress-theme-o
 
 Take [TryGhost/Casper](https://github.com/TryGhost/Casper) as a reference
 
+---
+
+![preview](https://ououe.com/img/vuepress-theme-ououe.jpg)
+
+---
+
 ## Installation
 
 ``` sh
@@ -26,11 +32,29 @@ module.exports = {
   theme: 'ououe',
   themeConfig: {
     // ...
+  },
+
+  // When your version is larger than 1.3.0, you need to add the following code to enable dark theme
+  postcss: {
+    plugins: [
+      require('css-prefers-color-scheme/postcss'),
+      require('autoprefixer')
+    ]
   }
 }
 ```
 
 ## Options
+
+### defaultTheme
+- Type: `string`
+- Default: `light`
+
+support `light` or `dark`
+
+based on [css-prefers-color-scheme](https://github.com/csstools/css-prefers-color-scheme/)
+
+you need to add a postcss plugins to your [config file](#Usage)
 
 ### cover
 - Type: `string`, `object`

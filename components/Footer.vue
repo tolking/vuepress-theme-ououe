@@ -31,9 +31,12 @@ export default {
   padding 1rem 0 .5rem
   background $codeBgColor
   text-align center
+  transition background .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    background $codeBgDarkColor
   .copyright
     display inline-block
     margin-top .55rem
     font-size .7rem
-    color $whiteColor
+    color #fff
 </style>

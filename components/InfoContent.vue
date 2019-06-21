@@ -13,7 +13,7 @@
           >{{ item }}</router-link
         >
       </div>
-      <span v-if="categories.length && tags.length">/</span>
+      <span v-if="categories.length && tags.length" class="tag-space">/</span>
       <div v-if="tags.length" class="inblock tag-list">
         <router-link
           v-for="(item, index) in tags"
@@ -69,6 +69,10 @@ export default {
   border-radius 1rem
   box-shadow 0px 0px 8px $shadowColor
   background $whiteColor
+  transition all .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    box-shadow 0px 0px 8px $shadowDarkColor
+    background $whiteDarkColor
   .content-header
     padding 3rem 0 1rem
     text-align center
@@ -77,6 +81,10 @@ export default {
       color $blackColor
       font-weight bold
       text-shadow 0 1px 5px $shadowColor
+      transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $blackDarkColor
+        text-shadow 0 1px 5px $shadowDarkColor
   .content-tag
     .tag-list
       padding .5rem 0
@@ -85,6 +93,14 @@ export default {
         padding .2rem .5rem
         font-size 1.2rem
         color $accentColor
+        transition all .5s ease-in-out
+        @media (prefers-color-scheme: dark)
+          color $accentDarkColor
+    .tag-space
+      color $blackColor
+      transition color .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $blackDarkColor
   .content-time
     padding 0 3rem 2rem
     text-align right
@@ -92,4 +108,7 @@ export default {
       display block
       font-size .9rem
       color $textColor
+      transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        color $textDarkColor
 </style>

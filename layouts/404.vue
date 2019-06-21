@@ -35,11 +35,17 @@ export default {
     color $textColor
     font-weight 400
     opacity .5
+    transition color .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color $textDarkColor
   .error-home
     display inline-block
     margin 2rem 0 4rem
     font-size 2rem
     color $accentColor
+    transition color .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      color $accentDarkColor
     &:hover
       opacity .8
 </style>

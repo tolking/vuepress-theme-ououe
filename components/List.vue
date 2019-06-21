@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-w main list" role="main">
+  <section class="flex-w main list">
     <router-link
       v-for="(item, index) in $list.posts"
       :key="index"
@@ -66,10 +66,15 @@ export default {
     background $whiteColor
     overflow hidden
     transition all .5s ease-in-out
+    @media (prefers-color-scheme: dark)
+      box-shadow 0 1px 8px $shadowDarkColor
+      background $whiteDarkColor
     &:hover
       box-shadow 0 3px 15px $shadowColor
       transform scale3d(1.02, 1.02, 1)
       transition all .5s ease-in-out
+      @media (prefers-color-scheme: dark)
+        box-shadow 0 3px 15px $shadowDarkColor
       .item-content
         .content-title:after
           transform scaleX(1)
@@ -90,6 +95,11 @@ export default {
           padding .2rem
           font-size 1rem
           color $textColor
+          transition transform .5s ease-out
+          @media (prefers-color-scheme: dark)
+            color $textDarkColor
+            &:hover
+              color $accentDarkColor
           &:hover
             color $accentColor
       .content-tags
@@ -102,6 +112,11 @@ export default {
         white-space nowrap
         overflow hidden
         text-overflow ellipsis
+        transition transform .5s ease-out
+        @media (prefers-color-scheme: dark)
+          color $titleDarkColor
+          &:after
+            background $accentDarkColor
         &:after
           content ""
           display block
@@ -110,7 +125,7 @@ export default {
           height .1rem
           background $accentColor
           transform scaleX(0)
-          transition transform .5s ease-out
+          transition transform .5s ease-out  
       .content-text
         flex 1
         margin-top .5rem
@@ -119,6 +134,9 @@ export default {
         font-size 1rem
         color $textColor
         line-height 1.5rem
+        transition transform .5s ease-out
+        @media (prefers-color-scheme: dark)
+          color $textDarkColor
 .cover-list
   margin-top -2rem
   min-height "calc(100vh - 2.5rem - %s)" % $coverHeight
