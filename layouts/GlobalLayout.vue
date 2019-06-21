@@ -59,6 +59,12 @@ export default {
     const localTheme = window.localStorage.getItem('defaultTheme') || ''
     const defaultTheme = localTheme || this.$themeConfig.defaultTheme
     this.colorScheme = prefersColorScheme(defaultTheme)
+    setTimeout(() => {
+      this.colorScheme = prefersColorScheme(defaultTheme)
+    }, 100)
+    window.onload = function() {
+      this.colorScheme = prefersColorScheme(defaultTheme)
+    }.bind(this)
   },
   methods: {
     changeScheme() {

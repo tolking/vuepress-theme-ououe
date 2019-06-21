@@ -2,6 +2,9 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.1
+- fix error of partial styles
+
 ## 1.3.0
 - add dark theme (change theme using switch button on the left)
 - you need to add a postcss plugins to your config file
