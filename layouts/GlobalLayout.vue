@@ -59,12 +59,6 @@ export default {
     const localTheme = window.localStorage.getItem('defaultTheme') || ''
     const defaultTheme = localTheme || this.$themeConfig.defaultTheme
     this.colorScheme = prefersColorScheme(defaultTheme)
-    setTimeout(() => {
-      this.colorScheme = prefersColorScheme(defaultTheme)
-    }, 100)
-    window.onload = function() {
-      this.colorScheme = prefersColorScheme(defaultTheme)
-    }.bind(this)
   },
   methods: {
     changeScheme() {
@@ -76,6 +70,9 @@ export default {
 }
 </script>
 
+<style lang="stylus">
+@require '../styles/public.styl'
+</style>
 <style lang="stylus" scoped>
 #global-layout
   background $bgColor

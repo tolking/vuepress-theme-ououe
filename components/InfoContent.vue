@@ -64,6 +64,10 @@ export default {
 }
 </script>
 
+<style lang="stylus">
+@require '../styles/content.styl'
+@require '../styles/code.styl'
+</style>
 <style lang="stylus" scoped>
 .info-content
   border-radius 1rem
