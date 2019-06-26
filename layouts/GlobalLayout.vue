@@ -25,9 +25,9 @@ import Tag from '@theme/layouts/Tag.vue'
 import NotFound from '@theme/layouts/404.vue'
 import prefersColorScheme from 'css-prefers-color-scheme'
 
-export default {
-  name: 'GlobalLayout',
-  components: {
+let components
+if (process.env.NODE_ENV === 'development') {
+  components = {
     AppHeader,
     AppFooter,
     HeaderCover,
@@ -35,7 +35,19 @@ export default {
     Page,
     Tag,
     NotFound
-  },
+  }
+} else {
+  components = {
+    AppHeader,
+    AppFooter,
+    HeaderCover,
+    Page
+  }
+}
+
+export default {
+  name: 'GlobalLayout',
+  components,
   data() {
     return {
       colorScheme: {}
