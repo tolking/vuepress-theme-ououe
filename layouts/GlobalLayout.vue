@@ -25,6 +25,7 @@ import Tag from '@theme/layouts/Tag.vue'
 import NotFound from '@theme/layouts/404.vue'
 import prefersColorScheme from 'css-prefers-color-scheme'
 
+// NOTE: This may not be the best way to fix `Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.` (on build pages)
 let components
 if (process.env.NODE_ENV === 'development') {
   components = {
@@ -67,7 +68,7 @@ export default {
       return this.layout !== 'Page' && this.layout !== 'NotFound'
     }
   },
-  mounted() {
+  beforeMount() {
     const localTheme = window.localStorage.getItem('defaultTheme') || ''
     const defaultTheme = localTheme || this.$themeConfig.defaultTheme
     this.colorScheme = prefersColorScheme(defaultTheme)
