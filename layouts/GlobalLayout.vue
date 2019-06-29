@@ -73,6 +73,12 @@ export default {
     const defaultTheme = localTheme || this.$themeConfig.defaultTheme
     this.colorScheme = prefersColorScheme(defaultTheme)
   },
+  mounted() {
+    // Prevent styles in index.styl not work
+    window.onload = function() {
+      this.colorScheme = prefersColorScheme(this.colorScheme.scheme)
+    }.bind(this)
+  },
   methods: {
     changeScheme() {
       this.colorScheme.scheme =
