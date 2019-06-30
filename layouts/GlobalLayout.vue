@@ -91,6 +91,8 @@ export default {
 
 <style lang="stylus">
 @require '../styles/public.styl'
+@require '../styles/content.styl'
+@require '../styles/code.styl'
 </style>
 <style lang="stylus" scoped>
 #global-layout
