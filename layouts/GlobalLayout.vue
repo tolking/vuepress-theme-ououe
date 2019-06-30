@@ -25,9 +25,10 @@ import Tag from '@theme/layouts/Tag.vue'
 import NotFound from '@theme/layouts/404.vue'
 import prefersColorScheme from 'css-prefers-color-scheme'
 
-export default {
-  name: 'GlobalLayout',
-  components: {
+// NOTE: This may not be the best way to fix `Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.` (on build pages)
+let components
+if (process.env.NODE_ENV === 'development') {
+  components = {
     AppHeader,
     AppFooter,
     HeaderCover,
@@ -35,7 +36,19 @@ export default {
     Page,
     Tag,
     NotFound
-  },
+  }
+} else {
+  components = {
+    AppHeader,
+    AppFooter,
+    HeaderCover,
+    Page
+  }
+}
+
+export default {
+  name: 'GlobalLayout',
+  components,
   data() {
     return {
       colorScheme: {}
@@ -55,15 +68,15 @@ export default {
       return this.layout !== 'Page' && this.layout !== 'NotFound'
     }
   },
-  mounted() {
+  beforeMount() {
     const localTheme = window.localStorage.getItem('defaultTheme') || ''
     const defaultTheme = localTheme || this.$themeConfig.defaultTheme
     this.colorScheme = prefersColorScheme(defaultTheme)
-    setTimeout(() => {
-      this.colorScheme = prefersColorScheme(defaultTheme)
-    }, 100)
+  },
+  mounted() {
+    // Prevent styles in index.styl not work
     window.onload = function() {
-      this.colorScheme = prefersColorScheme(defaultTheme)
+      this.colorScheme = prefersColorScheme(this.colorScheme.scheme)
     }.bind(this)
   },
   methods: {
@@ -76,6 +89,11 @@ export default {
 }
 </script>
 
+<style lang="stylus">
+@require '../styles/public.styl'
+@require '../styles/content.styl'
+@require '../styles/code.styl'
+</style>
 <style lang="stylus" scoped>
 #global-layout
   background $bgColor

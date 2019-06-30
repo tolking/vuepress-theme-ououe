@@ -21,7 +21,7 @@
           >
         </div>
         <h2 class="content-title">{{ item.title }}</h2>
-        <div v-html="item.excerpt" class="content-text"></div>
+        <div v-html="item.excerpt" class="content"></div>
         <div v-if="getTags(item.frontmatter)" class="content-tags">
           <router-link
             v-for="(item, index) in getTags(item.frontmatter)"
@@ -125,18 +125,14 @@ export default {
           height .1rem
           background $accentColor
           transform scaleX(0)
-          transition transform .5s ease-out  
-      .content-text
+          transition transform .5s ease-out
+      .content
         flex 1
         margin-top .5rem
+        padding 0
         max-height $listCardHeight
         overflow hidden
-        font-size 1rem
-        color $textColor
-        line-height 1.5rem
-        transition transform .5s ease-out
-        @media (prefers-color-scheme: dark)
-          color $textDarkColor
+        font-size .9rem
 .cover-list
   margin-top -2rem
   min-height "calc(100vh - 2.5rem - %s)" % $coverHeight
