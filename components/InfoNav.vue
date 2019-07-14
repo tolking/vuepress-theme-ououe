@@ -6,7 +6,7 @@
       </div>
       <article class="flex-ysc item-content">
         <h2 class="content-title">{{ last.title }}</h2>
-        <div v-html="last.excerpt" class="content-text"></div>
+        <div v-html="last.excerpt" class="content"></div>
       </article>
     </router-link>
     <router-link v-if="next" :to="next.path" class="flex-xb nav-item">
@@ -15,7 +15,7 @@
       </div>
       <article class="flex-ysc item-content">
         <h2 class="content-title">{{ next.title }}</h2>
-        <div v-html="next.excerpt" class="content-text"></div>
+        <div v-html="next.excerpt" class="content"></div>
       </article>
     </router-link>
   </section>
@@ -71,14 +71,14 @@ export default {
         transition color .5s ease-in-out
         @media (prefers-color-scheme: dark)
           color $titleDarkColor
-      .content-text
+      .content
         flex 1
         margin-top .5rem
+        padding 0
         max-height $listCardHeight
         overflow hidden
-        font-size 1rem
+        font-size .9rem
         color $textColor
-        line-height 1.5rem
         transition color .5s ease-in-out
         @media (prefers-color-scheme: dark)
           color $textDarkColor

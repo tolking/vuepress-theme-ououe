@@ -2,12 +2,19 @@
   <header class="header">
     <div class="header-navbar">
       <div class="flex-xbc main header-nav">
-        <nav class="nav-link">
+        <div class="nav-link">
           <router-link :to="$localePath" class="inblock link-logo">
             <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo" />
           </router-link>
-          <nav-link :value="links" class="nav-link"></nav-link>
-        </nav>
+          <nav class="link-list">
+            <nav-link
+              v-for="(item, index) in links"
+              :key="index"
+              :value="item"
+              class="list-item"
+            ></nav-link>
+          </nav>
+        </div>
         <search-box v-if="$themeConfig.search"></search-box>
       </div>
     </div>
@@ -57,6 +64,34 @@ export default {
           .logo-img
             padding 16.5% 0
             height 50%
+        .link-list
+          display inline-block
+          .list-item
+            display inline-block
+            padding 0 .7rem
+            font-size 1.2rem
+            color $whiteColor
+            line-height $headerHeight
+            &:after
+              content ''
+              display block
+              margin-left 20%
+              width 60%
+              height .1rem
+              background $accentColor
+              transform scaleX(0)
+              transition transform .5s ease-out
+            &:hover:after
+              transform scaleX(1)
+              transition transform .5s ease-out
+          .router-link-exact-active,
+          .router-link-active
+            color $accentColor
+          .list-item:nth-child(1)
+            &.router-link-active
+              color $whiteColor
+            &.router-link-exact-active
+              color $accentColor
 @media (max-width $phoneWidth)
   .nav-link
     white-space nowrap

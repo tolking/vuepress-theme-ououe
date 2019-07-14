@@ -1,6 +1,13 @@
 <template>
   <footer class="footer">
-    <nav-link v-if="links" :value="links" class="footer-link"></nav-link>
+    <nav v-if="links" class="link-list">
+      <nav-link
+        v-for="(item, index) in links"
+        :key="index"
+        :value="item"
+        class="list-item"
+      ></nav-link>
+    </nav>
     <router-link :to="$localePath" class="copyright">{{
       $site.title + ' &copy; ' + year
     }}</router-link>
@@ -34,6 +41,11 @@ export default {
   transition background .5s ease-in-out
   @media (prefers-color-scheme: dark)
     background $codeBgDarkColor
+  .link-list
+    .list-item
+      margin 0 .5rem
+      font-size .9rem
+      color $whiteColor
   .copyright
     display inline-block
     margin-top .55rem
