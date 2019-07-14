@@ -3,7 +3,11 @@
     <app-header :class="{ 'cover-header': showCover }">
       <header-cover v-if="showCover" :item="$cover"></header-cover>
     </app-header>
-    <label v-if="showCover" @click="changeScheme" class="switch">
+    <label
+      v-if="$themeConfig.defaultTheme && showCover"
+      @click="changeScheme"
+      class="switch"
+    >
       <input
         class="switch-input"
         type="checkbox"
@@ -69,15 +73,20 @@ export default {
     }
   },
   beforeMount() {
-    const localTheme = window.localStorage.getItem('defaultTheme') || ''
-    const defaultTheme = localTheme || this.$themeConfig.defaultTheme
-    this.colorScheme = prefersColorScheme(defaultTheme)
+    if (this.$themeConfig.defaultTheme) {
+      const defaultTheme =
+        window.localStorage.getItem('defaultTheme') ||
+        this.$themeConfig.defaultTheme
+      this.colorScheme = prefersColorScheme(defaultTheme)
+    }
   },
   mounted() {
     // Prevent styles in index.styl not work
-    window.onload = function() {
-      this.colorScheme = prefersColorScheme(this.colorScheme.scheme)
-    }.bind(this)
+    if (this.$themeConfig.defaultTheme) {
+      window.onload = function() {
+        this.colorScheme = prefersColorScheme(this.colorScheme.scheme)
+      }.bind(this)
+    }
   },
   methods: {
     changeScheme() {

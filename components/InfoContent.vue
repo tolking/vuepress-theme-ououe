@@ -10,8 +10,8 @@
           :key="index"
           :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
           class="tag-text"
-          >{{ item }}</router-link
-        >
+          >{{ item }}
+        </router-link>
       </div>
       <span v-if="categories.length && tags.length" class="tag-space">/</span>
       <div v-if="tags.length" class="inblock tag-list">
@@ -20,8 +20,8 @@
           :key="index"
           :to="$pluginConfig.tagIndexPageUrl + item + '/'"
           class="tag-text"
-          >{{ item }}</router-link
-        >
+          >{{ item }}
+        </router-link>
       </div>
     </div>
     <Content class="content" />

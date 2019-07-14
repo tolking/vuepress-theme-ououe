@@ -2,6 +2,9 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.3
+- add `false` in defaultTheme
+
 ## 1.3.2
 - optimizing dark theme styles
 

@@ -5,22 +5,22 @@
         v-if="current !== 1"
         :to="pagination[current - 2]"
         class="list-item"
-        >&lt;</router-link
-      >
+        >&lt;
+      </router-link>
       <router-link
         v-for="(item, index) in grouplist"
         :key="index"
         :to="item.path || ''"
         :class="{ 'list-item-active': current === item.val }"
         class="list-item"
-        >{{ item.text }}</router-link
-      >
+        >{{ item.text }}
+      </router-link>
       <router-link
         v-if="current !== page"
         :to="pagination[current]"
         class="list-item"
-        >&gt;</router-link
-      >
+        >&gt;
+      </router-link>
     </nav>
   </section>
 </template>

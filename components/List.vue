@@ -17,8 +17,8 @@
             :key="index"
             :to="$pluginConfig.categoryIndexPageUrl + item + '/'"
             class="item-text"
-            >{{ item }}</router-link
-          >
+            >{{ item }}
+          </router-link>
         </div>
         <h2 class="content-title">{{ item.title }}</h2>
         <div v-html="item.excerpt" class="content"></div>
@@ -28,8 +28,8 @@
             :key="index"
             :to="$pluginConfig.tagIndexPageUrl + item + '/'"
             class="item-text"
-            >{{ item }}</router-link
-          >
+            >{{ item }}
+          </router-link>
         </div>
       </article>
     </router-link>
