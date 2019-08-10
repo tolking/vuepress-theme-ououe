@@ -2,6 +2,9 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.5
+- fix css-prefers-color-scheme
+
 ## 1.3.4
 - add `backgroundImage` (background image on posts pages)
 - optimizing styles
