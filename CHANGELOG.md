@@ -2,6 +2,10 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.4
+- add `backgroundImage` (background image on posts pages)
+- optimizing styles
+
 ## 1.3.3
 - add `false` in defaultTheme
 

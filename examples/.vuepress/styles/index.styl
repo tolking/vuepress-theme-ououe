@@ -1,0 +1,37 @@
+.tip,
+.warning,
+.danger
+  padding 1rem 1.5rem
+  border-left-width .5rem
+  border-left-style solid
+  margin 1rem 0
+  .title
+    font-weight bold
+.tip
+  background-color #f3f5f7
+  border-color #42b983
+  @media (prefers-color-scheme: dark)
+    background-color #3e3b3b
+.warning
+  background-color rgba(255,229,100,.3)
+  border-color darken(#ffe564, 35%)
+  color darken(#ffe564, 70%)
+  @media (prefers-color-scheme: dark)
+    background-color rgba(185, 174, 119, 0.3)
+  .title
+    color darken(#ffe564, 50%)
+.danger
+  background-color #ffe6e6
+  border-color darken(red, 20%)
+  color darken(red, 70%)
+  @media (prefers-color-scheme: dark)
+    background-color rgba(255, 214, 214, 0.3)
+  .title
+    color darken(red, 40%)
+.right
+  p
+    color transparentify($textColor, 0.5)
+    font-size 0.9rem
+    text-align right
+    @media (prefers-color-scheme: dark)
+      color transparentify(#fff, 0.5)
