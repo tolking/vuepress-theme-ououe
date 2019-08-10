@@ -27,7 +27,6 @@ import Layout from '@theme/layouts/Layout.vue'
 import Page from '@theme/layouts/Page.vue'
 import Tag from '@theme/layouts/Tag.vue'
 import NotFound from '@theme/layouts/404.vue'
-import prefersColorScheme from 'css-prefers-color-scheme'
 
 // NOTE: This may not be the best way to fix `Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.` (on build pages)
 let components
@@ -74,6 +73,7 @@ export default {
   },
   beforeMount() {
     if (this.$themeConfig.defaultTheme) {
+      const prefersColorScheme = require('css-prefers-color-scheme').default
       const defaultTheme =
         window.localStorage.getItem('defaultTheme') ||
         this.$themeConfig.defaultTheme
@@ -83,6 +83,7 @@ export default {
   mounted() {
     // Prevent styles in index.styl not work
     if (this.$themeConfig.defaultTheme) {
+      const prefersColorScheme = require('css-prefers-color-scheme').default
       window.onload = function() {
         this.colorScheme = prefersColorScheme(this.colorScheme.scheme)
       }.bind(this)
