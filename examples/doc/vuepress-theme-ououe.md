@@ -1,18 +1,30 @@
-# vuepress-theme-ououe
+---
+title: vuepress-theme-ououe
+lang: en-US
+display: home
+description: A blog theme for VuePress
+image: https://picsum.photos/1920/1080/?random&date=2019-02-22
+date: 2019-02-22
+tags:
+  - vue
+  - vuepress
+categories:
+  - documentation
+--- 
 
 > A blog theme for VuePress
 
-Live Demo: [My Blog](https://ououe.com)
+**This plugin is for Vuepress 1.0**
 
-[Documentation](https://ououe.com/lib/vuepress-theme-ououe.html)
+<!-- more -->
+
+Live Demo: [My Blog](https://ououe.com)
 
 Uses [vuepress-theme-ououe-template](https://github.com/tolking/vuepress-theme-ououe-template) to starter
 
 Take [TryGhost/Casper](https://github.com/TryGhost/Casper) as a reference
 
----
-
-![preview](https://ououe.com/img/vuepress-theme-ououe.jpg)
+[Source code](https://github.com/tolking/vuepress-theme-ououe)
 
 ---
 
@@ -26,7 +38,7 @@ npm i vuepress-theme-ououe
 
 ## Usage
 
-``` js
+``` js {3}
 // .vuepress -> config.js
 module.exports = {
   theme: 'ououe',
@@ -44,15 +56,17 @@ module.exports = {
 
 support `false`, `light` or `dark`
 
+::: tip
 When using `false`, displaying light or dark themes is determined by [browser](https://caniuse.com/#search=prefers-color-scheme)
 
 When using `light` or `dark`, displaying light or dark themes is determined by defaultTheme
-
+::: right
 based on [css-prefers-color-scheme](https://github.com/csstools/css-prefers-color-scheme/)
+:::
 
-When using `light` or `dark`, you need to add a postcss plugins to your config.js
+**When using `light` or `dark`, you need to add a postcss plugins to your config.js**
 
-``` js
+``` js {6}
 // .vuepress -> config.js
 module.exports = {
   // ...
@@ -79,7 +93,7 @@ cover: {
 }
 ```
 
-Show in the header of the index page
+  Show in the header of the index page
 
 ### logo
 - Type: `string`
@@ -89,17 +103,11 @@ Show in the header of the index page
 - Type: `boolean`
 - Default: `true`
 
-### backgroundImage
-- Type: `boolean`
-- Default: `true`
-
-background image on posts pages
-
 ### pageGroup
 - Type: `number`
 - Default: `5`
 
-Number of pages Pagination
+  Number of pages Pagination
 
 ### postTime
 - Type: `object`
@@ -148,9 +156,9 @@ Number of pages Pagination
 - Type: `boolean`
 - Default: `false`
 
-Use [vssue](https://vssue.js.org/guide/vuepress.html) for comment system
+  Use [vssue](https://vssue.js.org/guide/vuepress.html) for comment system
 
-**You must install it before using it**
+  **You must install it before using it**
 
 ## Structure directores
 ```
@@ -165,7 +173,9 @@ Use [vssue](https://vssue.js.org/guide/vuepress.html) for comment system
   ...
 ```
 
+::: tip TIP
 **You don't need to create a `index.md(or README.md)` file in a folder that needs Pagination**
+:::
 
 or set `layout`
 
@@ -221,7 +231,7 @@ However, you can still access it through the right path.
 
 ## Other
 
-###Partitioning some function into [vuepress-plugin-blog-multidir](https://github.com/tolking/vuepress-plugin-blog-multidir)
+### Partitioning some function into [vuepress-plugin-blog-multidir](https://github.com/tolking/vuepress-plugin-blog-multidir)
 
 You can change the default options.
 
@@ -232,11 +242,11 @@ module.exports = {
   themeConfig: {
     // ...
   },
-  plugins: [
-    ['blog-multidir', {
-      // ...
-    }]
-  ]
+  plugins: {
+    'blog-multidir': {
+      //...
+    }
+  }
 }
 ```
 
