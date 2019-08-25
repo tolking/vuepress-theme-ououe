@@ -22,7 +22,7 @@ categories:
 
 ``` sh
 yarn add vuepress-plugin-blog-multidir
-// or
+# or
 npm i vuepress-plugin-blog-multidir
 ```
 

@@ -20,7 +20,7 @@ Take [TryGhost/Casper](https://github.com/TryGhost/Casper) as a reference
 
 ``` sh
 yarn add vuepress-theme-ououe
-// or
+# or
 npm i vuepress-theme-ououe
 ```
 
@@ -39,23 +39,24 @@ module.exports = {
 ## Options
 
 ### defaultTheme
-- Type: `boolean`, `string`
-- Default: `false`
+- Type: `string`, `object`
+- Default: `undefined`
 
-support `false`, `light` or `dark`
+By default, light or dark themes are displayed by [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme), You can change it by `defaultTheme`
 
-When using `false`, displaying light or dark themes is determined by [browser](https://caniuse.com/#search=prefers-color-scheme)
-
-When using `light` or `dark`, displaying light or dark themes is determined by defaultTheme
-
-based on [css-prefers-color-scheme](https://github.com/csstools/css-prefers-color-scheme/)
-
-When using `light` or `dark`, you need to add a postcss plugins to your config.js
+support `light`, `dark` or `{ theme: [begin hours, end hours] }`
 
 ``` js
-// .vuepress -> config.js
 module.exports = {
-  // ...
+  theme: 'default-prefers-color-scheme',
+  themeConfig: {
+    defaultTheme: 'dark',
+    // or
+    defaultTheme: { dark: [18, 6] },
+    // or
+    defaultTheme: { light: [6, 18], dark: [18, 6] },
+  },
+  // When using `light theme` or `dark theme`, you need to add a postcss plugins to your config.js
   postcss: {
     plugins: [
       require('css-prefers-color-scheme/postcss'),
@@ -64,6 +65,15 @@ module.exports = {
   }
 }
 ```
+
+### showThemeButton
+- Type: `boolean`
+- Default: `true`
+
+`showThemeButton` to control the chose theme button display
+
+The display of the theme is determined by 
+**`botton chose theme` -> `defaultTheme` -> `prefers-color-scheme`**
 
 ### cover
 - Type: `string`, `object`

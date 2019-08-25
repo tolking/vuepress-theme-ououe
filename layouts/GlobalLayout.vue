@@ -4,7 +4,11 @@
       <header-cover v-if="showCover" :item="$cover"></header-cover>
     </app-header>
     <label
-      v-if="$themeConfig.defaultTheme && showCover"
+      v-if="
+        this.$themeConfig.showThemeButton &&
+          $themeConfig.defaultTheme &&
+          showCover
+      "
       @click="changeScheme"
       class="switch"
     >
@@ -69,23 +73,49 @@ export default {
     },
     showCover() {
       return this.layout !== 'Page' && this.layout !== 'NotFound'
+    },
+    defaultTheme() {
+      const _defaultTheme =
+        (this.$themeConfig.showThemeButton &&
+          window.localStorage.getItem('defaultTheme')) ||
+        this.$themeConfig.defaultTheme
+      if (typeof _defaultTheme === 'object') {
+        const hours = new Date().getHours()
+        let _key = false
+        for (const key in _defaultTheme) {
+          const value = _defaultTheme[key]
+          if (value[0] <= value[1]) {
+            if (value[0] <= hours && hours < value[1]) {
+              _key = key
+              break
+            }
+          } else {
+            if (
+              (value[0] <= hours && hours < 24) ||
+              (0 <= hours && hours < value[1])
+            ) {
+              _key = key
+              break
+            }
+          }
+        }
+        return _key
+      } else {
+        return _defaultTheme || false
+      }
     }
   },
   beforeMount() {
-    if (this.$themeConfig.defaultTheme) {
+    if (this.defaultTheme) {
       const prefersColorScheme = require('css-prefers-color-scheme').default
-      const defaultTheme =
-        window.localStorage.getItem('defaultTheme') ||
-        this.$themeConfig.defaultTheme
-      this.colorScheme = prefersColorScheme(defaultTheme)
+      this.colorScheme = prefersColorScheme(this.defaultTheme)
     }
   },
   mounted() {
     // Prevent styles in index.styl not work
-    if (this.$themeConfig.defaultTheme) {
-      const prefersColorScheme = require('css-prefers-color-scheme').default
+    if (this.defaultTheme) {
       window.onload = function() {
-        this.colorScheme = prefersColorScheme(this.colorScheme.scheme)
+        this.colorScheme.scheme === this.defaultTheme
       }.bind(this)
     }
   },
