@@ -28,23 +28,43 @@ select
     padding: 0 .5rem
     width auto
 
-.search-box input
-  border 1px solid $borderColor
-  background-color $bgColor
-  transition all .5s ease-in-out
+.search-box
+  input
+    border 1px solid $borderColor
+    background-color $bgColor
+    transition all .5s ease-in-out
+    &:focus
+      border-color $accentColor
+  .suggestions
+    background $bgColor
+    border-color darken($borderColor, 10%)
+  .suggestion
+    a
+      color lighten($textColor, 35%)
+    &.focused
+      background-color darken($bgColor, 10%)
+      a
+        color $accentColor
   @media (prefers-color-scheme: dark)
-    border 1px solid $borderDarkColor
-    background-color $bgDarkColor
-
-@media (max-width $phoneWidth)
-  .search-box
+    input
+      border 1px solid $borderDarkColor
+      background-color $bgDarkColor
+      &:focus
+        border-color $accentDarkColor
+    .suggestions
+      background $bgDarkColor
+      border-color lighten($bgDarkColor, 5%)
+    .suggestion
+      a
+        color lighten($textDarkColor, 35%)
+      &.focused
+        background-color darken($bgDarkColor, 10%)
+        a
+          color $accentDarkColor
+  @media (max-width $phoneWidth)
     margin-right 0
     input
       left 0 !important
-      &:focus
-        background-color $whiteColor !important
-        @media (prefers-color-scheme: dark)
-          background-color $whiteDarkColor !important
 
 .global-ui
   .go-to-top

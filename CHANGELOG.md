@@ -2,6 +2,15 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.6
+- optimizing styles
+- add `showThemeButton` to control the chose theme button display
+- setting `defaultTheme` by hours
+
+``` js
+defaultTheme: { dark: [18, 6] }
+```
+
 ## 1.3.5
 - fix css-prefers-color-scheme
 

@@ -5,7 +5,8 @@ module.exports = {
   dest: 'dist/',
   theme: require.resolve('../../'),
   themeConfig: {
-    defaultTheme: false,
+    defaultTheme: { dark: [19, 6] },
+    showThemeButton: false,
     cover: '/cover.jpg',
     logo: '/logo.png',
     search: true,
@@ -26,11 +27,11 @@ module.exports = {
     footer: [
       { text: 'Github', link: 'https://github.com/tolking' }
     ]
+  },
+  postcss: {
+    plugins: [
+      require('css-prefers-color-scheme/postcss'),
+      require('autoprefixer')
+    ]
   }
-  // postcss: {
-  //   plugins: [
-  //     require('css-prefers-color-scheme/postcss'),
-  //     require('autoprefixer')
-  //   ]
-  // }
 }

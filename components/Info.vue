@@ -9,7 +9,7 @@
     <Vssue
       v-if="$themeConfig.useVssue && $list.total"
       title="comment"
-      class="main info-vssue"
+      class="main"
     ></Vssue>
   </section>
 </template>
@@ -41,21 +41,7 @@ export default {
   background-size cover
   background-position center
   background-attachment fixed
-  .info-vssue
-    margin-top 3rem
-    padding 2rem
-    border-radius 1rem
-    background $whiteColor
-    box-shadow 0px 0px 8px $shadowColor
-    transition all .5s ease-in-out
-    @media (prefers-color-scheme: dark)
-      background $whiteDarkColor
-      box-shadow 0px 0px 8px $shadowDarkColor
 .no-bg
   padding-top ($headerHeight + 2rem)
   min-height "calc(100vh - 8.45rem - %s)" % $headerHeight
-@media (max-width $phoneWidth)
-  .info
-    .info-vssue
-      padding 1rem
 </style>
