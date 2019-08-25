@@ -53,6 +53,7 @@ export default {
     right 0
     z-index 100
     background $maskColor
+    backdrop-filter blur(5px)
     transition all .5s ease-in-out
     @media (prefers-color-scheme: dark)
       background $maskDarkColor

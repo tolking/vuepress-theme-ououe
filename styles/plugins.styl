@@ -1,0 +1,186 @@
+// pwa
+.sw-update-popup
+  border-color $accentColors
+  background $bgColor
+  @media (prefers-color-scheme: dark)
+    border-color $accentDarkColors
+    background $bgDarkColor
+
+// vssue
+.vssue
+  margin-top 3rem
+  padding 2rem
+  border-radius 1rem
+  background $whiteColor
+  box-shadow 0px 0px 8px $shadowColor
+  color $textColor
+  @media (max-width $phoneWidth)
+    padding 1rem
+  :not(.vssue-comment-content)
+    a
+      color $accentColor
+    hr
+      border-top-color $borderColor
+  .vssue-button
+    color $accentColor
+    border-color $borderColor
+    &:disabled
+      color $borderColor
+      border-color $borderColor
+      .vssue-icon
+        fill $borderColor
+    &:not(:disabled)
+      &.vssue-button-default
+        color lighten($textColor, 20%)
+        border-color lighten($textColor, 20%)
+      &.vssue-button-primary
+        color $accentColor
+        border-color $accentColor
+  .vssue-icon
+    fill $accentColor
+  .vssue-notice
+    .vssue-alert
+      color $accentColor
+      border-color lighten($accentColor, 70%)
+      background-color lighten($accentColor, 95%)
+    .vssue-progress
+      background-color $accentColor
+  .vssue-status
+    color $accentColor
+  .vssue-header
+    border-bottom-color $borderColor
+  .vssue-new-comment
+    border-bottom-color $borderColor
+    .vssue-new-comment-footer
+      .vssue-current-user
+        color lighten($textColor, 20%)
+        .vssue-logout
+          color lighten($textColor, 20%)
+    .vssue-new-comment-input
+      color $textColor
+      background-color $bgColor
+      border-color $borderColor
+      &:disabled
+        background-color lighten($bgColor, 10%)
+      &:focus
+        background-color $bgColor
+        border-color lighten($accentColor, 50%)
+        box-shadow 0 0 1px 1px lighten($accentColor, 50%)
+      &::placeholder
+        color lighten($textColor, 20%)
+      transition all .5s ease-in-out
+  .vssue-comments
+    .vssue-comment
+      &.vssue-comment-edit-mode
+        .vssue-comment-main
+          border-color lighten($accentColor, 50%)
+          box-shadow 0 0 1px 1px lighten($accentColor, 50%)
+      &.vssue-comment-disabled
+        .vssue-comment-body
+          background-color lighten($borderColor, 70%)
+      .vssue-comment-header
+        border-color $borderColor
+        .vssue-comment-created-at
+          color lighten($textColor, 20%)
+      .vssue-comment-main
+        border-color $borderColor
+      .vssue-comment-footer
+        border-color $borderColor
+        .vssue-comment-hint
+          color lighten($textColor, 20%)
+        .vssue-comment-reactions
+          .vssue-comment-reaction
+            color $accentColor
+        .vssue-comment-operations
+          color $accentColor
+          .vssue-comment-operation
+            &.vssue-comment-operation-muted
+              color lighten($textColor, 20%)
+              .vssue-icon
+                fill lighten($textColor, 20%)
+  transition all .5s ease-in-out
+  @media (prefers-color-scheme: dark)
+    background $whiteDarkColor
+    box-shadow 0px 0px 8px $shadowDarkColor
+    color $textDarkColor
+    :not(.vssue-comment-content)
+      a
+        color $accentDarkColor
+      hr
+        border-top-color $borderDarkColor
+    .vssue-button
+      color $accentDarkColor
+      border-color $borderDarkColor
+      &:disabled
+        color $borderDarkColor
+        border-color $borderDarkColor
+        .vssue-icon
+          fill $borderDarkColor
+      &:not(:disabled)
+        &.vssue-button-default
+          color darken($textDarkColor, 20%)
+          border-color darken($textDarkColor, 20%)
+        &.vssue-button-primary
+          color $accentDarkColor
+          border-color $accentDarkColor
+    .vssue-icon
+        fill $accentDarkColor
+    .vssue-notice
+      .vssue-alert
+      color $accentDarkColor
+      border-color lighten($accentDarkColor, 70%)
+      background-color lighten($accentDarkColor, 95%)
+      .vssue-progress
+        background-color $accentDarkColor
+    .vssue-status
+      color $accentDarkColor
+    .vssue-header
+      border-bottom-color $borderDarkColor
+    .vssue-new-comment
+      border-bottom-color $borderDarkColor
+      .vssue-new-comment-footer
+        .vssue-current-user
+          color darken($textDarkColor, 20%)
+          .vssue-logout
+            color darken($textDarkColor, 20%)
+      .vssue-new-comment-input
+        color $textDarkColor
+        background-color $bgDarkColor
+        border-color $borderDarkColor
+        &:disabled
+          background-color darken($bgDarkColor, 10%)
+        &:focus
+          background-color $bgDarkColor
+          border-color lighten($accentDarkColor, 50%)
+          box-shadow 0 0 1px 1px lighten($accentDarkColor, 50%)
+        &::placeholder
+          color darken($textDarkColor, 20%)
+    .vssue-comments
+      .vssue-comment
+        &.vssue-comment-edit-mode
+          .vssue-comment-main
+            border-color lighten($accentDarkColor, 50%)
+            box-shadow 0 0 1px 1px lighten($accentDarkColor, 50%)
+        &.vssue-comment-disabled
+          .vssue-comment-body
+            background-color lighten($borderDarkColor, 70%)
+        .vssue-comment-header
+          border-color $borderDarkColor
+          .vssue-comment-created-at
+            color darken($textDarkColor, 20%)
+        .vssue-comment-main
+          border-color $borderDarkColor
+        .vssue-comment-footer
+          border-color $borderDarkColor
+          .vssue-comment-hint
+            color darken($textDarkColor, 20%)
+          .vssue-comment-reactions
+            .vssue-comment-reaction
+              color $accentDarkColor
+          .vssue-comment-operations
+            color $accentDarkColor
+            .vssue-comment-operation
+              &.vssue-comment-operation-muted
+                color darken($textDarkColor, 20%)
+                .vssue-icon
+                  fill darken($textDarkColor, 20%)
