@@ -76,8 +76,9 @@ export default {
     },
     defaultTheme() {
       const _defaultTheme =
-        (this.$themeConfig.showThemeButton &&
-          window.localStorage.getItem('defaultTheme')) ||
+        (this.$themeConfig.defaultTheme &&
+          (this.$themeConfig.showThemeButton &&
+            window.localStorage.getItem('defaultTheme'))) ||
         this.$themeConfig.defaultTheme
       if (typeof _defaultTheme === 'object') {
         const hours = new Date().getHours()
