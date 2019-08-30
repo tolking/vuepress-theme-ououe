@@ -8,7 +8,12 @@
       class="flex-y list-item"
     >
       <div class="flex-xcc item-img">
-        <img :src="item.frontmatter.image" :alt="item.title" class="img" />
+        <img
+          :src="item.frontmatter.image"
+          :alt="item.title"
+          loading="lazy"
+          class="img"
+        />
       </div>
       <article class="flex-yb item-content">
         <div v-if="getCategories(item.frontmatter)" class="content-categories">

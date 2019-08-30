@@ -2,7 +2,12 @@
   <section v-if="last || next" class="flex-xb main info-nav">
     <router-link v-if="last" :to="last.path" class="flex-xb nav-item">
       <div class="flex-xcc item-img">
-        <img :src="last.frontmatter.image" :alt="last.title" class="img" />
+        <img
+          :src="last.frontmatter.image"
+          :alt="last.title"
+          loading="lazy"
+          class="img"
+        />
       </div>
       <article class="flex-ysc item-content">
         <h2 class="content-title">{{ last.title }}</h2>
@@ -11,7 +16,12 @@
     </router-link>
     <router-link v-if="next" :to="next.path" class="flex-xb nav-item">
       <div class="flex-xcc item-img">
-        <img :src="next.frontmatter.image" :alt="next.title" class="img" />
+        <img
+          :src="next.frontmatter.image"
+          :alt="next.title"
+          loading="lazy"
+          class="img"
+        />
       </div>
       <article class="flex-ysc item-content">
         <h2 class="content-title">{{ next.title }}</h2>
