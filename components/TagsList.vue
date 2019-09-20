@@ -32,7 +32,7 @@ export default {
           path: item.path
         })
       })
-      return list
+      return list.sort((a, b) => b.count - a.count)
     }
   }
 }

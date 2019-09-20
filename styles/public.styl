@@ -93,6 +93,9 @@ select
   ::-webkit-scrollbar
     max-width 6px
     max-height 12px
+    background-color $bgColor
+    @media (prefers-color-scheme: dark)
+      background-color $bgDarkColor
 
   ::-webkit-scrollbar-thumb
     background-color $textColor

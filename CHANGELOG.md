@@ -2,6 +2,11 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.7
+- optimizing styles
+- change the `TagsList` sort
+- add loading=lazy for chrome ^75
+
 ## 1.3.6
 - optimizing styles
 - add `showThemeButton` to control the chose theme button display
