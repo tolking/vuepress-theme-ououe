@@ -9,10 +9,10 @@
     >
       <div class="flex-xcc item-img">
         <img
-          :src="item.frontmatter.image"
+          :data-src="item.frontmatter.image"
           :alt="item.title"
           loading="lazy"
-          class="img"
+          class="img lazy"
         />
       </div>
       <article class="flex-yb item-content">

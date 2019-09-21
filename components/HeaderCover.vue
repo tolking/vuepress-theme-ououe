@@ -5,7 +5,12 @@
     class="flex-ycc header-cover"
   >
     <h1 class="cover-title">
-      <img v-if="logoImg" :src="logoImg" loading="lazy" class="title-img" />
+      <img
+        v-if="logoImg"
+        :data-src="logoImg"
+        loading="lazy"
+        class="title-img lazy"
+      />
       <span v-else class="title-text">{{ $title }}</span>
     </h1>
     <h2 class="cover-text">{{ $site.description }}</h2>

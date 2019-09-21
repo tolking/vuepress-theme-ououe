@@ -6,9 +6,9 @@
           <router-link :to="$localePath" class="inblock link-logo">
             <img
               v-if="logoImg"
-              :src="logoImg"
+              :data-src="logoImg"
               loading="lazy"
-              class="logo-img"
+              class="logo-img lazy"
               alt="logo"
             />
           </router-link>

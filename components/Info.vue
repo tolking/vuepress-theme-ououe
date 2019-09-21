@@ -42,6 +42,6 @@ export default {
   background-position center
   background-attachment fixed
 .no-bg
-  padding-top ($headerHeight + 2rem)
-  min-height "calc(100vh - 8.45rem - %s)" % $headerHeight
+  padding-top ($headerHeight + 2.5rem)
+  min-height "calc(100vh - 8.95rem - %s)" % $headerHeight
 </style>

@@ -5,7 +5,7 @@
 ## 1.3.7
 - optimizing styles
 - change the `TagsList` sort
-- add loading=lazy for chrome ^75
+- add [vuepress-plugin-img-lazy](https://github.com/tolking/vuepress-plugin-img-lazy)
 
 ## 1.3.6
 - optimizing styles

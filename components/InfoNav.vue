@@ -3,10 +3,10 @@
     <router-link v-if="last" :to="last.path" class="flex-xb nav-item">
       <div class="flex-xcc item-img">
         <img
-          :src="last.frontmatter.image"
+          :data-src="last.frontmatter.image"
           :alt="last.title"
           loading="lazy"
-          class="img"
+          class="img lazy"
         />
       </div>
       <article class="flex-ysc item-content">
@@ -17,10 +17,10 @@
     <router-link v-if="next" :to="next.path" class="flex-xb nav-item">
       <div class="flex-xcc item-img">
         <img
-          :src="next.frontmatter.image"
+          :data-src="next.frontmatter.image"
           :alt="next.title"
           loading="lazy"
-          class="img"
+          class="img lazy"
         />
       </div>
       <article class="flex-ysc item-content">
