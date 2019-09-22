@@ -2,6 +2,11 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.3.7
+- optimizing styles
+- change the `TagsList` sort
+- add [vuepress-plugin-img-lazy](https://github.com/tolking/vuepress-plugin-img-lazy)
+
 ## 1.3.6
 - optimizing styles
 - add `showThemeButton` to control the chose theme button display

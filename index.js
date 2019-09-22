@@ -6,6 +6,7 @@ module.exports = {
     '@vuepress/search',
     '@vuepress/plugin-nprogress',
     '@vuepress/last-updated',
-    'blog-multidir'
+    'blog-multidir',
+    'img-lazy'
   ]
 }

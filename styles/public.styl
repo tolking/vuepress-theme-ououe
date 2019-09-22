@@ -69,3 +69,36 @@ select
 .global-ui
   .go-to-top
     z-index 100
+  // pwa
+  .sw-update-popup
+    border-color $accentColor
+    background $bgColor
+    button
+      color #fff
+      background-color $accentColor
+      border-color $accentColor
+      &:hover
+        background-color lighten($accentColor, 10%)
+    @media (prefers-color-scheme: dark)
+      border-color $accentDarkColor
+      background $bgDarkColor
+      button
+        background-color $accentDarkColor
+        border-color $accentDarkColor
+        &:hover
+          background-color darken($accentDarkColor, 10%)
+
+// scroll bar
+@media (min-width: $MQMobile)
+  ::-webkit-scrollbar
+    max-width 6px
+    max-height 12px
+    background-color $bgColor
+    @media (prefers-color-scheme: dark)
+      background-color $bgDarkColor
+
+  ::-webkit-scrollbar-thumb
+    background-color $textColor
+    border-radius 6px
+    @media (prefers-color-scheme: dark)
+      background-color $textDarkColor

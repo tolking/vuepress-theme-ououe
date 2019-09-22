@@ -4,7 +4,13 @@
       <div class="flex-xbc main header-nav">
         <div class="nav-link">
           <router-link :to="$localePath" class="inblock link-logo">
-            <img v-if="logoImg" :src="logoImg" class="logo-img" alt="logo" />
+            <img
+              v-if="logoImg"
+              :data-src="logoImg"
+              loading="lazy"
+              class="logo-img lazy"
+              alt="logo"
+            />
           </router-link>
           <nav class="link-list">
             <nav-link

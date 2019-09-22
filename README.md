@@ -48,7 +48,7 @@ support `light`, `dark` or `{ theme: [begin hours, end hours] }`
 
 ``` js
 module.exports = {
-  theme: 'default-prefers-color-scheme',
+  theme: 'ououe',
   themeConfig: {
     defaultTheme: 'dark',
     // or
