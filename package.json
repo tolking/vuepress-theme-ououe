@@ -23,7 +23,9 @@
   "scripts": {
     "dev": "vuepress dev examples",
     "serve": "vuepress dev examples",
-    "build": "vuepress build examples"
+    "build": "vuepress build examples",
+    "dev:docs": "vuepress dev docs",
+    "build:docs": "vuepress build docs"
   },
   "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.0.1",
@@ -39,6 +41,7 @@
   "devDependencies": {
     "@vue/eslint-config-prettier": "^4.0.1",
     "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.2.2"
+    "eslint-plugin-vue": "^5.2.2",
+    "vuepress-theme-default-prefers-color-scheme": "^1.0.2"
   }
 }
