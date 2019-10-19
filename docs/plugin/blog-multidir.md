@@ -13,7 +13,7 @@ You can modify the plugin options
 
 ## Usage
 
-``` js {3}
+``` js
 module.exports = {
   plugins: [
     [
@@ -24,7 +24,7 @@ module.exports = {
 }
 ```
 
-[ Vuepress documentation](https://v1.vuepress.vuejs.org/plugin/using-a-plugin.html)
+[ Vuepress documentation](https://vuepress.vuejs.org/plugin/using-a-plugin.html)
 
 ## Options
 
@@ -74,7 +74,7 @@ postsDir = {
 - Type: `string`, `boolean(false)`
 - Default: `false`
 
-  See [Permalinks](https://v1.vuepress.vuejs.org/guide/permalinks.html#template-variables) for a list of valid variables.
+  See [Permalinks](https://vuepress.vuejs.org/guide/permalinks.html#template-variables) for a list of valid variables.
 
 ### postsSorter
 - Type: `function`

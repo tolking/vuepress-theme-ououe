@@ -95,4 +95,4 @@ module.exports = {
 
 ## 1.0.0
 - Initial version
-- [Documentation](https://ououe.com/lib/vuepress-theme-ououe.html)
+- [Documentation](https://tolking.github.io/vuepress-theme-ououe)
