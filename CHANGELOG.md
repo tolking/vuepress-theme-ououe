@@ -2,6 +2,10 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+# 1.3.8
+- fix styles without `frontmatter.image`
+- adjust the header text of the list page
+
 ## 1.3.7
 - optimizing styles
 - change the `TagsList` sort

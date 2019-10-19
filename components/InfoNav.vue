@@ -1,7 +1,7 @@
 <template>
   <section v-if="last || next" class="flex-xb main info-nav">
     <router-link v-if="last" :to="last.path" class="flex-xb nav-item">
-      <div class="flex-xcc item-img">
+      <div v-if="last.frontmatter.image" class="flex-xcc item-img">
         <img
           :data-src="last.frontmatter.image"
           :alt="last.title"
@@ -15,7 +15,7 @@
       </article>
     </router-link>
     <router-link v-if="next" :to="next.path" class="flex-xb nav-item">
-      <div class="flex-xcc item-img">
+      <div v-if="next.frontmatter.image" class="flex-xcc item-img">
         <img
           :data-src="next.frontmatter.image"
           :alt="next.title"
@@ -65,15 +65,15 @@ export default {
       transform scale3d(1.01, 1.01, 1)
       transition all .5s ease-in-out
     .item-img
-      width 30%
+      flex 1 0 35%
       min-height ($listCardHeight / 2)
       max-height 12rem
       overflow hidden
       .img
         width auto
     .item-content
-      flex 1 0 60%
-      padding .5rem 1rem
+      padding 1rem
+      width 100%
       .content-title
         font-size 1.3rem
         color $titleColor

@@ -6,12 +6,12 @@
   >
     <h1 class="cover-title">
       <img
-        v-if="logoImg"
-        :data-src="logoImg"
+        v-show="!coverTitle"
+        :data-src="$themeConfig.logo"
         loading="lazy"
         class="title-img lazy"
       />
-      <span v-else class="title-text">{{ $title }}</span>
+      <span v-show="coverTitle" class="title-text">{{ coverTitle }}</span>
     </h1>
     <h2 class="cover-text">{{ $site.description }}</h2>
   </section>
@@ -27,8 +27,14 @@ export default {
     }
   },
   computed: {
-    logoImg() {
-      return this.$themeConfig.logo
+    coverTitle() {
+      return this.$route.path === '/'
+        ? false
+        : this.$themeConfig.nav.find(item => {
+            return item.link === this.$route.path
+          }).text ||
+            this.$frontmatter.title ||
+            this.$title
     }
   }
 }
@@ -49,7 +55,7 @@ export default {
     .title-img
       height ($coverHeight / 5)
     .title-text
-      font-size 2rem
+      font-size 4rem
       color $whiteColor
   .cover-text
     margin-top .5rem;
