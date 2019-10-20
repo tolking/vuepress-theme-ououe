@@ -43,6 +43,7 @@ module.exports = {
 
 ::: tip
 The display of the theme is determined by 
+
 **`botton chose theme` -> `defaultTheme` -> `prefers-color-scheme`**
 :::
 
@@ -99,18 +100,11 @@ postTime: {
 
 ``` js
 nav: [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Posts',
-    link: '/posts/'
-  },
-  {
-    text: 'About',
-    link: '/about/'
-  }
+  { text: 'Home', link: '/' },
+  { text: 'Posts', link: '/posts/' },
+  { text: 'Tags', link: '/tag/' },
+  { text: 'Categories', link: '/category/' },
+  { text: 'About', link: '/about/' }
   // ...
 ]
 ```
@@ -121,10 +115,7 @@ nav: [
 
 ``` js
 footer: [
-  {
-    text: 'link',
-    link: '/'
-  }
+  { text: 'link', link: '/' }
   // ...
 ]
 ```

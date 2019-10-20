@@ -62,9 +62,9 @@ module.exports = {
 
 example
 ``` js
-postsDir = 'posts'
+postsDir: 'posts'
 // or { path: permalink } `better`
-postsDir = {
+postsDir: {
   posts: 'posts/:year/:month/:day/:slug',
   other: 'other/:year/:month/:day/:slug'
 }
@@ -80,7 +80,7 @@ postsDir = {
 - Type: `function`
 - Default: 
 ``` js
-((prev, next) => {
+postsSorter: ((prev, next) => {
   const prevTime = new Date(prev.frontmatter.date).getTime()
   const nextTime = new Date(next.frontmatter.date).getTime()
   return prevTime - nextTime > 0 ? -1 : 1
@@ -93,15 +93,13 @@ postsDir = {
 
 example
 ``` js
-{
-  paginationDir: true // Enable all paging
-  // or
-  paginationDir: false // Cancel all pages
-  // or
-  paginationDir: 'posts' // Enable single paging for `posts` folder
-  // or
-  paginationDir: ['posts1', 'posts2'] // Enable multiple paging
-}
+paginationDir: true // Enable all paging
+// or
+paginationDir: false // Cancel all pages
+// or
+paginationDir: 'posts' // Enable single paging for `posts` folder
+// or
+paginationDir: ['posts1', 'posts2'] // Enable multiple paging
 ```
 
 ### paginationLimit
@@ -111,6 +109,12 @@ example
 ### paginatioPath
 - Type: `string`
 - Default: `page/`
+
+  Path to be added for paging list
+
+::: tip
+The first page will not use it
+:::
 
 ## computed
 

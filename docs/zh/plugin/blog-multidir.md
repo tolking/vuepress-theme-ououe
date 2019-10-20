@@ -72,9 +72,9 @@ module.exports = {
 
 #### example
 ``` js
-postsDir = 'posts'
+postsDir: 'posts'
 // or { path: permalink } `最佳`
-postsDir = {
+postsDir: {
   posts: 'posts/:year/:month/:day/:slug',
   other: 'other/:year/:month/:day/:slug'
 }
@@ -94,7 +94,7 @@ postsDir = {
 - 类型: `function`
 - 默认值: 
 ``` js
-((prev, next) => {
+postsSorter: ((prev, next) => {
   const prevTime = new Date(prev.frontmatter.date).getTime()
   const nextTime = new Date(next.frontmatter.date).getTime()
   return prevTime - nextTime > 0 ? -1 : 1
@@ -111,22 +111,20 @@ postsDir = {
 
 #### example
 ``` js
-{
-  paginationDir: true // 全部分页
-  // or
-  paginationDir: false // 取消全部分页
-  // or
-  paginationDir: 'posts' // 仅对 `posts` 文件夹分页
-  // or
-  paginationDir: ['posts1', 'posts2'] // 对多个文件夹分页
-}
+paginationDir: true // 全部分页
+// or
+paginationDir: false // 取消全部分页
+// or
+paginationDir: 'posts' // 仅对 `posts` 文件夹分页
+// or
+paginationDir: ['posts1', 'posts2'] // 对多个文件夹分页
 ```
 
 ### paginationLimit
 - 类型: `number`
 - 默认值: `12`
 
-每个分页的条数
+每个分页的数据条数
 
 ### paginatioPath
 - 类型: `string`
@@ -135,7 +133,7 @@ postsDir = {
 分页列表需要增加的路径
 
 ::: tip
-默认第一页是不会增加这个值的
+第一页不会增加这个值
 :::
 
 ## 全局计算属性

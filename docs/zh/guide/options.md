@@ -25,7 +25,7 @@ module.exports = {
     // 或者
     defaultTheme: { light: [6, 18], dark: [18, 6] },
   },
-  // 但你使用 defaultTheme 时，你需要增加一个如下的 postcss 插件
+  // 当你使用 defaultTheme 时，你需要增加一个如下的 postcss 插件
   postcss: {
     plugins: [
       require('css-prefers-color-scheme/postcss'),
@@ -104,18 +104,11 @@ postTime: {
 
 ``` js
 nav: [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Posts',
-    link: '/posts/'
-  },
-  {
-    text: 'About',
-    link: '/about/'
-  }
+  { text: 'Home', link: '/' },
+  { text: 'Posts', link: '/posts/' },
+  { text: 'Tags', link: '/tag/' },
+  { text: 'Categories', link: '/category/' },
+  { text: 'About', link: '/about/' }
   // ...
 ]
 ```
@@ -126,10 +119,7 @@ nav: [
 
 ``` js
 footer: [
-  {
-    text: 'link',
-    link: '/'
-  }
+  { text: 'link', link: '/' }
   // ...
 ]
 ```
