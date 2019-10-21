@@ -17,6 +17,14 @@ export default ({ Vue }) => {
         } else {
           return item.base || ''
         }
+      },
+      $isHome() {
+        return (
+          this.$localePath === this.$page.regularPath ||
+          this.$page.regularPath.startsWith(
+            '/' + this.$pluginConfig.paginatioPath
+          )
+        )
       }
     }
   })

@@ -74,6 +74,7 @@ export default {
     .item-content
       padding 1rem
       width 100%
+      max-height 10rem
       .content-title
         font-size 1.3rem
         color $titleColor
@@ -101,4 +102,8 @@ export default {
       margin-top 1rem
       &:nth-child(2)
         margin-left 0
+      .item-img
+        max-height 10rem
+      .item-content
+        max-height 8rem
 </style>
