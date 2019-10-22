@@ -6,12 +6,13 @@
   >
     <h1 class="cover-title">
       <img
-        v-if="logoImg"
-        :data-src="logoImg"
+        v-if="$themeConfig.logo"
+        v-show="$isHome"
+        :data-src="$themeConfig.logo"
         loading="lazy"
         class="title-img lazy"
       />
-      <span v-else class="title-text">{{ $title }}</span>
+      <span v-if="coverTitle" class="title-text">{{ coverTitle }}</span>
     </h1>
     <h2 class="cover-text">{{ $site.description }}</h2>
   </section>
@@ -27,8 +28,16 @@ export default {
     }
   },
   computed: {
-    logoImg() {
-      return this.$themeConfig.logo
+    coverTitle() {
+      const navItem = this.$themeConfig.nav.find(item => {
+        return item.link === this.$route.path
+      })
+
+      if (this.$isHome) {
+        return this.$themeConfig.logo ? false : this.$title
+      } else {
+        return navItem ? navItem.text : this.$frontmatter.title || this.$title
+      }
     }
   }
 }
@@ -46,13 +55,24 @@ export default {
   background-size cover
   background-position center
   .cover-title
+    width 100%
+    text-align center
     .title-img
-      height ($coverHeight / 5)
+      max-width 100%
+      max-height ($coverHeight / 5)
     .title-text
-      font-size 2rem
+      max-width 100%
+      max-height: ($coverHeight / 5)
+      font-size 4rem
       color $whiteColor
+      overflow-wrap break-word
   .cover-text
-    margin-top .5rem;
+    margin-top .5rem
     font-size 1.2rem
     color $whiteColor
+@media (max-width $phoneWidth)
+  .header-cover
+    .cover-title
+      .title-text
+        font-size 3rem
 </style>

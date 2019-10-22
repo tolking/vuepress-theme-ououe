@@ -3,7 +3,7 @@ title: vuepress-plugin-img-lazy
 description: a vuepress plugin to better supporting image lazy loading
 ---
 
-# vuepress-plugin-img-lazy
+# vuepress-plugin-img-lazy <Badge text="^1.3.7"/>
 
 ::: tip
  You don't need to make any options for this plugin. You just need to know how to use it.

@@ -5,6 +5,14 @@ module.exports = {
   dest: 'dist/',
   evergreen: true,
   theme: 'default-prefers-color-scheme',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }],
+    ['meta', { name: 'renderer', content: 'webkit' }],
+    ['meta', { name: 'force-rendering', content: 'webkit' }],
+    ['meta', { name: 'applicable-device', content: 'pc,mobile' }],
+    ['meta', { name: 'author', content: 'tolking <w13131wang@gmail.com>' }]
+  ],
   locales: {
     '/': {
       lang: 'en-US',

@@ -85,8 +85,8 @@ use `display: none`, It will not be displayed. However, you can still access it 
 :::
 
 ### image
-- 类型: `string`
-- 默认值: `''`
+- type: `string`
+- Required: `false`
 
 Pictures displayed in list and article backgrounds
 

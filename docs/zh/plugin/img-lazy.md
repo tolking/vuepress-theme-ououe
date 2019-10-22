@@ -3,7 +3,7 @@ title: vuepress-plugin-img-lazy
 description: 一个为了更好地支持图片懒加载的 vuepress 插件
 ---
 
-# vuepress-plugin-img-lazy
+# vuepress-plugin-img-lazy <Badge text="^1.3.7"/>
 
 ::: tip
 内置插件，此插件无需你做任何配置，你只需了解使用即可

@@ -64,12 +64,24 @@ export default {
         @media (prefers-color-scheme: dark)
           color $accentDarkColor
       .item-text
-        padding 0 3rem 1rem
+        padding 0 3rem .3rem
         font-size 1.4rem
         color $titleColor
+        transform translateY(-0.8rem)
         transition color .5s ease-in-out
         @media (prefers-color-scheme: dark)
           color $titleDarkColor
 .cover-list
   min-height "calc(100vh - 4.5rem - %s)" % $coverHeight
+@media (max-width $phoneWidth)
+  .tags-list
+    .list-content
+      .list-item
+        margin 1rem .8rem
+        .item-count
+          font-size 12px
+        .item-text
+          padding 0 1.5rem .3rem
+          font-size 1rem
+          transform translateY(-0.5rem)
 </style>

@@ -2,6 +2,11 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+# 1.3.8
+- fix styles without `frontmatter.image`
+- adjust the header text of the list page
+- optimizing the tags styles
+
 ## 1.3.7
 - optimizing styles
 - change the `TagsList` sort
@@ -91,4 +96,4 @@ module.exports = {
 
 ## 1.0.0
 - Initial version
-- [Documentation](https://ououe.com/lib/vuepress-theme-ououe.html)
+- [Documentation](https://tolking.github.io/vuepress-theme-ououe)

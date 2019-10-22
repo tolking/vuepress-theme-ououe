@@ -1,6 +1,6 @@
 <template>
   <section class="layout">
-    <list :class="{ 'cover-list': $cover, 'home-list': isHome }"></list>
+    <list :class="{ 'cover-list': $cover, 'home-list': $isHome }"></list>
     <pagination></pagination>
   </section>
 </template>
@@ -14,16 +14,6 @@ export default {
   components: {
     List,
     Pagination
-  },
-  computed: {
-    isHome() {
-      return (
-        this.$localePath === this.$page.regularPath ||
-        this.$page.regularPath.startsWith(
-          '/' + this.$pluginConfig.paginatioPath
-        )
-      )
-    }
   }
 }
 </script>
