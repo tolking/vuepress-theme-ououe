@@ -64,7 +64,7 @@ export default {
         @media (prefers-color-scheme: dark)
           color $accentDarkColor
       .item-text
-        padding 0 3rem
+        padding 0 3rem .3rem
         font-size 1.4rem
         color $titleColor
         transform translateY(-0.8rem)
@@ -81,7 +81,7 @@ export default {
         .item-count
           font-size 12px
         .item-text
-          padding 0 1.5rem .8rem
+          padding 0 1.5rem .3rem
           font-size 1rem
           transform translateY(-0.5rem)
 </style>
