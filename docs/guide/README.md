@@ -14,7 +14,7 @@ Uses [vuepress-theme-ououe-template](https://github.com/tolking/vuepress-theme-o
 ## Features
 
 - prefers-color-scheme or custom default theme color
-- self-adaption pc and mobile
+- sadaptive computer and mobile
 - image lazy-loading
 - support for multi folder blogs
 - a filtered list of home pages
