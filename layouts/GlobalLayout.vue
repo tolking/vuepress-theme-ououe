@@ -1,7 +1,7 @@
 <template>
   <section id="global-layout">
     <app-header :class="{ 'cover-header': showCover }">
-      <header-cover v-if="showCover" :item="$cover"></header-cover>
+      <header-cover v-if="showCover" :item="$cover" />
     </app-header>
     <label
       v-if="
@@ -19,7 +19,7 @@
       />
     </label>
     <component :is="layout" />
-    <app-footer></app-footer>
+    <app-footer />
   </section>
 </template>
 

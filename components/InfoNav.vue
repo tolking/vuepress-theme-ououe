@@ -2,26 +2,16 @@
   <section v-if="last || next" class="flex-xb main info-nav">
     <router-link v-if="last" :to="last.path" class="flex-xb nav-item">
       <div v-if="last.frontmatter.image" class="flex-xcc item-img">
-        <img
-          :data-src="last.frontmatter.image"
-          :alt="last.title"
-          loading="lazy"
-          class="img lazy"
-        />
+        <img-lazy :src="last.frontmatter.image" :alt="last.title" class="img" />
       </div>
       <article class="flex-ysc item-content">
         <h2 class="content-title">{{ last.title }}</h2>
-        <div v-html="last.excerpt" class="content"></div>
+        <div v-html="last.excerpt" class="content" />
       </article>
     </router-link>
     <router-link v-if="next" :to="next.path" class="flex-xb nav-item">
       <div v-if="next.frontmatter.image" class="flex-xcc item-img">
-        <img
-          :data-src="next.frontmatter.image"
-          :alt="next.title"
-          loading="lazy"
-          class="img lazy"
-        />
+        <img-lazy :src="next.frontmatter.image" :alt="next.title" class="img" />
       </div>
       <article class="flex-ysc item-content">
         <h2 class="content-title">{{ next.title }}</h2>
@@ -32,8 +22,11 @@
 </template>
 
 <script>
+import ImgLazy from '@theme/components/ImgLazy.vue'
+
 export default {
   name: 'InfoNav',
+  components: { ImgLazy },
   computed: {
     last() {
       return this.$list.lastPost || false

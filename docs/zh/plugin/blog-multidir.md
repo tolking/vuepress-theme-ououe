@@ -6,12 +6,12 @@ description: 为 vuepress 提供多文件夹的博客插件
 # vuepress-plugin-blog-multidir
 
 ::: tip
-内置插件，此插件你可以直接引用并修改插件配置
+内置插件，此插件你可以直接使用或者修改插件配置
 :::
 
 [源码](https://github.com/tolking/vuepress-plugin-blog-multidir)
 
-## 插件使用
+## 修改配置
 
 ``` js
 module.exports = {

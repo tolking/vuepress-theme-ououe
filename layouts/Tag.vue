@@ -1,6 +1,6 @@
 <template>
   <section class="tag">
-    <tags-list :class="{ 'cover-list': $cover }"></tags-list>
+    <tags-list :class="{ 'cover-list': $cover }" />
   </section>
 </template>
 

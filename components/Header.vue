@@ -3,48 +3,40 @@
     <div class="header-navbar">
       <div class="flex-xbc main header-nav">
         <div class="nav-link">
-          <router-link :to="$localePath" class="inblock link-logo">
-            <img
-              v-if="logoImg"
-              :data-src="logoImg"
-              loading="lazy"
-              class="logo-img lazy"
-              alt="logo"
-            />
+          <router-link
+            v-if="$themeConfig.logo"
+            :to="$localePath"
+            class="inblock link-logo"
+          >
+            <img-lazy :src="$themeConfig.logo" class="logo-img" alt="logo" />
           </router-link>
           <nav class="link-list">
             <nav-link
-              v-for="(item, index) in links"
+              v-for="(item, index) in $themeConfig.nav"
               :key="index"
               :value="item"
               class="list-item"
-            ></nav-link>
+            />
           </nav>
         </div>
-        <search-box v-if="$themeConfig.search"></search-box>
+        <search-box v-if="$themeConfig.search" />
       </div>
     </div>
-    <slot></slot>
+    <slot />
   </header>
 </template>
 
 <script>
 import SearchBox from '@SearchBox'
 import NavLink from '@theme/components/NavLink.vue'
+import ImgLazy from '@theme/components/ImgLazy.vue'
 
 export default {
   name: 'Header',
   components: {
     SearchBox,
-    NavLink
-  },
-  computed: {
-    links() {
-      return this.$themeConfig.nav
-    },
-    logoImg() {
-      return this.$themeConfig.logo
-    }
+    NavLink,
+    ImgLazy
   }
 }
 </script>

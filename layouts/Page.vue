@@ -1,6 +1,6 @@
 <template>
   <section class="page">
-    <info></info>
+    <info />
   </section>
 </template>
 

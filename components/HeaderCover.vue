@@ -5,12 +5,11 @@
     class="flex-ycc header-cover"
   >
     <h1 class="cover-title">
-      <img
+      <img-lazy
         v-if="$themeConfig.logo"
         v-show="$isHome"
-        :data-src="$themeConfig.logo"
-        loading="lazy"
-        class="title-img lazy"
+        :src="$themeConfig.logo"
+        class="title-img"
       />
       <span v-if="coverTitle" class="title-text">{{ coverTitle }}</span>
     </h1>
@@ -19,8 +18,11 @@
 </template>
 
 <script>
+import ImgLazy from '@theme/components/ImgLazy.vue'
+
 export default {
   name: 'HeaderCover',
+  components: { ImgLazy },
   props: {
     item: {
       type: String,

@@ -1,10 +1,14 @@
 import themeConfig from './lib/themeConfig'
+import imgLazy from '@dynamic/imgLazy'
 
 export default ({ Vue }) => {
   Vue.mixin({
     computed: {
       $themeConfig() {
         return Object.assign(themeConfig, this.$site.themeConfig)
+      },
+      $imgLazyConfig() {
+        return imgLazy
       },
       $cover() {
         const item = this.$themeConfig.cover
