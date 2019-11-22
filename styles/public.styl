@@ -66,13 +66,27 @@ select
     input
       left 0 !important
 
+// 页面过渡动画
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .2s;
+}
+.fade-transform-enter {
+  opacity: 0;
+  transform: scale(.99);
+}
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: scale(1.01);
+}
+
 .global-ui
   .go-to-top
     z-index 100
   // pwa
   .sw-update-popup
     border-color $accentColor
-    background $bgColor
+    background $bgColor !important
     button
       color #fff
       background-color $accentColor
