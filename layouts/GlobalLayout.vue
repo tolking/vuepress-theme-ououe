@@ -1,7 +1,7 @@
 <template>
   <section id="global-layout">
     <app-header :class="{ 'cover-header': showCover }">
-      <header-cover v-if="showCover" :item="$cover"></header-cover>
+      <header-cover v-if="showCover" :item="$cover" />
     </app-header>
     <label
       v-if="
@@ -18,8 +18,10 @@
         :checked="colorScheme.scheme === 'dark'"
       />
     </label>
-    <component :is="layout" />
-    <app-footer></app-footer>
+    <transition name="fade-transform" mode="out-in" appear>
+      <component :is="layout" />
+    </transition>
+    <app-footer />
   </section>
 </template>
 
@@ -138,6 +140,7 @@ export default {
 <style lang="stylus" scoped>
 #global-layout
   min-height 100vh
+  overflow hidden
   background $bgColor
   transition all .5s ease-in-out
   @media (prefers-color-scheme: dark)

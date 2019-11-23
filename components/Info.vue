@@ -4,13 +4,13 @@
     :class="{ 'no-bg': !$themeConfig.backgroundImage || !$frontmatter.image }"
     class="info"
   >
-    <info-content></info-content>
-    <info-nav></info-nav>
+    <info-content />
+    <info-nav />
     <Vssue
       v-if="$themeConfig.useVssue && $list.total"
       title="comment"
       class="main"
-    ></Vssue>
+    />
   </section>
 </template>
 

@@ -1,15 +1,15 @@
 <template>
   <footer class="footer">
-    <nav v-if="links" class="link-list">
+    <nav v-if="$themeConfig.footer" class="link-list">
       <nav-link
-        v-for="(item, index) in links"
+        v-for="(item, index) in $themeConfig.footer"
         :key="index"
         :value="item"
         class="list-item"
-      ></nav-link>
+      />
     </nav>
     <router-link :to="$localePath" class="copyright">{{
-      $site.title + ' &copy; ' + year
+      $site.title + ' &copy; ' + new Date().getFullYear()
     }}</router-link>
   </footer>
 </template>
@@ -21,14 +21,6 @@ export default {
   name: 'Footer',
   components: {
     NavLink
-  },
-  computed: {
-    links() {
-      return this.$themeConfig.footer
-    },
-    year() {
-      return new Date().getFullYear()
-    }
   }
 }
 </script>

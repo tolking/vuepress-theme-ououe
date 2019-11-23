@@ -8,12 +8,7 @@
       class="flex-y list-item"
     >
       <div v-if="item.frontmatter.image" class="flex-xcc item-img">
-        <img
-          :data-src="item.frontmatter.image"
-          :alt="item.title"
-          loading="lazy"
-          class="img lazy"
-        />
+        <img-lazy :src="item.frontmatter.image" :alt="item.title" class="img" />
       </div>
       <article class="flex-yb item-content">
         <div v-if="getCategories(item.frontmatter)" class="content-categories">
@@ -26,7 +21,7 @@
           </router-link>
         </div>
         <h2 class="content-title">{{ item.title }}</h2>
-        <div v-html="item.excerpt" class="content"></div>
+        <div v-html="item.excerpt" class="content" />
         <div v-if="getTags(item.frontmatter)" class="content-tags">
           <router-link
             v-for="(item, index) in getTags(item.frontmatter)"
@@ -43,9 +38,11 @@
 
 <script>
 import { getCategories, getTags } from '@theme/lib/util'
+import ImgLazy from '@theme/components/ImgLazy.vue'
 
 export default {
   name: 'List',
+  components: { ImgLazy },
   methods: {
     getCategories(item) {
       return getCategories(item)

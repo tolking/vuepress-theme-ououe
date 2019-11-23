@@ -7,6 +7,7 @@ module.exports = {
     '@vuepress/plugin-nprogress',
     '@vuepress/last-updated',
     'blog-multidir',
-    'img-lazy'
+    'img-lazy',
+    ['reading-progress', { readingDir: /[^/]+$/ }]
   ]
 }

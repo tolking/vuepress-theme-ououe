@@ -1,7 +1,7 @@
 <template>
   <section class="layout">
     <list :class="{ 'cover-list': $cover, 'home-list': $isHome }"></list>
-    <pagination></pagination>
+    <pagination />
   </section>
 </template>
 

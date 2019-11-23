@@ -6,12 +6,12 @@ description: Build your blog through multiple folders for vuepress
 # vuepress-plugin-blog-multidir
 
 ::: tip
-You can modify the plugin options
+You can modify the plugin options, or just use
 :::
 
 [Source code](https://github.com/tolking/vuepress-plugin-blog-multidir)
 
-## Usage
+## Modify
 
 ``` js
 module.exports = {
@@ -23,8 +23,6 @@ module.exports = {
   ]
 }
 ```
-
-[ Vuepress documentation](https://vuepress.vuejs.org/plugin/using-a-plugin.html)
 
 ## Options
 

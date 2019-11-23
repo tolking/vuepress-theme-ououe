@@ -53,8 +53,9 @@ module.exports = {
             'options'
           ],
           '/plugin/': [
-            'blog-multidir',
-            'img-lazy'
+            ['blog-multidir', 'blog-multidir'],
+            ['img-lazy', 'img-lazy'],
+            ['reading-progress', 'reading-progress']
           ]
         }
       },
@@ -81,11 +82,16 @@ module.exports = {
             ['options', '配置']
           ],
           '/zh/plugin/': [
-            'blog-multidir',
-            'img-lazy'
+            ['blog-multidir', 'blog-multidir'],
+            ['img-lazy', 'img-lazy'],
+            ['reading-progress', 'reading-progress']
           ]
         }
       }
     }
-  }
+  },
+  plugins: [
+    'img-lazy',
+    'reading-progress'
+  ]
 }
