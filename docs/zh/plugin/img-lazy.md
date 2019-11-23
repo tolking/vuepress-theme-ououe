@@ -30,14 +30,14 @@ description: 一个为了更好地支持图片懒加载的 vuepress 插件
 ## 修改配置
 
 ::: tip
-在 `1.3.9` 以上的版本时，你可以同时控制 markdown 文档与主题的图片
+在 `1.4.0` 以上的版本时，你可以同时控制 markdown 文档与主题的图片
 :::
 
 ``` js
 module.exports = {
   plugins: [
     [
-      'blog-multidir',
+      'img-lazy',
       { /* 配置 */ }
     ]
   ]

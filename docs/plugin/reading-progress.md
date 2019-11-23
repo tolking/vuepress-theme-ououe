@@ -3,10 +3,20 @@ title: vuepress-plugin-reading-progress
 description: add reading progress bar for vuepress
 ---
 
-# vuepress-plugin-reading-progress <Badge text="^1.3.9"/>
+# vuepress-plugin-reading-progress <Badge text="^1.4.0"/>
 
 ::: tip
 You can modify the plugin options, or just use
+
+*or disable the plugin*
+
+``` js
+module.exports = {
+  plugins: [
+    ['reading-progress', false]
+  ]
+}
+```
 :::
 
 [Source code](https://github.com/tolking/vuepress-plugin-reading-progress)
@@ -27,7 +37,7 @@ module.exports = {
 ## Options
 
 ::: tip
-The default options of the theme is
+The default options of the theme is (display the reading progress bar only on the posts page)
 
 ``` js
 module.exports = {

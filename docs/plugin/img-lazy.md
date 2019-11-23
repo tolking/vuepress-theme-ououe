@@ -31,14 +31,14 @@ You need to know how to use it.
 ## Modify
 
 ::: tip
-You can control the img of markdown and theme (^1.3.9)
+You can control the img of markdown and theme (^1.4.0)
 :::
 
 ``` js
 module.exports = {
   plugins: [
     [
-      'blog-multidir',
+      'img-lazy',
       { /* options */ }
     ]
   ]

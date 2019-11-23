@@ -3,10 +3,20 @@ title: vuepress-plugin-reading-progress
 description: 为 vuepress 增加阅读进度条
 ---
 
-# vuepress-plugin-reading-progress <Badge text="^1.3.9"/>
+# vuepress-plugin-reading-progress <Badge text="^1.4.0"/>
 
 ::: tip
 内置插件，此插件你可以直接使用或者修改插件配置
+
+*或者禁用这个插件*
+
+``` js
+module.exports = {
+  plugins: [
+    ['reading-progress', false]
+  ]
+}
+```
 :::
 
 [源码](https://github.com/tolking/vuepress-plugin-reading-progress)
@@ -27,7 +37,7 @@ module.exports = {
 ## 配置
 
 ::: tip
-主题采用的默认配置为
+主题采用的默认配置为（仅在文章详情页面显示阅读进度条）
 
 ``` js
 module.exports = {
