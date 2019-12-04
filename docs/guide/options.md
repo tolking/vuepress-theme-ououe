@@ -90,9 +90,26 @@ Number of pages Pagination
 ``` js
 postTime: {
   createTime: 'Create Time',
-  lastUpdated: 'Last Updated'
+  lastUpdated: 'Last Updated',
+  options: { dateStyle: 'medium' }
 }
 ```
+
+Time displayed at the bottom of the posts pages
+
+::: tip
+#### createTime / lastUpdated
+- Type: `string`, `boolean(false)`
+- Default: `Create Time / Last Updated`
+
+using `false` will not display time
+
+#### options <Badge text="^1.4.1"/>
+- Type: `object`
+- Default: `{ dateStyle: 'medium' }`
+
+Config of format time [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+:::
 
 ### nav
 - Type: `array`

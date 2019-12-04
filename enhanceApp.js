@@ -1,10 +1,11 @@
-import themeConfig from './lib/themeConfig'
+import themeConfig from '@theme/lib/themeConfig'
+import { objectDeepMerge } from '@theme/lib/util'
 
 export default ({ Vue }) => {
   Vue.mixin({
     computed: {
       $themeConfig() {
-        return Object.assign(themeConfig, this.$site.themeConfig)
+        return objectDeepMerge(themeConfig, this.$site.themeConfig)
       },
       $cover() {
         const item = this.$themeConfig.cover

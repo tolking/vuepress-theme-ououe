@@ -2,12 +2,15 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
-# 1.4.0
+## 1.4.1
+- add options for `postTime`
+
+## 1.4.0
 - add transition animation
 - control the img of the theme through the `vuepress-plugin-img-lazy` config
 - add [vuepress-plugin-reading-progress](https://github.com/tolking/vuepress-plugin-reading-progress)
 
-# 1.3.8
+## 1.3.8
 - fix styles without `frontmatter.image`
 - adjust the header text of the list page
 - optimizing the tags styles

@@ -93,10 +93,27 @@ cover: {
 
 ``` js
 postTime: {
-  createTime: '创建时间',
-  lastUpdated: '更新时间'
+  createTime: 'Create Time',
+  lastUpdated: 'Last Updated',
+  options: { dateStyle: 'medium' }
 }
 ```
+
+显示在文章底部的时间
+
+::: tip
+#### createTime / lastUpdated
+- 类型: `string`, `boolean(false)`
+- 默认值: `Create Time / Last Updated`
+
+显示的文本，使用 `false` 将不会显示时间
+
+#### options <Badge text="^1.4.1"/>
+- 类型: `object`
+- 默认值: `{ dateStyle: 'medium' }`
+
+格式化时间的配置 [参考](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+:::
 
 ### nav
 - 类型: `array`
