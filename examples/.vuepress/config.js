@@ -12,10 +12,16 @@ module.exports = {
     search: true,
     backgroundImage: false,
     pageGroup: 5,
-    postTime: {
-      createTime: 'Create Time',
-      lastUpdated: 'Last Updated'
-    },
+    // postTime: {
+    //   createTime: 'Create Time',
+    //   lastUpdated: 'Last Updated',
+    //   options: {
+    //     dateStyle: 'full',
+    //     timeStyle: 'short',
+    //     hour12: false,
+    //     weekday: 'long'
+    //   }
+    // },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Posts', link: '/posts/' },

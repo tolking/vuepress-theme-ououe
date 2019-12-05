@@ -1,6 +1,6 @@
 module.exports = {
   layoutDir: 'layouts',
-  globalLayout: '/layouts/GlobalLayout.vue',
+  globalLayout: '/layouts/GlobalLayout',
   plugins: [
     '@vuepress/back-to-top',
     '@vuepress/search',

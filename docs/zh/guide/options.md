@@ -93,10 +93,27 @@ cover: {
 
 ``` js
 postTime: {
-  createTime: '创建时间',
-  lastUpdated: '更新时间'
+  createTime: 'Create Time',
+  lastUpdated: 'Last Updated',
+  options: { dateStyle: 'medium' }
 }
 ```
+
+显示在文章底部的时间
+
+::: tip
+#### createTime / lastUpdated
+- 类型: `string`, `boolean(false)`
+- 默认值: `Create Time / Last Updated`
+
+显示的文本，使用 `false` 将不会显示时间
+
+#### options <Badge text="^1.4.1"/>
+- 类型: `object`
+- 默认值: `{ dateStyle: 'medium' }`
+
+格式化时间的配置 [参考](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+:::
 
 ### nav
 - 类型: `array`
@@ -124,7 +141,7 @@ footer: [
 ]
 ```
 
-### useVssue <Badge text="^1.1.1"/>
+### useVssue <Badge text="^1.4.1"/>
 - 类型: `boolean`
 - 默认值: `false`
 
@@ -134,6 +151,24 @@ footer: [
 **在使用之前你需要安装它**
 
 前往 [vssue](https://vssue.js.org/guide/vuepress.html) 了解如何使用
+
+然后你可以在 frontmatter 中配置参数
+
+``` md
+---
+vssue-title: vssue-title
+vssue-id: vssue-id
+---
+```
+
+#### vssue-title
+- 类型: `string`
+- 默认值: 与 title 保持一致
+- 可省略
+
+#### vssue-id
+- 类型: `string`
+- 可省略
 :::
 
 ## 其它配置

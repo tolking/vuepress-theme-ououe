@@ -38,7 +38,9 @@ export default {
       if (this.$isHome) {
         return this.$themeConfig.logo ? false : this.$title
       } else {
-        return navItem ? navItem.text : this.$frontmatter.title || this.$title
+        return (
+          (navItem && navItem.text) || this.$frontmatter.title || this.$title
+        )
       }
     }
   }

@@ -90,9 +90,26 @@ Number of pages Pagination
 ``` js
 postTime: {
   createTime: 'Create Time',
-  lastUpdated: 'Last Updated'
+  lastUpdated: 'Last Updated',
+  options: { dateStyle: 'medium' }
 }
 ```
+
+Time displayed at the bottom of the posts pages
+
+::: tip
+#### createTime / lastUpdated
+- Type: `string`, `boolean(false)`
+- Default: `Create Time / Last Updated`
+
+using `false` will not display time
+
+#### options <Badge text="^1.4.1"/>
+- Type: `object`
+- Default: `{ dateStyle: 'medium' }`
+
+Config of format time [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+:::
 
 ### nav
 - Type: `array`
@@ -120,7 +137,7 @@ footer: [
 ]
 ```
 
-### useVssue <Badge text="^1.1.1"/>
+### useVssue <Badge text="^1.4.1"/>
 - Type: `boolean`
 - Default: `false`
 
@@ -130,6 +147,24 @@ Use `vssue` for comment system
 **You must install it before using it**
 
 How to use [vssue](https://vssue.js.org/guide/vuepress.html)
+
+then, in frontmatter
+
+``` md
+---
+vssue-title: vssue-title
+vssue-id: vssue-id
+---
+```
+
+#### vssue-title
+- Type: `string`
+- Default: as same as title
+- Required: `false`
+
+#### vssue-id
+- Type: `string`
+- Required: `false`
 :::
 
 ## Other

@@ -26,18 +26,24 @@
     </div>
     <Content class="content" />
     <div v-if="postTime" class="content-time">
-      <time v-if="createTime" datetime="2019-02-22" class="time-text">{{
-        postTime.createTime + ': ' + createTime
-      }}</time>
-      <time v-if="lastUpdated" datetime="2019-02-22" class="time-text">{{
-        postTime.lastUpdated + ': ' + lastUpdated
-      }}</time>
+      <time
+        v-if="postTime.createTime && createTime"
+        :datetime="createTime"
+        class="time-text"
+        >{{ postTime.createTime + ': ' + createTime }}
+      </time>
+      <time
+        v-if="postTime.lastUpdated && lastUpdated"
+        :datetime="lastUpdated"
+        class="time-text"
+        >{{ postTime.lastUpdated + ': ' + lastUpdated }}
+      </time>
     </div>
   </article>
 </template>
 
 <script>
-import { getCategories, getTags, formatDate } from '@theme/lib/util'
+import { getCategories, getTags } from '@theme/lib/util'
 
 export default {
   name: 'InfoContent',
@@ -49,16 +55,20 @@ export default {
       return getTags(this.$frontmatter)
     },
     createTime() {
-      return this.$frontmatter.date && formatDate(this.$frontmatter.date)
+      return this.formatDate(this.$frontmatter.date)
     },
     lastUpdated() {
-      return (
-        this.$page.lastUpdated &&
-        formatDate(this.$page.lastUpdated.split(' ')[0])
-      )
+      return this.formatDate(this.$page.lastUpdated)
     },
     postTime() {
       return this.$themeConfig.postTime
+    }
+  },
+  methods: {
+    formatDate(date) {
+      return (
+        date && new Date(date).toLocaleString(this.$lang, this.postTime.options)
+      )
     }
   }
 }
