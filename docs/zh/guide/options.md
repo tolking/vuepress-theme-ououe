@@ -141,7 +141,7 @@ footer: [
 ]
 ```
 
-### useVssue <Badge text="^1.1.1"/>
+### useVssue <Badge text="^1.4.1"/>
 - 类型: `boolean`
 - 默认值: `false`
 
@@ -151,6 +151,24 @@ footer: [
 **在使用之前你需要安装它**
 
 前往 [vssue](https://vssue.js.org/guide/vuepress.html) 了解如何使用
+
+然后你可以在 frontmatter 中配置参数
+
+``` md
+---
+vssue-title: vssue-title
+vssue-id: vssue-id
+---
+```
+
+#### vssue-title
+- 类型: `string`
+- 默认值: 与 title 保持一致
+- 可省略
+
+#### vssue-id
+- 类型: `string`
+- 可省略
 :::
 
 ## 其它配置

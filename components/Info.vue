@@ -8,7 +8,8 @@
     <info-nav />
     <Vssue
       v-if="$themeConfig.useVssue && $list.total"
-      title="comment"
+      :title="vssueTitle"
+      :issue-id="vssueId"
       class="main"
     />
   </section>
@@ -29,6 +30,14 @@ export default {
       return this.$themeConfig.backgroundImage && this.$frontmatter.image
         ? { 'background-image': `url(${this.$frontmatter.image})` }
         : ''
+    },
+    vssueTitle() {
+      return (
+        this.$frontmatter['vssue-title'] || this.$frontmatter.title || undefined
+      )
+    },
+    vssueId() {
+      return this.$frontmatter['vssue-id'] || undefined
     }
   }
 }

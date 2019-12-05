@@ -137,7 +137,7 @@ footer: [
 ]
 ```
 
-### useVssue <Badge text="^1.1.1"/>
+### useVssue <Badge text="^1.4.1"/>
 - Type: `boolean`
 - Default: `false`
 
@@ -147,6 +147,24 @@ Use `vssue` for comment system
 **You must install it before using it**
 
 How to use [vssue](https://vssue.js.org/guide/vuepress.html)
+
+then, in frontmatter
+
+``` md
+---
+vssue-title: vssue-title
+vssue-id: vssue-id
+---
+```
+
+#### vssue-title
+- Type: `string`
+- Default: as same as title
+- Required: `false`
+
+#### vssue-id
+- Type: `string`
+- Required: `false`
 :::
 
 ## Other
