@@ -4,6 +4,7 @@
 
 ## 1.4.1
 - add options for `postTime`
+- fix vssue bug and styles
 
 ## 1.4.0
 - add transition animation
