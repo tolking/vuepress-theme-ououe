@@ -29,14 +29,12 @@
 <script>
 import SearchBox from '@SearchBox'
 import NavLink from '@theme/components/NavLink.vue'
-import ImgLazy from '@theme/components/ImgLazy.vue'
 
 export default {
   name: 'Header',
   components: {
     SearchBox,
-    NavLink,
-    ImgLazy
+    NavLink
   }
 }
 </script>

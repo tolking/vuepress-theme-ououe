@@ -2,6 +2,9 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.4.2
+- fix styles
+
 ## 1.4.1
 - add options for `postTime`
 - fix vssue bug and styles

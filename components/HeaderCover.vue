@@ -18,11 +18,8 @@
 </template>
 
 <script>
-import ImgLazy from '@theme/components/ImgLazy.vue'
-
 export default {
   name: 'HeaderCover',
-  components: { ImgLazy },
   props: {
     item: {
       type: String,

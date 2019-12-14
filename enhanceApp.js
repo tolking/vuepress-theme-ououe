@@ -1,7 +1,9 @@
 import themeConfig from '@theme/lib/themeConfig'
 import { objectDeepMerge } from '@theme/lib/util'
+import ImgLazy from 'vuepress-plugin-img-lazy/ImgLazy'
 
 export default ({ Vue }) => {
+  Vue.component(ImgLazy.name, ImgLazy)
   Vue.mixin({
     computed: {
       $themeConfig() {

@@ -38,11 +38,9 @@
 
 <script>
 import { getCategories, getTags } from '@theme/lib/util'
-import ImgLazy from '@theme/components/ImgLazy.vue'
 
 export default {
   name: 'List',
-  components: { ImgLazy },
   methods: {
     getCategories(item) {
       return getCategories(item)

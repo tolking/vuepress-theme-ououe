@@ -22,11 +22,8 @@
 </template>
 
 <script>
-import ImgLazy from '@theme/components/ImgLazy.vue'
-
 export default {
   name: 'InfoNav',
-  components: { ImgLazy },
   computed: {
     last() {
       return this.$list.lastPost || false

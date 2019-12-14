@@ -25,7 +25,9 @@ You need to know how to use it.
 <!-- or -->
 ![img](img.jpg =500x300) <!-- better -->
 <!-- or -->
-<img loading="lazy" data-src="img.jpg" class="lazy">
+<template>
+  <img-lazy src="img.jpg" />
+<template>
 ```
 
 ## Modify
