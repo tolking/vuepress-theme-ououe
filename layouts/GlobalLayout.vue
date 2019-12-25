@@ -19,7 +19,7 @@
       />
     </label>
     <transition name="fade-transform" mode="out-in" appear>
-      <component :is="layout" />
+      <component :is="layout" :key="$page.path" />
     </transition>
     <app-footer />
   </section>
@@ -65,9 +65,14 @@ export default {
   },
   computed: {
     layout() {
+      const layout = this.$frontmatter.layout
       if (this.$page.path) {
-        if (this.$frontmatter.layout) {
-          return this.$frontmatter.layout
+        if (
+          layout &&
+          (this.$vuepress.getLayoutAsyncComponent(layout) ||
+            this.$vuepress.getVueComponent(layout))
+        ) {
+          return layout
         }
         return 'Layout'
       }
