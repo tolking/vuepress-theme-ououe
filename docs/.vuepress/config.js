@@ -44,7 +44,7 @@ module.exports = {
         nav: [
           { text: 'Home', link: '/' },
           { text: 'Guide', link: '/guide/' },
-          { text: 'Plugin', link: '/plugin/blog-multidir' }
+          { text: 'Plugin', link: '/plugin/' }
         ],
         sidebar: {
           '/guide/': [
@@ -53,6 +53,7 @@ module.exports = {
             'options'
           ],
           '/plugin/': [
+            '',
             ['blog-multidir', 'blog-multidir'],
             ['img-lazy', 'img-lazy'],
             ['reading-progress', 'reading-progress']
@@ -73,7 +74,7 @@ module.exports = {
         nav: [
           { text: '主页', link: '/zh/' },
           { text: '指南', link: '/zh/guide/' },
-          { text: '插件', link: '/zh/plugin/blog-multidir' }
+          { text: '插件', link: '/zh/plugin/' }
         ],
         sidebar: {
           '/zh/guide/': [
@@ -82,6 +83,7 @@ module.exports = {
             ['options', '配置']
           ],
           '/zh/plugin/': [
+            ['', '插件'],
             ['blog-multidir', 'blog-multidir'],
             ['img-lazy', 'img-lazy'],
             ['reading-progress', 'reading-progress']

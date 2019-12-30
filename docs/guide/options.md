@@ -6,6 +6,7 @@ description: options of the vuepress-theme-ououe
 # Options
 
 ### defaultTheme <Badge text="^1.3.6"/>
+
 - Type: `string`, `object`
 - Required: `false`
 
@@ -36,6 +37,7 @@ module.exports = {
 ```
 
 ### showThemeButton <Badge text="^1.3.6"/>
+
 - Type: `boolean`
 - Default: `true`
 
@@ -48,6 +50,7 @@ The display of the theme is determined by
 :::
 
 ### cover
+
 - Type: `string`, `object`
 - Default: `''`
 
@@ -64,26 +67,31 @@ cover: {
 Show in the header of the index page
 
 ### logo
+
 - Type: `string`
 - Default: `''`
 
 ### search
+
 - Type: `boolean`
 - Default: `true`
 
 ### backgroundImage <Badge text="^1.3.4"/>
+
 - Type: `boolean`
 - Default: `true`
 
 background image on posts pages
 
 ### pageGroup
+
 - Type: `number`
 - Default: `5`
 
 Number of pages Pagination
 
 ### postTime
+
 - Type: `object`
 - Default:
 
@@ -99,12 +107,14 @@ Time displayed at the bottom of the posts pages
 
 ::: tip
 #### createTime / lastUpdated
+
 - Type: `string`, `boolean(false)`
 - Default: `Create Time / Last Updated`
 
 using `false` will not display time
 
 #### options <Badge text="^1.4.1"/>
+
 - Type: `object`
 - Default: `{ dateStyle: 'medium' }`
 
@@ -112,6 +122,7 @@ Config of format time [options](https://developer.mozilla.org/en-US/docs/Web/Jav
 :::
 
 ### nav
+
 - Type: `array`
 - Default: `[]`
 
@@ -127,6 +138,7 @@ nav: [
 ```
 
 ### footer
+
 - Type: `array`
 - Default: `[]`
 
@@ -138,6 +150,7 @@ footer: [
 ```
 
 ### useVssue <Badge text="^1.4.1"/>
+
 - Type: `boolean`
 - Default: `false`
 
@@ -158,11 +171,13 @@ vssue-id: vssue-id
 ```
 
 #### vssue-title
+
 - Type: `string`
 - Default: as same as title
 - Required: `false`
 
 #### vssue-id
+
 - Type: `string`
 - Required: `false`
 :::

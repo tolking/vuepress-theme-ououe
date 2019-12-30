@@ -24,41 +24,51 @@ module.exports = {
 }
 ```
 
+[Vuepress documentation](https://vuepress.vuejs.org/zh/plugin/using-a-plugin.html)
+
 ## Options
 
 ### aliasesRoot
+
 - Type: `string`
 - default: `:root`
 
-  **Can't have the same name as your folder**  (For internal use only).
+**Can't have the same name as your folder**  (For internal use only).
 
 ### categoryIndexPageUrl
+
 - Type: `string`
 - Default: `/category/`
 
 ### tagIndexPageUrl
+
 - Type: `string`
 - Default: `/tag/`
 
 ### categoryLayout
+
 - Type: `string`
 - Default: `Tag`
 
 ### tagLayout
+
 - Type: `string`
 - Default: `Tag`
 
 ### postLayout
+
 - Type: `string`
 - Default: `Page`
 
 ### postsDir
+
 - Type: `string`, `array`, `Object`
 - Default: `posts`
 
-  **Configures the permalink generated for you folder.**
+**Configures the permalink generated for you folder.**
 
 example
+
 ``` js
 postsDir: 'posts'
 // or { path: permalink } `better`
@@ -69,14 +79,17 @@ postsDir: {
 ```
 
 ### permalink
+
 - Type: `string`, `boolean(false)`
 - Default: `false`
 
-  See [Permalinks](https://vuepress.vuejs.org/guide/permalinks.html#template-variables) for a list of valid variables.
+See [Permalinks](https://vuepress.vuejs.org/guide/permalinks.html#template-variables) for a list of valid variables.
 
 ### postsSorter
+
 - Type: `function`
-- Default: 
+- Default:
+
 ``` js
 postsSorter: ((prev, next) => {
   const prevTime = new Date(prev.frontmatter.date).getTime()
@@ -86,10 +99,12 @@ postsSorter: ((prev, next) => {
 ```
 
 ### paginationDir
+
 - Type: `boolean`, `string`, `array`
 - Default: `true`
 
 example
+
 ``` js
 paginationDir: true // Enable all paging
 // or
@@ -101,10 +116,12 @@ paginationDir: ['posts1', 'posts2'] // Enable multiple paging
 ```
 
 ### paginationLimit
+
 - Type: `number`
 - Default: `12`
 
 ### paginatioPath
+
 - Type: `string`
 - Default: `page/`
 
@@ -124,23 +141,24 @@ you can create a [issues](https://github.com/tolking/vuepress-theme-ououe/issues
 
 ### $pluginConfig
 
-  Plugin config information
+Plugin config information
 
 ### $tags
 
-  Page information sorted by tags
+Page information sorted by tags
 
 ### $categories
 
-  Page information sorted by categories
+Page information sorted by categories
 
 ### $lists
 
-  Page information sorted by folders
+Page information sorted by folders
 
 ### $list
 
-  If you are in the pagination page. you can get
+If you are in the pagination page. you can get
+
 ``` js
 {
   pageKeys,
@@ -150,7 +168,8 @@ you can create a [issues](https://github.com/tolking/vuepress-theme-ououe/issues
 }
 ```
 
-  or If you are in the post page. you can get
+or If you are in the post page. you can get
+
 ``` js
 {
   index,
@@ -160,4 +179,5 @@ you can create a [issues](https://github.com/tolking/vuepress-theme-ououe/issues
   nextPost
 }
 ```
-  from `this.$list`
+
+from `this.$list`

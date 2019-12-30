@@ -49,6 +49,7 @@ module.exports = {
 ## 配置
 
 ### useLoading
+
 - Type: `Boolben`
 - Default: `true`
 
@@ -59,6 +60,7 @@ module.exports = {
 :::
 
 ### selector
+
 - Type: `string`
 - Default: `lazy`
 

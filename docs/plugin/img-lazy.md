@@ -9,7 +9,6 @@ description: a vuepress plugin to better supporting image lazy loading
 You can modify the plugin options, or just use
 :::
 
-
 > base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
 
 [Live Demo](https://tolking.github.io/vuepress-plugin-img-lazy/preview.html)
@@ -50,6 +49,7 @@ module.exports = {
 ## Options
 
 ### useLoading
+
 - Type: `Boolben`
 - Default: `true`
 
@@ -60,6 +60,7 @@ In general, using native lazy loading will load more pictures than not using
 :::
 
 ### selector
+
 - Type: `string`
 - Default: `lazy`
 

@@ -26,6 +26,7 @@ module.exports = {
 ```
 
 ## Structure directores
+
 ``` sh
 +- blog
   +- .vuepress
@@ -49,6 +50,7 @@ module.exports = {
 layout: Page
 ---
 ```
+
 :::
 
 ## frontmatter
@@ -63,16 +65,17 @@ date: 2019-02-22
 tags:
   - vuepress
   - vuepress-themt-ououe
-categories: 
+categories:
   - blog
   - theme
 <!-- or -->
 tag: vuepress
 category: blog
---- 
+---
 ```
 
 ### display
+
 - type: `string`
 - Required: `false`
 
@@ -85,6 +88,7 @@ use `display: none`, It will not be displayed. However, you can still access it 
 :::
 
 ### image
+
 - type: `string`
 - Required: `false`
 
@@ -92,7 +96,7 @@ Pictures displayed in list and article backgrounds
 
 ### Change theme
 
-```
+``` sh
 +- blog
   +- .vuepress
     +- styles
