@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-ououe",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "index.js",
   "description": "A blog theme for VuePress by tolking",
   "author": "tolking <qw13131wang@gmail.com>",
@@ -36,7 +36,7 @@
     "css-prefers-color-scheme": "^3.1.1",
     "vuepress": "^1.0.1",
     "vuepress-plugin-blog-multidir": "^1.0.5",
-    "vuepress-plugin-img-lazy": "^1.0.0",
+    "vuepress-plugin-img-lazy": "^1.0.1",
     "vuepress-plugin-reading-progress": "^1.0.8"
   },
   "devDependencies": {

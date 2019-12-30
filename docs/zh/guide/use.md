@@ -50,6 +50,7 @@ module.exports = {
 layout: Page
 ---
 ```
+
 :::
 
 ## 配置 frontmatter
@@ -64,16 +65,17 @@ date: 2019-02-22
 tags:
   - vuepress
   - vuepress-themt-ououe
-categories: 
+categories:
   - blog
   - theme
 <!-- or -->
 tag: vuepress
 category: blog
---- 
+---
 ```
 
 ### display
+
 - 类型: `string`
 - 可省略
 
@@ -86,6 +88,7 @@ category: blog
 :::
 
 ### image
+
 - 类型: `string`
 - 可省略
 
@@ -93,7 +96,7 @@ category: blog
 
 ## 修改样式
 
-```
+``` sh
 +- blog
   +- .vuepress
     +- styles

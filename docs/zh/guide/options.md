@@ -6,6 +6,7 @@ description: vuepress-theme-ououe 的主题配置
 # 主题配置
 
 ### defaultTheme <Badge text="^1.3.6"/>
+
 - 类型: `string`, `object`
 - 可省略
 
@@ -36,6 +37,7 @@ module.exports = {
 ```
 
 ### showThemeButton <Badge text="^1.3.6"/>
+
 - 类型: `boolean`
 - 默认值: `true`
 
@@ -48,6 +50,7 @@ module.exports = {
 :::
 
 ### cover
+
 - 类型: `string`, `object`
 - 默认值: `''`
 
@@ -64,30 +67,35 @@ cover: {
 ```
 
 ### logo
+
 - 类型: `string`
 - 默认值: `''`
 
 显示在列表页面 `cover` 上的图片
 
 ### search
+
 - 类型: `boolean`
 - 默认值: `true`
 
 是否显示搜索框
 
 ### backgroundImage <Badge text="^1.3.4"/>
+
 - 类型: `boolean`
 - 默认值: `true`
 
 是否显示文章页面的背景图片
 
 ### pageGroup
+
 - 类型: `number`
 - 默认值: `5`
 
 分页组件显示的分页数
 
 ### postTime
+
 - 类型: `object`
 - 默认值:
 
@@ -103,12 +111,14 @@ postTime: {
 
 ::: tip
 #### createTime / lastUpdated
+
 - 类型: `string`, `boolean(false)`
 - 默认值: `Create Time / Last Updated`
 
 显示的文本，使用 `false` 将不会显示时间
 
 #### options <Badge text="^1.4.1"/>
+
 - 类型: `object`
 - 默认值: `{ dateStyle: 'medium' }`
 
@@ -116,6 +126,7 @@ postTime: {
 :::
 
 ### nav
+
 - 类型: `array`
 - 默认值: `[]`
 
@@ -131,6 +142,7 @@ nav: [
 ```
 
 ### footer
+
 - 类型: `array`
 - 默认值: `[]`
 
@@ -142,6 +154,7 @@ footer: [
 ```
 
 ### useVssue <Badge text="^1.4.1"/>
+
 - 类型: `boolean`
 - 默认值: `false`
 
@@ -162,11 +175,13 @@ vssue-id: vssue-id
 ```
 
 #### vssue-title
+
 - 类型: `string`
 - 默认值: 与 title 保持一致
 - 可省略
 
 #### vssue-id
+
 - 类型: `string`
 - 可省略
 :::

@@ -24,53 +24,61 @@ module.exports = {
 }
 ```
 
-[ Vuepress documentation](https://vuepress.vuejs.org/zh/plugin/using-a-plugin.html)
+[Vuepress documentation](https://vuepress.vuejs.org/zh/plugin/using-a-plugin.html)
 
 ## 插件配置
 
 ### aliasesRoot
+
 - 类型: `string`
 - 默认值: `:root`
 
-**不能够有同名的文件夹（仅供内部使用）**
+**不能够有同名的文件夹**（仅供内部使用）
 
 ### categoryIndexPageUrl
+
 - 类型: `string`
 - 默认值: `/category/`
 
 配置 `类别` 的默认路径
 
 ### tagIndexPageUrl
+
 - 类型: `string`
 - 默认值: `/tag/`
 
 配置 `标签` 的默认路径
 
 ### categoryLayout
+
 - 类型: `string`
 - 默认值: `Tag`
 
 配置 `类别` 页面的引用组件
 
 ### tagLayout
+
 - 类型: `string`
 - 默认值: `Tag`
 
 配置 `标签` 页面的引用组件
 
 ### postLayout
+
 - 类型: `string`
 - 默认值: `Page`
 
 配置 `文章` 页面的引用组件
 
 ### postsDir
+
 - 类型: `string`, `Object`
 - 默认值: `posts`
 
 配置需要使用 `Permalink` 的文件夹，或者采用对象方式直接配置
 
-#### example
+例如:
+
 ``` js
 postsDir: 'posts'
 // or { path: permalink } `最佳`
@@ -81,6 +89,7 @@ postsDir: {
 ```
 
 ### permalink
+
 - 类型: `string`, `boolean(false)`
 - 默认值: `false`
 
@@ -91,8 +100,10 @@ postsDir: {
 :::
 
 ### postsSorter
+
 - 类型: `function`
-- 默认值: 
+- 默认值:
+
 ``` js
 postsSorter: ((prev, next) => {
   const prevTime = new Date(prev.frontmatter.date).getTime()
@@ -104,12 +115,14 @@ postsSorter: ((prev, next) => {
 文章列表的排序方式
 
 ### paginationDir
+
 - 类型: `boolean`, `string`, `array`
 - 默认值: `true`
 
 配置需要分页的文件夹
 
-#### example
+例如:
+
 ``` js
 paginationDir: true // 全部分页
 // or
@@ -121,12 +134,14 @@ paginationDir: ['posts1', 'posts2'] // 对多个文件夹分页
 ```
 
 ### paginationLimit
+
 - 类型: `number`
 - 默认值: `12`
 
 每个分页的数据条数
 
 ### paginatioPath
+
 - 类型: `string`
 - 默认值: `page/`
 
@@ -165,6 +180,7 @@ paginationDir: ['posts1', 'posts2'] // 对多个文件夹分页
 通过 `this.$list`
 
 在列表页面，你会获取到
+
 ``` js
 {
   pageKeys,
@@ -175,6 +191,7 @@ paginationDir: ['posts1', 'posts2'] // 对多个文件夹分页
 ```
 
 或者在文章页面，你会获取到
+
 ``` js
 {
   index,

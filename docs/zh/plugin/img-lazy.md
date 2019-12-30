@@ -24,7 +24,9 @@ description: 一个为了更好地支持图片懒加载的 vuepress 插件
 <!-- 或者 -->
 ![img](img.jpg =500x300) <!-- 最佳 -->
 <!-- 或者 -->
-<img data-src="img.jpg" loading="lazy" class="lazy">
+<template>
+  <img-lazy src="img.jpg" />
+<template>
 ```
 
 ## 修改配置
@@ -47,6 +49,7 @@ module.exports = {
 ## 配置
 
 ### useLoading
+
 - Type: `Boolben`
 - Default: `true`
 
@@ -57,6 +60,7 @@ module.exports = {
 :::
 
 ### selector
+
 - Type: `string`
 - Default: `lazy`
 

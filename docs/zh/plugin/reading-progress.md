@@ -6,9 +6,7 @@ description: 为 vuepress 增加阅读进度条
 # vuepress-plugin-reading-progress <Badge text="^1.4.0"/>
 
 ::: tip
-内置插件，此插件你可以直接使用或者修改插件配置
-
-*或者禁用这个插件*
+内置插件，此插件你可以直接使用或者修改插件配置，*或者禁用这个插件*
 
 ``` js
 module.exports = {
@@ -17,6 +15,7 @@ module.exports = {
   ]
 }
 ```
+
 :::
 
 [源码](https://github.com/tolking/vuepress-plugin-reading-progress)
@@ -46,15 +45,18 @@ module.exports = {
   ]
 }
 ```
+
 :::
 
 ### readingDir
+
 - Type: `null`, `string`, `array`, `object`, `RegExp`
 - Default: `null`
 
 筛选需要显示阅读进度条的文件
 
-example
+例如:
+
 ``` js
 {
   readingDir: null, // 将在所有页面显示阅读进度条
@@ -76,6 +78,7 @@ example
 ```
 
 ### fixed
+
 - Type: `string`
 - Default: `top`
 
@@ -86,6 +89,7 @@ example
 ## Front matter
 
 使用 `readingShow` 控制当前页面的阅读进度条显示
+
 - Type: `string`, `boolean`
 - Default: `null`
 - 支持 `top`, `bottom`, `left`, `right`, `true`, `false`
@@ -100,7 +104,7 @@ readingShow: false
 
 如果希望对样式应用简单的颜色替代
 
-```
+``` sh
 +- .vuepress
   +- styles
     +- palette.styl
@@ -114,7 +118,7 @@ $readingProgressColor = $accentColor
 $readingProgressImage = none
 ```
 
-#### 例如
+例如:
 
 ``` styl
 $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED30 30%, #3FA62E 45%, #3BB4D7 60%, #2F4D9E 75%, #71378A 80%)

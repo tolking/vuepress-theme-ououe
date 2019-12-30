@@ -6,9 +6,7 @@ description: add reading progress bar for vuepress
 # vuepress-plugin-reading-progress <Badge text="^1.4.0"/>
 
 ::: tip
-You can modify the plugin options, or just use
-
-*or disable the plugin*
+You can modify the plugin options, or just use, *or disable the plugin*
 
 ``` js
 module.exports = {
@@ -17,6 +15,7 @@ module.exports = {
   ]
 }
 ```
+
 :::
 
 [Source code](https://github.com/tolking/vuepress-plugin-reading-progress)
@@ -46,16 +45,18 @@ module.exports = {
   ]
 }
 ```
+
 :::
 
-
 ### readingDir
+
 - Type: `null`, `string`, `array`, `object`, `RegExp`
 - Default: `null`
 
 Specify regularPath that display reading progress bar
 
 example
+
 ``` js
 {
   readingDir: null, // Display reading progress bar on all pages
@@ -77,6 +78,7 @@ example
 ```
 
 ### fixed
+
 - Type: `string`
 - Default: `top`
 
@@ -87,6 +89,7 @@ set position for reading progress bar
 ## Front matter
 
 Change the reading progress bar display of the current page by use `readingShow`
+
 - Type: `string`, `boolean`
 - Default: `null`
 - one of `top`, `bottom`, `left`, `right`, `true`, `false`
@@ -101,7 +104,7 @@ readingShow: false
 
 If you wish to apply simple color overrides to the styling
 
-```
+``` sh
 +- .vuepress
   +- styles
     +- palette.styl
@@ -115,7 +118,7 @@ $readingProgressColor = $accentColor
 $readingProgressImage = none
 ```
 
-#### example
+example
 
 ``` styl
 $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED30 30%, #3FA62E 45%, #3BB4D7 60%, #2F4D9E 75%, #71378A 80%)
