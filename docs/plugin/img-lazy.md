@@ -7,6 +7,8 @@ description: a vuepress plugin to better supporting image lazy loading
 
 ::: tip
 You can modify the plugin options, or just use
+
+[Base URL](https://vuepress.vuejs.org/guide/assets.html#rBase%20URL) already included by default
 :::
 
 > base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
@@ -20,13 +22,11 @@ You need to know how to use it.
 :::
 
 ``` md
-![img](img.jpg)
+![img](/img.jpg)
 <!-- or -->
-![img](img.jpg =500x300) <!-- better -->
+![img](/img.jpg =500x300) <!-- better -->
 <!-- or -->
-<template>
-  <img-lazy src="img.jpg" />
-<template>
+<img-lazy src="/img.jpg" />
 ```
 
 ## Modify

@@ -1,7 +1,7 @@
 <template>
   <section
     v-if="item"
-    :style="{ 'background-image': `url(${item})` }"
+    :style="{ 'background-image': `url(${$withBase(item)})` }"
     class="flex-ycc header-cover"
   >
     <h1 class="cover-title">

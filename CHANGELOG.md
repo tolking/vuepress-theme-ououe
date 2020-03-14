@@ -2,6 +2,12 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.5.0
+
+- fix pwa style
+- Compatible [Base URL](https://vuepress.vuejs.org/guide/assets.html#rBase%20URL)
+- update dependencies version
+
 ## 1.4.2
 
 - fix styles
