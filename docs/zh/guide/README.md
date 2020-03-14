@@ -18,3 +18,4 @@ description: 关于 vuepress-theme-ououe
 - 图片懒加载包括 `md` 文件里面的图片
 - 支持多文件夹的博客
 - 一个筛选过的主页列表
+- 兼容 [基础路径](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%9F%BA%E7%A1%80%E8%B7%AF%E5%BE%84)

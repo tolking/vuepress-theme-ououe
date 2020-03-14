@@ -85,22 +85,22 @@ select
     z-index 100
   // pwa
   .sw-update-popup
-    border-color $accentColor
+    border-color $accentColor !important
     background $bgColor !important
     button
-      color #fff
-      background-color $accentColor
-      border-color $accentColor
+      color #fff !important
+      background-color $accentColor !important
+      border-color $accentColor !important
       &:hover
-        background-color lighten($accentColor, 10%)
+        background-color lighten($accentColor, 10%) !important
     @media (prefers-color-scheme: dark)
-      border-color $accentDarkColor
-      background $bgDarkColor
+      border-color $accentDarkColor !important
+      background $bgDarkColor !important
       button
-        background-color $accentDarkColor
-        border-color $accentDarkColor
+        background-color $accentDarkColor !important
+        border-color $accentDarkColor !important
         &:hover
-          background-color darken($accentDarkColor, 10%)
+          background-color darken($accentDarkColor, 10%) !important
 
 // scroll bar
 @media (min-width: $MQMobile)

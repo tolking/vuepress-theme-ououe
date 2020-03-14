@@ -29,35 +29,18 @@
 import AppHeader from '@theme/components/Header.vue'
 import AppFooter from '@theme/components/Footer.vue'
 import HeaderCover from '@theme/components/HeaderCover.vue'
-import Layout from '@theme/layouts/Layout.vue'
 import Page from '@theme/layouts/Page.vue'
 import Tag from '@theme/layouts/Tag.vue'
-import NotFound from '@theme/layouts/404.vue'
-
-// NOTE: This may not be the best way to fix `Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.` (on build pages)
-let components
-if (process.env.NODE_ENV === 'development') {
-  components = {
-    AppHeader,
-    AppFooter,
-    HeaderCover,
-    Layout,
-    Page,
-    Tag,
-    NotFound
-  }
-} else {
-  components = {
-    AppHeader,
-    AppFooter,
-    HeaderCover,
-    Page
-  }
-}
 
 export default {
   name: 'GlobalLayout',
-  components,
+  components: {
+    AppHeader,
+    AppFooter,
+    HeaderCover,
+    Page,
+    Tag
+  },
   data() {
     return {
       colorScheme: {}
@@ -84,8 +67,8 @@ export default {
     defaultTheme() {
       const _defaultTheme =
         (this.$themeConfig.defaultTheme &&
-          (this.$themeConfig.showThemeButton &&
-            window.localStorage.getItem('defaultTheme'))) ||
+          this.$themeConfig.showThemeButton &&
+          window.localStorage.getItem('defaultTheme')) ||
         this.$themeConfig.defaultTheme
       if (typeof _defaultTheme === 'object') {
         const hours = new Date().getHours()

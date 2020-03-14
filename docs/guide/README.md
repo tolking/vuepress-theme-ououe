@@ -18,3 +18,4 @@ Uses [vuepress-theme-ououe-template](https://github.com/tolking/vuepress-theme-o
 - image lazy-loading
 - support for multi folder blogs
 - a filtered list of home pages
+- compatible [Base URL](https://vuepress.vuejs.org/guide/assets.html#rBase%20URL)

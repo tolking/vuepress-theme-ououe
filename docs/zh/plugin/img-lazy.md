@@ -7,6 +7,8 @@ description: 一个为了更好地支持图片懒加载的 vuepress 插件
 
 ::: tip
 内置插件，此插件你可以直接使用或者修改插件配置
+
+已经默认包含 [基础路径](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%9F%BA%E7%A1%80%E8%B7%AF%E5%BE%84)
 :::
 
 > base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
@@ -20,13 +22,11 @@ description: 一个为了更好地支持图片懒加载的 vuepress 插件
 :::
 
 ``` md
-![img](img.jpg)
+![img](/img.jpg)
 <!-- 或者 -->
-![img](img.jpg =500x300) <!-- 最佳 -->
+![img](/img.jpg =500x300) <!-- 最佳 -->
 <!-- 或者 -->
-<template>
-  <img-lazy src="img.jpg" />
-<template>
+<img-lazy src="/img.jpg" />
 ```
 
 ## 修改配置
