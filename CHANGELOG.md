@@ -2,9 +2,14 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.5.1
+
+- fix vssue styles
+- fix pwa styles
+
 ## 1.5.0
 
-- fix pwa style
+- fix pwa styles
 - Compatible [Base URL](https://vuepress.vuejs.org/guide/assets.html#rBase%20URL)
 - update dependencies version
 
