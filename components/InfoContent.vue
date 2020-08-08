@@ -83,6 +83,8 @@ export default {
   @media (prefers-color-scheme: dark)
     box-shadow 0px 0px 8px $shadowDarkColor
     background $whiteDarkColor
+  @media print
+    box-shadow none
   .content-header
     padding 3rem 0 1rem
     text-align center
@@ -95,6 +97,9 @@ export default {
       @media (prefers-color-scheme: dark)
         color $blackDarkColor
         text-shadow 0 1px 5px $shadowDarkColor
+      @media print
+        color $blackColor
+        text-shadow none
   .content-tag
     .tag-list
       padding .5rem 0
@@ -114,6 +119,8 @@ export default {
   .content-time
     padding 0 3rem 2rem
     text-align right
+    @media print
+      display none
     .time-text
       display block
       font-size .9rem

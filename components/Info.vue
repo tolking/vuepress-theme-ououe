@@ -50,7 +50,13 @@ export default {
   background-size cover
   background-position center
   background-attachment fixed
+
 .no-bg
   padding-top ($headerHeight + 2.5rem)
   min-height "calc(100vh - 8.95rem - %s)" % $headerHeight
+
+@media print
+  .info, .no-bg
+    padding-top 0
+    min-height auto
 </style>

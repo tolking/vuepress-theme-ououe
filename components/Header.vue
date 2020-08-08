@@ -97,4 +97,7 @@ export default {
       display none
 .cover-header
   height $coverHeight
+@media print
+  .header
+    display none
 </style>

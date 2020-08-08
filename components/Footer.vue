@@ -43,4 +43,6 @@ export default {
     margin-top .55rem
     font-size .7rem
     color #fff
+  @media print
+    display none
 </style>
