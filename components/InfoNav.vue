@@ -96,4 +96,7 @@ export default {
         max-height 10rem
       .item-content
         max-height 8rem
+@media print
+  .info-nav
+    display none
 </style>

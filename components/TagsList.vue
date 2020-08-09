@@ -84,4 +84,10 @@ export default {
           padding 0 1.5rem .3rem
           font-size 1rem
           transform translateY(-0.5rem)
+@media print
+  .tags-list .list-content .list-item
+    box-shadow none
+    background-color transparent
+    .item-text
+      color $titleColor
 </style>

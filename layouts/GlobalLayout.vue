@@ -139,6 +139,8 @@ export default {
   transform translate(0px, .5rem)
   @media (max-width $phoneWidth)
     transform translate(0px, -5rem)
+  @media print
+    display none
 .switch-input
   position relative
   display inline-block

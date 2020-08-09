@@ -39,7 +39,3 @@ module.exports = {
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
-
-## Keywords
-
-vue vuepress blog blog-theme vuepress-theme light-theme dark-theme prefers-color-scheme

@@ -112,4 +112,7 @@ export default {
       .list-item
         margin  0 .3rem
         padding .6rem .8rem
+@media print
+  .pagination
+    display none
 </style>

@@ -2,6 +2,10 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.5.2
+
+- improve typography for print media
+
 ## 1.5.1
 
 - fix vssue styles

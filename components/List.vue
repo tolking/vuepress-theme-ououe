@@ -148,5 +148,22 @@ export default {
 @media (max-width $phoneWidth)
   .list
     .list-item
-      margin 0 0 1rem
+      margin 0 0
+@media print
+  .list .list-item
+    border-radius 0
+    box-shadow none
+    page-break-inside avoid
+    &:nth-child(2n)
+      margin-left .8rem
+    .item-img .img
+      white-space pre-wrap
+      page-break-inside avoid
+    .item-content
+      .content-categories
+      .content-tags
+        .item-text
+          color $textColor
+      .content-title
+        color $titleColor
 </style>

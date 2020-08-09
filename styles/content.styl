@@ -9,6 +9,13 @@
     transition color .5s ease-in-out
     @media (prefers-color-scheme: dark)
       color $accentDarkColor
+    @media print
+      color $accentColor
+      &[href^="http://"]::after
+      &[href^="https://"]::after
+        content " [" attr(href) "] "
+      .icon.outbound
+        display none
 
   p a code
     font-weight 400
@@ -16,6 +23,8 @@
     transition color .5s ease-in-out
     @media (prefers-color-scheme: dark)
       color: $accentDarkColor
+    @media print
+      color $accentColor
 
   kbd
     padding 0 0.15em
@@ -27,6 +36,9 @@
     @media (prefers-color-scheme: dark)
       border solid 0.15rem $borderDarkColor
       border-bottom solid 0.25rem $borderDarkColor
+    @media print
+      border solid 0.15rem $borderColor
+      border-bottom solid 0.25rem $borderColor
 
   blockquote
     font-size .9em
@@ -47,6 +59,8 @@
       transition color .5s ease-in-out
       @media (prefers-color-scheme: dark)
         color $textDarkColor
+      @media print
+        color $textColor
 
   strong
     font-weight 600
@@ -60,6 +74,10 @@
       color $titleDarkColor
     &:hover .header-anchor
       opacity: 1
+    @media print
+      color $titleColor
+      page-break-after avoid
+      page-break-before avoid
 
   h1
     margin: 2rem 0
@@ -68,6 +86,9 @@
   h2
     margin: 2rem 0 1rem
     font-size 1.65em
+    &+p
+      @media print
+        page-break-before avoid
 
   h3
     margin: 1rem 0
@@ -108,9 +129,13 @@
     transition color .5s ease-in-out
     @media (prefers-color-scheme: dark)
       color $textDarkColor
+    @media print
+      color $textColor
 
   img
     max-width: 100%
+    @media print
+      page-break-inside avoid
 
   hr
     border 0
@@ -124,6 +149,8 @@
     margin 1rem 0
     display: block
     overflow-x: auto
+    @media print
+      page-break-inside avoid
 
   tr
     border-top 1px solid $shadowColor
@@ -132,6 +159,8 @@
       background-color #f6f8fa
       @media (prefers-color-scheme: dark)
         background-color #444
+      @media print
+        background-color transparent
 
   th, td
     padding .6em 1em
@@ -141,6 +170,8 @@
     @media (prefers-color-scheme: dark)
       border 1px solid $shadowDarkColor
       color $textDarkColor
+    @media print
+      color $textColor
 
   .theme-container
     &.sidebar-open
