@@ -148,7 +148,7 @@ export default {
 @media (max-width $phoneWidth)
   .list
     .list-item
-      margin 0 0
+      margin 0 0 1rem
 @media print
   .list .list-item
     border-radius 0
