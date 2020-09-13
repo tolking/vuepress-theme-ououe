@@ -48,7 +48,7 @@ module.exports = {
 
 ## 配置
 
-### useLoading
+### useNative
 
 - Type: `Boolben`
 - Default: `true`

@@ -188,4 +188,4 @@ vssue-id: vssue-id
 
 ## 其它配置
 
-请参考 [plugin](../plugin/blog-multidir)
+请参考 [plugin](../plugin/README.md)
