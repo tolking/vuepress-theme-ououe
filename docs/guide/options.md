@@ -184,4 +184,4 @@ vssue-id: vssue-id
 
 ## Other
 
-[plugin](../plugin/README.md)
+[plugin](../plugin/blog-multidir)

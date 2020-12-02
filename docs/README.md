@@ -3,7 +3,7 @@ home: true
 heroText: vuepress-theme-ououe
 tagline: A blog theme for VuePress
 actionText: Get Started →
-actionLink: /guide/
+actionLink: /guide/use
 footer: Copyright © theme by tolking
 ---
 

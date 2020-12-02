@@ -11,8 +11,6 @@ description: 一个为了更好地支持图片懒加载的 vuepress 插件
 已经默认包含 [基础路径](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%9F%BA%E7%A1%80%E8%B7%AF%E5%BE%84)
 :::
 
-> base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
-
 [演示](https://tolking.github.io/vuepress-plugin-img-lazy/preview.html)
 
 [源码](https://github.com/tolking/vuepress-plugin-img-lazy)
@@ -49,9 +47,9 @@ module.exports = {
 ## 配置
 
 ### useNative
-
-- Type: `Boolben`
+- Type: `Boolean`
 - Default: `true`
+- Required: `false`
 
 是否使用基于原生的懒加载
 
@@ -60,8 +58,22 @@ module.exports = {
 :::
 
 ### selector
-
 - Type: `string`
 - Default: `lazy`
+- Required: `false`
 
 默认的懒加载类名
+
+### rootMargin
+- Type: `String`
+- Default: `200px`
+- Required: `false`
+
+IntersectionObserver 的 rootMargin 配置，useNative: false 时可用
+
+### prefix
+- Type: `string` `Function`
+- Default: `src => src && src.charAt(0) === '/' && !src.startsWith(ctx.base) ? ctx.base + src.slice(1) : src`
+- Required: `false`
+
+配置图片src的前缀

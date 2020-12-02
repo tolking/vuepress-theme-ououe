@@ -11,8 +11,6 @@ You can modify the plugin options, or just use
 [Base URL](https://vuepress.vuejs.org/guide/assets.html#rBase%20URL) already included by default
 :::
 
-> base on [markdown-it-img-lazy](https://github.com/tolking/markdown-it-img-lazy) and [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) and [lozad](https://github.com/ApoorvSaxena/lozad.js)
-
 [Live Demo](https://tolking.github.io/vuepress-plugin-img-lazy/preview.html)
 
 [Source code](https://github.com/tolking/vuepress-plugin-img-lazy)
@@ -49,9 +47,9 @@ module.exports = {
 ## Options
 
 ### useNative
-
-- Type: `Boolben`
+- Type: `Boolean`
 - Default: `true`
+- Required: `false`
 
 Use the native image lazy-loading for the web
 
@@ -60,8 +58,22 @@ In general, using native lazy loading will load more pictures than not using
 :::
 
 ### selector
-
 - Type: `string`
 - Default: `lazy`
+- Required: `false`
 
 Default class name for image
+
+### rootMargin
+- Type: `String`
+- Default: `200px`
+- Required: `false`
+
+rootMargin for IntersectionObserver
+
+### prefix
+- Type: `string` `Function`
+- Default: `src => src && src.charAt(0) === '/' && !src.startsWith(ctx.base) ? ctx.base + src.slice(1) : src`
+- Required: `false`
+
+Config prefix for src in images

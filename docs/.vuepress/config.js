@@ -42,7 +42,6 @@ module.exports = {
           }
         },
         nav: [
-          { text: 'Home', link: '/' },
           { text: 'Guide', link: '/guide/' },
           { text: 'Plugin', link: '/plugin/' }
         ],
@@ -72,7 +71,6 @@ module.exports = {
           }
         },
         nav: [
-          { text: '主页', link: '/zh/' },
           { text: '指南', link: '/zh/guide/' },
           { text: '插件', link: '/zh/plugin/' }
         ],
