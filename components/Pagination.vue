@@ -89,11 +89,11 @@ export default {
     .list-item
       display inline-block
       margin 0 .5rem
-      padding .8rem 1.2rem
+      padding .6rem 1rem
       border 1px solid $borderColor
       border-radius .5rem
       background $bgColor
-      font-size 1.2rem
+      font-size 1.1rem
       color $titleColor
       transition all .5s ease-in-out
       @media (prefers-color-scheme: dark)
@@ -108,10 +108,11 @@ export default {
       color $whiteColor
 @media (max-width $phoneWidth)
   .pagination
+    margin .8rem
     .pagination-list
       .list-item
         margin  0 .3rem
-        padding .6rem .8rem
+        padding .5rem .8rem
 @media print
   .pagination
     display none

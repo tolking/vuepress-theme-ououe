@@ -1,7 +1,7 @@
 .content,
 .markdown-body
   padding: 3rem
-  font-size: 1rem
+  font-size: 16px
   a
     font-weight 500
     color $accentColor
@@ -41,7 +41,7 @@
       border-bottom solid 0.25rem $borderColor
 
   blockquote
-    font-size .9em
+    font-size 1em
     color #999
     border-left .5rem solid $accentColor
     margin 0.5rem 0
@@ -80,11 +80,11 @@
       page-break-before avoid
 
   h1
-    margin: 2rem 0
-    font-size 2.2em
+    margin: 1.5rem 0
+    font-size 2em
 
   h2
-    margin: 2rem 0 1rem
+    margin: 1.5rem 0 1rem
     font-size 1.65em
     &+p
       @media print
@@ -124,7 +124,7 @@
     line-height 1.6
 
   p
-    font-size 1.1em
+    font-size 1em
     color $textColor
     transition color .5s ease-in-out
     @media (prefers-color-scheme: dark)
@@ -185,4 +185,6 @@
         top 0
 @media (max-width $phoneWidth)
   .content
+  .markdown-body
     padding: 1rem 0
+    font-size: 15px

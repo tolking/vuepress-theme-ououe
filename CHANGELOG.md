@@ -2,6 +2,10 @@
 
 [README](README.md) | [CHANGELOG](CHANGELOG.md)
 
+## 1.5.3
+
+- optimizing styles
+
 ## 1.5.2
 
 - improve typography for print media

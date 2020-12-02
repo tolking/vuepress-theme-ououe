@@ -89,7 +89,7 @@ export default {
     padding 3rem 0 1rem
     text-align center
     .header-title
-      font-size 2.2rem
+      font-size 2.1rem
       color $blackColor
       font-weight bold
       text-shadow 0 1px 5px $shadowColor
