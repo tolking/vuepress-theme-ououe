@@ -1,3 +1,6 @@
+> [!WARNING]
+> This library is no longer maintained, you can choose to migrate to [vitepress-theme-ououe](https://github.com/tolking/vitepress-theme-ououe)
+
 # vuepress-theme-ououe
 
 > A blog theme for VuePress
